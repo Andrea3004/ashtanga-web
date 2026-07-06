@@ -1,6 +1,6 @@
-# Ashtanga Seoul Next.js 홈페이지 MVP
+# Ashtanga Yoga Studio Next.js 홈페이지 MVP
 
-아쉬탕가 요가원 메인 홈페이지 리뉴얼 MVP입니다. Next.js, TypeScript, Tailwind CSS, App Router 기반으로 구성했습니다.
+아쉬탕가 요가 스튜디오 메인 홈페이지 리뉴얼 MVP입니다. Next.js, TypeScript, Tailwind CSS, App Router 기반으로 구성했습니다.
 
 ## 실행
 
