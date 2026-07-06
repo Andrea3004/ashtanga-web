@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
 import { PracticeCard } from "@/components/PracticeCard";
-import { ScheduleCard } from "@/components/ScheduleCard";
+import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
 import { Section } from "@/components/Section";
-import { externalLinks, practicePrograms, scheduleItems, siteInfo, visitSteps } from "@/data/site";
+import { externalLinks, practicePrograms, siteInfo, visitSteps } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -66,11 +66,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Schedule" title="이번 주 기본 시간표" className="bg-charcoal" tone="dark">
-        <div className="grid gap-4">
-          {scheduleItems.map((item) => (
-            <ScheduleCard key={item.day} {...item} />
-          ))}
+      <Section eyebrow="Schedule" title="수업 구성별 시간표" className="bg-charcoal" tone="dark">
+        <div className="grid gap-10">
+          <GeneralScheduleSection />
+          <MysoreScheduleSection />
+          <ScheduleNotes />
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <CTAButton href={externalLinks.reservationApp}>예약앱에서 일정 확인</CTAButton>

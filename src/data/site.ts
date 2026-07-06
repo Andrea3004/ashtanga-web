@@ -101,22 +101,53 @@ export const practicePrograms = [
   }
 ];
 
-export const scheduleItems = [
+export const generalClassTimes = ["10:00", "12:00", "18:20", "19:30", "20:40"];
+
+export const generalClassDays = [
+  { day: "월", title: "Ashtanga Yoga 1" },
+  { day: "화", title: "Ashtanga Yoga 2" },
+  { day: "수", title: "Ashtanga Yoga 3" },
+  { day: "목", title: "Ashtanga Yoga 4" },
+  { day: "금", title: "Ashtanga Yoga 5" }
+];
+
+export const saturdayGeneralClass = {
+  day: "토",
+  time: "10:00~11:30",
+  title: "Full Series"
+};
+
+export const mysoreScheduleItems = [
   {
-    day: "월~금",
-    morning: "06:00 오픈 · 마이솔 수련",
-    evening: "21:30 종료"
+    day: "월~목",
+    sessions: [
+      { time: "05:00~09:00", title: "Mysore Class / Self-Practice" },
+      { time: "14:30~17:00", title: "Mysore Class / Self-Practice" },
+      { time: "18:30~21:00", title: "Mysore Class / Self-Practice" }
+    ]
   },
   {
-    day: "토~일",
-    morning: "06:30 오픈 · 오전 수련",
-    evening: "12:00 종료"
+    day: "금",
+    sessions: [
+      { time: "06:30", title: "Primary Led Class" },
+      { time: "14:30", title: "Primary Led Class" },
+      { time: "18:30~21:00", title: "Mysore Class / Self-Practice" }
+    ]
   },
   {
-    day: "레드 · 특강",
-    morning: "예약앱 및 공지 확인",
-    evening: "변동 일정 별도 안내"
+    day: "일",
+    sessions: [
+      { time: "06:30", title: "Primary Led Class 1" },
+      { time: "08:30", title: "Intermediate Led Class 2" },
+      { time: "마지막 주 일요일", title: "Conference Day" }
+    ]
   }
+];
+
+export const scheduleNotes = [
+  "체험을 원하시는 분은 1회 쿠폰으로 수업에 참여하실 수 있습니다.",
+  "사전에 카카오톡 또는 전화로 예약해 주세요.",
+  "문데이/공휴일/특강 일정은 별도 공지를 확인해 주세요."
 ];
 
 export const visitSteps = [
