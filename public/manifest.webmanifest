@@ -1,0 +1,30 @@
+{
+  "name": "아쉬탕가 요가 스튜디오",
+  "short_name": "Ashtanga",
+  "description": "서울 서초구 아쉬탕가 요가 스튜디오 공식 홈페이지",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#081A20",
+  "background_color": "#081A20",
+  "icons": [
+    {
+      "src": "/assets/brand/reservation-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/brand/reservation-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/brand/reservation-apple-touch-icon-v2.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
