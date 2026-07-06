@@ -15,11 +15,11 @@ export default function AboutPage() {
             요가 경험이 없는 분도 자신의 속도에 맞춰 안정적으로 시작할 수 있도록 안내합니다.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="rounded-lg border border-line bg-white p-6">
+            <article className="rounded-lg border border-line bg-surface p-6">
               <h2 className="text-xl font-black text-ink">작은 관찰</h2>
               <p className="mt-3 text-muted">자세의 완성보다 오늘의 호흡, 균형, 긴장을 먼저 살핍니다.</p>
             </article>
-            <article className="rounded-lg border border-line bg-white p-6">
+            <article className="rounded-lg border border-line bg-surface p-6">
               <h2 className="text-xl font-black text-ink">꾸준한 리듬</h2>
               <p className="mt-3 text-muted">정해진 시퀀스 안에서 수련의 변화를 차분히 쌓아갑니다.</p>
             </article>

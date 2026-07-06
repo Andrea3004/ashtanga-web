@@ -15,7 +15,7 @@ export default function PracticePage() {
             <PracticeCard key={program.title} {...program} />
           ))}
         </div>
-        <div className="mt-12 rounded-lg border border-line bg-white p-6">
+        <div className="mt-12 rounded-lg border border-line bg-surface p-6">
           <h2 className="text-2xl font-black text-ink">수련 원칙</h2>
           <p className="mt-4 max-w-3xl text-muted">
             강도를 높이는 것보다 호흡을 잃지 않는 범위에서 움직입니다. 선생님의 안내에 따라

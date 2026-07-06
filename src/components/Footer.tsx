@@ -9,14 +9,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="flex flex-wrap justify-between gap-3 bg-ink px-5 py-7 text-sm text-white/70 sm:px-8 lg:px-20">
+    <footer className="flex flex-wrap justify-between gap-3 border-t border-line bg-background px-5 py-7 text-sm text-muted sm:px-8 lg:px-20">
       <p>
         {siteInfo.name} · {siteInfo.address}
       </p>
       <div className="flex flex-wrap gap-3">
         <p>{siteInfo.businessHours}</p>
         {socialLinks.map((link) => (
-          <a key={link.label} href={link.href} className="hover:text-white">
+          <a key={link.label} href={link.href} className="hover:text-gold">
             {link.label}
           </a>
         ))}

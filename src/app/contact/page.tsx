@@ -41,18 +41,18 @@ export default function ContactPage() {
               </CTAButton>
             </div>
           </div>
-          <form className="grid gap-4 rounded-lg border border-line bg-white p-6 shadow-soft">
+          <form className="grid gap-4 rounded-lg border border-line bg-surface p-6 shadow-soft">
             <label className="grid gap-2 text-sm font-black text-muted">
               이름
-              <input className="min-h-12 rounded-md border border-line bg-paper px-3 text-ink" name="name" placeholder="홍길동" />
+              <input className="min-h-12 rounded-md border border-line bg-background px-3 text-ink placeholder:text-muted" name="name" placeholder="홍길동" />
             </label>
             <label className="grid gap-2 text-sm font-black text-muted">
               연락처
-              <input className="min-h-12 rounded-md border border-line bg-paper px-3 text-ink" name="phone" placeholder={siteInfo.phone} />
+              <input className="min-h-12 rounded-md border border-line bg-background px-3 text-ink placeholder:text-muted" name="phone" placeholder={siteInfo.phone} />
             </label>
             <label className="grid gap-2 text-sm font-black text-muted">
               관심 수련
-              <select className="min-h-12 rounded-md border border-line bg-paper px-3 text-ink" name="program">
+              <select className="min-h-12 rounded-md border border-line bg-background px-3 text-ink" name="program">
                 <option>입문 상담</option>
                 <option>마이솔 클래스</option>
                 <option>레드 클래스</option>

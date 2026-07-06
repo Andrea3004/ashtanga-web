@@ -1,10 +1,12 @@
 export const siteInfo = {
   name: "아쉬탕가 요가 스튜디오",
   nameKo: "아쉬탕가 요가 스튜디오",
+  brandLabel: "Ashtanga Yoga Studio",
+  tagline: "Mysore practice · Led class · Beginner guidance",
   address: "서울시 서초구 사임당로173 5층(서전빌딩)",
   phone: "02)582-4401~2",
   businessHours: "월~금 06:00~21:30 · 토~일 06:30~12:00",
-  metaDescription: "호흡과 움직임을 차분히 쌓아가는 아쉬탕가 요가원 메인 홈페이지"
+  metaDescription: "서울 서초구 아쉬탕가 요가 스튜디오 공식 홈페이지"
 };
 
 export const externalLinks = {
@@ -84,50 +86,50 @@ export const navItems = [
 export const practicePrograms = [
   {
     title: "마이솔 클래스",
-    summary: "개인의 진도에 맞춰 수련하고 선생님의 보조를 받는 전통 방식입니다.",
-    meta: "평일 아침 · 저녁"
+    summary: "정해진 시퀀스를 각자의 속도에 맞춰 수련하고, 필요한 지점에서 선생님의 안내를 받습니다.",
+    meta: "월~금 06:00~21:30"
   },
   {
     title: "레드 클래스",
-    summary: "카운트와 함께 흐름을 익히며 호흡의 리듬을 정돈합니다.",
-    meta: "월 · 수 · 금"
+    summary: "선생님의 카운트에 맞춰 호흡, 시선, 움직임의 리듬을 함께 점검합니다.",
+    meta: "예약앱 공지 확인"
   },
   {
-    title: "입문 과정",
-    summary: "기초 호흡, 태양경배, 안전한 시작 방법을 차근차근 안내합니다.",
-    meta: "화 · 목"
+    title: "처음 수련",
+    summary: "요가 경험이 없어도 호흡과 기본 동작부터 무리 없이 시작할 수 있도록 안내합니다.",
+    meta: "카카오톡 상담"
   }
 ];
 
 export const scheduleItems = [
   {
-    day: "월 · 수 · 금",
-    morning: "06:30 마이솔",
-    evening: "19:30 레드"
+    day: "월~금",
+    morning: "06:00 오픈 · 마이솔 수련",
+    evening: "21:30 종료"
   },
   {
-    day: "화 · 목",
-    morning: "07:00 입문",
-    evening: "20:00 마이솔"
+    day: "토~일",
+    morning: "06:30 오픈 · 오전 수련",
+    evening: "12:00 종료"
   },
   {
-    day: "토",
-    morning: "09:00 레드",
-    evening: "11:00 호흡 워크숍"
+    day: "레드 · 특강",
+    morning: "예약앱 및 공지 확인",
+    evening: "변동 일정 별도 안내"
   }
 ];
 
 export const visitSteps = [
   {
-    title: "방문 목적을 알려주세요",
-    body: "통증, 운동 경험, 수련 목표를 간단히 확인합니다."
+    title: "예약앱 또는 카카오톡으로 문의",
+    body: "처음 방문 전 가능한 시간과 수련 경험을 알려주시면 시작 방법을 안내합니다."
   },
   {
-    title: "편안한 복장으로 오세요",
-    body: "수련 2시간 전 가벼운 식사를 권장합니다."
+    title: "공복에 가까운 상태로 방문",
+    body: "움직이기 편한 복장으로 오시고, 식사는 수련 2~3시간 전 가볍게 마치는 것을 권장합니다."
   },
   {
-    title: "첫 수련은 천천히 시작합니다",
-    body: "호흡과 기본 동작을 중심으로 무리 없이 안내합니다."
+    title: "호흡과 기본 순서부터 시작",
+    body: "처음부터 모든 동작을 따라 하지 않고, 몸 상태에 맞춰 필요한 범위에서 수련합니다."
   }
 ];

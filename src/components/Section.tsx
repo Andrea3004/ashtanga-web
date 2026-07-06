@@ -10,7 +10,7 @@ type SectionProps = {
 };
 
 export function Section({ eyebrow, title, children, className = "", id, tone = "light" }: SectionProps) {
-  const titleClass = tone === "dark" ? "text-white" : "text-ink";
+  const titleClass = tone === "dark" ? "text-text" : "text-ink";
 
   return (
     <section id={id} className={`px-5 py-20 sm:px-8 lg:px-20 lg:py-28 ${className}`}>

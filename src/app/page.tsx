@@ -3,12 +3,12 @@ import { CTAButton } from "@/components/CTAButton";
 import { PracticeCard } from "@/components/PracticeCard";
 import { ScheduleCard } from "@/components/ScheduleCard";
 import { Section } from "@/components/Section";
-import { practicePrograms, scheduleItems, siteInfo, visitSteps } from "@/data/site";
+import { externalLinks, practicePrograms, scheduleItems, siteInfo, visitSteps } from "@/data/site";
 
 export default function HomePage() {
   return (
     <main>
-      <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-white">
+      <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">
         <Image
           src="/images/ashtanga-shala-hero.png"
           alt="아침 햇살이 들어오는 고요한 아쉬탕가 요가 수련실"
@@ -17,20 +17,23 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,28,22,0.78),rgba(23,28,22,0.28)_56%,rgba(23,28,22,0.08)),linear-gradient(0deg,rgba(23,28,22,0.34),rgba(23,28,22,0.02)_48%)]" />
-        <div className="relative z-10 flex max-w-3xl flex-col justify-end px-5 pb-20 pt-32 sm:px-8 lg:px-20 lg:pb-28">
-          <p className="mb-4 text-xs font-black uppercase text-[#f0c8a8]">Mysore · Led Class · Breathwork</p>
-          <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-7xl">
-            호흡으로 시작해 몸의 리듬을 되찾는 아쉬탕가 수련
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.9),rgba(8,26,32,0.55)_56%,rgba(8,26,32,0.24)),linear-gradient(0deg,rgba(8,26,32,0.58),rgba(8,26,32,0.08)_48%)]" />
+        <div className="relative z-10 flex max-w-3xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:px-20 lg:pb-28">
+          <p className="mb-4 text-xs font-black uppercase text-gold">{siteInfo.tagline}</p>
+          <h1 className="text-3xl font-black leading-tight sm:text-5xl lg:text-7xl">
+            매일의 호흡을 쌓는 정통 아쉬탕가 수련
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/90">
-            매트 위에서 반복과 집중을 쌓아가는 전통 {siteInfo.nameKo}. 처음 방문하는 분도 자신의
-            속도에 맞춰 안정적으로 시작할 수 있습니다.
+          <p className="mt-5 max-w-2xl text-base leading-7 text-text/90 sm:mt-6 sm:text-lg">
+            {siteInfo.address}에 위치한 {siteInfo.nameKo}입니다. 마이솔 수련을 중심으로 각자의 몸과
+            호흡에 맞춰 꾸준히 이어갈 수 있도록 안내합니다.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <CTAButton href="/contact">상담 예약</CTAButton>
+            <CTAButton href={externalLinks.reservationApp}>예약앱 바로가기</CTAButton>
+            <CTAButton href={externalLinks.kakaoTalk} variant="secondary">
+              카카오톡 문의
+            </CTAButton>
             <CTAButton href="/schedule" variant="secondary">
-              수련 시간 보기
+              시간표 보기
             </CTAButton>
           </div>
         </div>
@@ -38,22 +41,22 @@ export default function HomePage() {
 
       <section className="grid border-y border-line bg-line sm:grid-cols-3">
         {[
-          ["06:30", "평일 아침 마이솔"],
-          ["1:1", "개별 호흡과 자세 관찰"],
-          ["Beginner", "입문자 오리엔테이션"]
+          ["06:00", "평일 오픈"],
+          ["21:30", "평일 마지막 수련"],
+          ["12:00", "주말 오전 운영"]
         ].map(([value, label]) => (
           <div key={value} className="min-h-32 bg-soft px-5 py-7 sm:px-8 lg:px-20">
-            <strong className="block text-3xl font-black leading-none text-ink">{value}</strong>
+            <strong className="block text-3xl font-black leading-none text-gold">{value}</strong>
             <span className="mt-3 block font-bold text-muted">{label}</span>
           </div>
         ))}
       </section>
 
-      <Section eyebrow="Practice" title="매일 같은 순서 안에서 매일 다른 몸을 만납니다">
+      <Section eyebrow="Practice" title="같은 순서 안에서 오늘의 몸을 관찰합니다">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <p className="max-w-2xl text-lg text-muted">
-            아쉬탕가는 정해진 시퀀스를 바탕으로 호흡, 시선, 움직임을 연결하는 수련입니다.
-            빠르게 잘하는 것보다 꾸준히 관찰하는 태도를 중요하게 다룹니다.
+            아쉬탕가는 정해진 순서 안에서 호흡, 시선, 움직임을 연결하는 수련입니다. 빠르게 많은
+            동작을 해내기보다, 꾸준한 반복 속에서 몸의 상태를 정확히 보는 태도를 중요하게 다룹니다.
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             {practicePrograms.map((program) => (
@@ -69,9 +72,15 @@ export default function HomePage() {
             <ScheduleCard key={item.day} {...item} />
           ))}
         </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <CTAButton href={externalLinks.reservationApp}>예약앱에서 일정 확인</CTAButton>
+          <CTAButton href={externalLinks.kakaoTalk} variant="secondary">
+            방문 전 문의
+          </CTAButton>
+        </div>
       </Section>
 
-      <Section eyebrow="First Visit" title="처음 오시는 분을 위한 안내" className="bg-white">
+      <Section eyebrow="First Visit" title="처음 오시는 분을 위한 안내" className="bg-background">
         <ol className="grid gap-4 md:grid-cols-3">
           {visitSteps.map((step, index) => (
             <li key={step.title} className="min-h-44 rounded-lg border border-line bg-paper p-6">
@@ -87,18 +96,23 @@ export default function HomePage() {
         <div>
           <p className="mb-3 text-xs font-black uppercase text-clay">Contact</p>
           <h2 className="text-3xl font-black leading-tight text-ink sm:text-4xl lg:text-5xl">
-            오늘의 몸 상태에서 시작하세요
+            방문 전 편하게 문의하세요
           </h2>
           <p className="mt-5 max-w-2xl text-muted">
-            방문 상담, 체험 수련, 정규 등록 문의를 한 곳에서 받을 수 있도록 MVP 영역을 마련했습니다.
+            처음 수련, 수업 시간, 등록 방법은 예약앱 또는 카카오톡으로 확인할 수 있습니다.
           </p>
         </div>
-        <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
-          <p className="text-lg font-black text-ink">체험 수련 문의</p>
-          <p className="mt-3 text-muted">현재는 예약 시스템 연결 전 단계입니다. 다음 단계에서 폼 저장을 연결합니다.</p>
-          <CTAButton href="/contact" variant="dark" className="mt-6 w-full">
-            문의 페이지로 이동
-          </CTAButton>
+        <div className="rounded-lg border border-line bg-surface p-6 shadow-soft">
+          <p className="text-lg font-black text-ink">수련 예약 및 상담</p>
+          <p className="mt-3 text-muted">{siteInfo.businessHours}</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <CTAButton href={externalLinks.reservationApp} variant="dark" className="w-full">
+              예약앱 열기
+            </CTAButton>
+            <CTAButton href="/contact" variant="dark" className="w-full">
+              문의 페이지
+            </CTAButton>
+          </div>
         </div>
       </section>
     </main>
