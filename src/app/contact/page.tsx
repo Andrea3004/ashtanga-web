@@ -13,7 +13,8 @@ export default function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_0.7fr]">
           <div>
             <p className="max-w-2xl text-lg text-muted">
-              아직 Supabase나 예약 시스템은 연결하지 않았습니다. MVP에서는 문의 흐름과 화면 구조만 준비했습니다.
+              방문 전 위치, 수련 가능 시간, 1회 체험 가능 여부를 확인해 주세요. 예약과 상담은 우선
+              카카오톡, 전화, 외부 예약 앱으로 연결합니다.
             </p>
             <dl className="mt-8 grid gap-4 text-muted">
               <div>
@@ -41,29 +42,25 @@ export default function ContactPage() {
               </CTAButton>
             </div>
           </div>
-          <form className="grid gap-4 rounded-lg border border-line bg-surface p-6 shadow-soft">
-            <label className="grid gap-2 text-sm font-black text-muted">
-              이름
-              <input className="min-h-12 rounded-md border border-line bg-background px-3 text-ink placeholder:text-muted" name="name" placeholder="홍길동" />
-            </label>
-            <label className="grid gap-2 text-sm font-black text-muted">
-              연락처
-              <input className="min-h-12 rounded-md border border-line bg-background px-3 text-ink placeholder:text-muted" name="phone" placeholder={siteInfo.phone} />
-            </label>
-            <label className="grid gap-2 text-sm font-black text-muted">
-              관심 수련
-              <select className="min-h-12 rounded-md border border-line bg-background px-3 text-ink" name="program">
-                <option>입문 상담</option>
-                <option>마이솔 클래스</option>
-                <option>레드 클래스</option>
-                <option>호흡 워크숍</option>
-              </select>
-            </label>
-            <CTAButton href="/" variant="dark" className="mt-2 w-full">
-              임시 문의 확인
+          <div className="grid gap-4 rounded-lg border border-line bg-surface p-6 shadow-soft">
+            <p className="text-lg font-black text-ink">외부 채널</p>
+            <p className="text-sm leading-6 text-muted">
+              이 MVP에서는 회원가입, DB 저장, 비회원 예약 저장 기능을 만들지 않습니다. 실제 상담과 예약은
+              아래 외부 채널을 사용합니다.
+            </p>
+            <CTAButton href={externalLinks.kakaoTalk} variant="dark" className="w-full">
+              카카오톡으로 1회 체험 문의
             </CTAButton>
-            <p className="text-sm text-muted">제출 기능은 다음 단계에서 예약 시스템과 연결합니다.</p>
-          </form>
+            <CTAButton href={externalLinks.instagram} variant="dark" className="w-full">
+              인스타그램 보기
+            </CTAButton>
+            <CTAButton href={externalLinks.naverBlog} variant="dark" className="w-full">
+              네이버 블로그
+            </CTAButton>
+            <CTAButton href={externalLinks.naverCafe} variant="dark" className="w-full">
+              네이버 카페
+            </CTAButton>
+          </div>
         </div>
       </Section>
     </main>

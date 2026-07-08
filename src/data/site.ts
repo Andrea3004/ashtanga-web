@@ -18,6 +18,29 @@ export const externalLinks = {
   reservationApp: "https://app.ashtanga.or.kr"
 };
 
+export const socialLinks = [
+  {
+    title: "네이버 지도",
+    description: "강남역 인근 스튜디오 위치와 길찾기를 확인하세요.",
+    href: externalLinks.naverMap
+  },
+  {
+    title: "네이버 블로그",
+    description: "공지, 수련 안내, 스튜디오 소식을 블로그에서 확인하세요.",
+    href: externalLinks.naverBlog
+  },
+  {
+    title: "네이버 카페",
+    description: "회원 커뮤니티와 자세한 수련 자료를 연결합니다.",
+    href: externalLinks.naverCafe
+  },
+  {
+    title: "인스타그램",
+    description: "수련 현장과 최신 소식을 짧게 살펴보세요.",
+    href: externalLinks.instagram
+  }
+];
+
 export const placeholderAudit = [
   {
     field: "요가원명",
@@ -77,27 +100,61 @@ export const placeholderAudit = [
 ];
 
 export const navItems = [
-  { href: "/about", label: "요가원 소개" },
-  { href: "/practice", label: "수련" },
-  { href: "/schedule", label: "시간표" },
-  { href: "/contact", label: "문의" }
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/practice", label: "Practice" },
+  { href: "/schedule", label: "Schedule" },
+  { href: "/contact", label: "Contact" }
 ];
 
 export const practicePrograms = [
   {
-    title: "마이솔 클래스",
-    summary: "정해진 시퀀스를 각자의 속도에 맞춰 수련하고, 필요한 지점에서 선생님의 안내를 받습니다.",
-    meta: "월~금 06:00~21:30"
+    title: "Beginner Class / 일반수업",
+    summary: "아쉬탕가 요가를 처음 시작하는 분도 순서와 호흡을 단계적으로 익힐 수 있는 수업입니다.",
+    meta: "Ashtanga Yoga 1~5"
   },
   {
-    title: "레드 클래스",
-    summary: "선생님의 카운트에 맞춰 호흡, 시선, 움직임의 리듬을 함께 점검합니다.",
-    meta: "예약앱 공지 확인"
+    title: "Mysore Class / 셀프·레드 클래스",
+    summary: "개인의 진도에 맞춰 수련하거나 레드 클래스에서 카운트와 리듬을 함께 점검합니다.",
+    meta: "Mysore · Led"
   },
   {
-    title: "처음 수련",
-    summary: "요가 경험이 없어도 호흡과 기본 동작부터 무리 없이 시작할 수 있도록 안내합니다.",
-    meta: "카카오톡 상담"
+    title: "Meditation / 명상",
+    summary: "움직임 이후 호흡과 감각을 정돈하며 집중과 회복의 시간을 마련합니다.",
+    meta: "Breath · Awareness"
+  }
+];
+
+export const aboutSections = [
+  {
+    title: "Studio",
+    body: "넓은 매트 간격과 조용한 분위기 속에서 새벽 수련부터 저녁 수련까지 이어갈 수 있는 프리미엄 아쉬탕가 공간입니다."
+  },
+  {
+    title: "Teacher",
+    body: "각자의 몸 상태와 수련 경험을 살피며 필요한 자세, 호흡, 휴식의 범위를 안내합니다."
+  },
+  {
+    title: "Philosophy",
+    body: "정해진 순서를 반복하며 성취보다 관찰을, 빠른 변화보다 꾸준한 리듬을 중요하게 여깁니다."
+  }
+];
+
+export const practiceDetails = [
+  {
+    title: "Beginner Class / 일반수업",
+    body: "태양경배, 기본 자세, 호흡과 시선의 사용법을 단계적으로 익힙니다. 처음 방문하는 분은 1회 체험 후 자신에게 맞는 수업 흐름을 상담할 수 있습니다.",
+    points: ["Ashtanga Yoga 1~5 단계 구성", "기초 자세와 안전한 변형 안내", "1회 체험 쿠폰 참여 가능"]
+  },
+  {
+    title: "Mysore Class / 셀프·레드 클래스",
+    body: "마이솔 클래스는 각자의 진도에 맞춰 수련하고, 레드 클래스는 선생님의 카운트에 맞춰 흐름을 점검합니다.",
+    points: ["새벽·오후·저녁 마이솔 운영", "Primary / Intermediate Led Class", "Self-Practice 가능 시간 운영"]
+  },
+  {
+    title: "Meditation / 명상",
+    body: "수련 후 호흡과 감각을 가라앉히며 집중을 회복합니다. 움직임과 고요함이 함께 이어지는 수련 경험을 지향합니다.",
+    points: ["호흡 관찰", "몸의 긴장 이완", "수련 후 회복 루틴"]
   }
 ];
 
@@ -148,6 +205,24 @@ export const scheduleNotes = [
   "체험을 원하시는 분은 1회 쿠폰으로 수업에 참여하실 수 있습니다.",
   "사전에 카카오톡 또는 전화로 예약해 주세요.",
   "문데이/공휴일/특강 일정은 별도 공지를 확인해 주세요."
+];
+
+export const pricingItems = [
+  {
+    title: "1회 체험",
+    price: "예약 문의",
+    description: "처음 방문하는 분은 1회 쿠폰으로 일반수업 또는 상담 가능한 수업에 참여할 수 있습니다."
+  },
+  {
+    title: "일반수업",
+    price: "별도 문의",
+    description: "Ashtanga Yoga 1~5 단계 수업 기준으로 등록 기간과 횟수를 상담합니다."
+  },
+  {
+    title: "마이솔 클래스",
+    price: "별도 문의",
+    description: "마이솔, 셀프 프랙티스, 레드 클래스 참여 범위에 따라 등록 방식을 안내합니다."
+  }
 ];
 
 export const visitSteps = [

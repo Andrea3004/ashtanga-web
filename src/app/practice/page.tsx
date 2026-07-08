@@ -1,6 +1,5 @@
-import { PracticeCard } from "@/components/PracticeCard";
 import { Section } from "@/components/Section";
-import { practicePrograms } from "@/data/site";
+import { practiceDetails } from "@/data/site";
 
 export const metadata = {
   title: "수련"
@@ -10,9 +9,17 @@ export default function PracticePage() {
   return (
     <main>
       <Section eyebrow="Practice" title="호흡, 시선, 움직임을 하나의 리듬으로 연결합니다">
-        <div className="grid gap-4 md:grid-cols-3">
-          {practicePrograms.map((program) => (
-            <PracticeCard key={program.title} {...program} />
+        <div className="grid gap-4 lg:grid-cols-3">
+          {practiceDetails.map((practice) => (
+            <article key={practice.title} className="rounded-lg border border-line bg-surface p-6">
+              <h2 className="text-xl font-black text-gold">{practice.title}</h2>
+              <p className="mt-4 text-muted">{practice.body}</p>
+              <ul className="mt-5 grid gap-2 text-sm text-text/75">
+                {practice.points.map((point) => (
+                  <li key={point}>· {point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
         <div className="mt-12 rounded-lg border border-line bg-surface p-6">

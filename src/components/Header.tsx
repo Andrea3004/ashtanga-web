@@ -7,14 +7,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 flex min-h-18 items-center justify-between border-b border-line bg-background/95 px-5 py-3 text-text backdrop-blur sm:px-8 lg:px-20">
       <Link href="/" className="inline-flex min-w-0 items-center gap-3" aria-label={`${siteInfo.name} 홈`}>
-        <span className="flex shrink-0 items-center rounded-2xl bg-[#F6F2EA]/95 px-3 py-1.5 shadow-[0_10px_28px_rgba(0,0,0,0.22)] ring-1 ring-gold/25">
+        <span className="flex shrink-0 items-center">
           <Image
-            src="/assets/brand/reservation-logo.png"
+            src="/assets/brand/home-logo.png"
             alt={siteInfo.name}
-            width={516}
-            height={158}
-            priority
-            className="h-8 w-auto min-w-[120px] max-w-[150px] object-contain sm:h-9 sm:min-w-[150px] sm:max-w-[190px]"
+           src="/assets/brand/home-logo.png"
+alt={siteInfo.name}
+width={1024}
+height={1024}
+priority
+className="h-12 w-12 object-contain sm:h-14 sm:w-14"
           />
         </span>
         <span className="min-w-0">

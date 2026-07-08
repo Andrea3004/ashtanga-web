@@ -3,7 +3,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { PracticeCard } from "@/components/PracticeCard";
 import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
 import { Section } from "@/components/Section";
-import { externalLinks, practicePrograms, siteInfo, visitSteps } from "@/data/site";
+import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -28,12 +28,12 @@ export default function HomePage() {
             호흡에 맞춰 꾸준히 이어갈 수 있도록 안내합니다.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <CTAButton href={externalLinks.reservationApp}>예약앱 바로가기</CTAButton>
-            <CTAButton href={externalLinks.kakaoTalk} variant="secondary">
-              카카오톡 문의
-            </CTAButton>
+            <CTAButton href={externalLinks.kakaoTalk}>1회 체험 문의</CTAButton>
             <CTAButton href="/schedule" variant="secondary">
               시간표 보기
+            </CTAButton>
+            <CTAButton href={externalLinks.naverMap} variant="secondary">
+              위치 보기
             </CTAButton>
           </div>
         </div>
@@ -77,6 +77,21 @@ export default function HomePage() {
           <CTAButton href={externalLinks.kakaoTalk} variant="secondary">
             방문 전 문의
           </CTAButton>
+        </div>
+      </Section>
+
+      <Section eyebrow="Connect" title="외부 채널에서 더 자세히 확인하세요" className="bg-background">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {socialLinks.map((link) => (
+            <a
+              key={link.title}
+              href={link.href}
+              className="rounded-lg border border-line bg-surface p-5 transition hover:border-gold hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-black text-gold">{link.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-muted">{link.description}</p>
+            </a>
+          ))}
         </div>
       </Section>
 
