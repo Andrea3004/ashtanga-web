@@ -11,12 +11,10 @@ export function Header() {
           <Image
             src="/assets/brand/home-logo.png"
             alt={siteInfo.name}
-           src="/assets/brand/home-logo.png"
-alt={siteInfo.name}
-width={1024}
-height={1024}
-priority
-className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+            width={1024}
+            height={1024}
+            priority
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14"
           />
         </span>
         <span className="min-w-0">
