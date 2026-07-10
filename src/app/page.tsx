@@ -114,8 +114,11 @@ export default function HomePage() {
             방문 전 편하게 문의하세요
           </h2>
           <p className="mt-5 max-w-2xl text-muted">
-            처음 수련, 수업 시간, 등록 방법은 상담 문의 페이지를 클릭하세요. 예약 앱 이용을 위해서는 회원가입이 필요합니다.
-          </p>
+            처음 수련, 수업 시간, 등록 방법은 상담 문의 페이지를 클릭하세요.
+          <span className="block mt-2">
+    예약 앱 이용을 위해서는 회원가입이 필요합니다.
+  </span>
+</p>
         </div>
         <div className="rounded-lg border border-line bg-surface p-6 shadow-soft">
           <p className="text-lg font-black text-ink">수련 예약 및 상담</p>
