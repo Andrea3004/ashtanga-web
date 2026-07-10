@@ -68,7 +68,7 @@ export function GeneralScheduleSection() {
 
 export function MysoreScheduleSection() {
   return (
-    <section aria-labelledby="mysore-schedule-title" className="space-y-5">
+    <section id="mysore" aria-labelledby="mysore-schedule-title" className="space-y-5">
       <div>
         <p className="text-xs font-black uppercase text-gold">Mysore Class</p>
         <h3 id="mysore-schedule-title" className="mt-2 text-2xl font-black text-text">

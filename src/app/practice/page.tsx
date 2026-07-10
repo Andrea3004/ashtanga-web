@@ -37,7 +37,10 @@ export default function PracticePage() {
               아쉬탕가 요가를 처음 접하는 분들을 위한 입문 수업입니다.
               기본 순서와 호흡, 움직임의 원리를 단계적으로 배워갑니다.
             </p>
-            <Link href="/schedule" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-text">
+            <Link
+              href="/schedule"
+              className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+            >
               일반 수업 시간표 보기
               <span aria-hidden="true">→</span>
             </Link>
@@ -66,6 +69,13 @@ export default function PracticePage() {
                 </p>
               </div>
             </div>
+            <Link
+              href="/schedule#mysore"
+              className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+            >
+              마이솔 시간표 보기
+              <span aria-hidden="true">→</span>
+            </Link>
           </article>
 
           <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-3">
