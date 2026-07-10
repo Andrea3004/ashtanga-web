@@ -91,7 +91,7 @@ export default function PracticePage() {
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <a
               href={externalLinks.reservationApp}
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition-colors hover:bg-gold/90 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
               target="_blank"
               rel="noreferrer"
             >
@@ -99,7 +99,7 @@ export default function PracticePage() {
             </a>
             <a
               href={externalLinks.kakaoTalk}
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-background px-4 py-2 font-black text-gold transition-colors hover:bg-gold/10 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
               target="_blank"
               rel="noreferrer"
             >

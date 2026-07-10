@@ -38,13 +38,16 @@ export default function SchedulePage() {
           별도 공지를 기준으로 확인해 주세요.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <CTAButton href={externalLinks.reservationApp} className="hover:!border-gold hover:!bg-gold/90">
+          <CTAButton
+            href={externalLinks.reservationApp}
+            className="focus-visible:!border-text focus-visible:!bg-text focus-visible:!text-background active:!border-text active:!bg-text active:!text-background"
+          >
             예약앱에서 확인
           </CTAButton>
           <CTAButton
             href={externalLinks.kakaoTalk}
             variant="secondary"
-            className="border-gold text-gold hover:!border-gold hover:!bg-gold/10 hover:!text-gold"
+            className="!border-gold !bg-transparent !text-gold hover:!border-gold hover:!bg-gold hover:!text-background focus-visible:!border-gold focus-visible:!bg-gold focus-visible:!text-background active:!border-gold active:!bg-gold active:!text-background"
           >
             카카오톡 문의
           </CTAButton>
