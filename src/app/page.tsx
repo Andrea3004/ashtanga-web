@@ -122,10 +122,10 @@ export default function HomePage() {
           <p className="mt-3 text-muted">{siteInfo.businessHours}</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
             <CTAButton href={externalLinks.reservationApp} variant="dark" className="w-full">
-              예약앱 열기
+              수업 예약하기(회원전용)
             </CTAButton>
             <CTAButton href="/contact" variant="dark" className="w-full">
-              문의 페이지
+              상담 문의 페이지
             </CTAButton>
           </div>
         </div>

@@ -1,7 +1,60 @@
 import { Section } from "@/components/Section";
 import { CTAButton } from "@/components/CTAButton";
 import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
-import { externalLinks, pricingItems, siteInfo } from "@/data/site";
+import {
+  externalLinks,
+  generalClassPricingTable,
+  mysoreClassPricingTable,
+  pricingItems,
+  scheduleOperationGuide,
+  siteInfo
+} from "@/data/site";
+
+type PricingTableData = {
+  columns: string[];
+  rows: string[][];
+  coupons: string[];
+};
+
+function PricingTable({ title, data }: { title: string; data: PricingTableData }) {
+  return (
+    <div className="space-y-4">
+      <h4 className="text-lg font-black text-text">{title}</h4>
+      <div className="overflow-x-auto rounded-lg border border-gold/25">
+        <table className="w-full min-w-[680px] border-collapse bg-surface text-left text-sm">
+          <thead>
+            <tr className="bg-gold text-background">
+              {data.columns.map((column) => (
+                <th key={column} scope="col" className="whitespace-nowrap p-3 font-black">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.rows.map((row) => (
+              <tr key={row[0]} className="border-t border-gold/20">
+                {row.map((cell, index) => (
+                  <td
+                    key={`${row[0]}-${cell}-${index}`}
+                    className={`whitespace-nowrap p-3 ${index === 0 ? "font-black text-gold" : "text-text/85"}`}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm leading-6 text-muted">
+        {data.coupons.map((coupon) => (
+          <li key={coupon}>· {coupon}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export const metadata = {
   title: "시간표"
@@ -26,10 +79,22 @@ export default function SchedulePage() {
               {pricingItems.map((item) => (
                 <article key={item.title} className="rounded-lg border border-gold/25 bg-surface p-5">
                   <h4 className="text-lg font-black text-gold">{item.title}</h4>
-                  <p className="mt-3 text-2xl font-black text-text">{item.price}</p>
+                  {item.price ? <p className="mt-3 text-2xl font-black text-text">{item.price}</p> : null}
                   <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
                 </article>
               ))}
+            </div>
+            <div className="grid gap-8">
+              <PricingTable title="일반 수업 회비" data={generalClassPricingTable} />
+              <PricingTable title="마이솔 클래스 회비" data={mysoreClassPricingTable} />
+              <aside className="rounded-lg border border-gold/25 bg-surface p-5">
+                <p className="text-sm font-black uppercase text-gold">운영 안내</p>
+                <ul className="mt-3 grid gap-2 text-sm leading-6 text-text/75">
+                  {scheduleOperationGuide.map((guide) => (
+                    <li key={guide}>· {guide}</li>
+                  ))}
+                </ul>
+              </aside>
             </div>
           </section>
         </div>

@@ -201,6 +201,31 @@ export const mysoreScheduleItems = [
   }
 ];
 
+export const generalClassPricingTable = {
+  columns: ["회비", "1개월", "3개월", "6개월", "12개월"],
+  rows: [
+    ["주4회", "195,000", "497,000", "877,000", "1,638,000"],
+    ["주6회", "245,000", "625,000", "1,102,000", "2,053,000"]
+  ],
+  coupons: ["1회 쿠폰 30,000원", "5회 쿠폰 120,000원", "유효기간 1개월"]
+};
+
+export const mysoreClassPricingTable = {
+  columns: ["회비", "1개월", "BOOST PASS(3개월)", "FOCUS PASS(6개월)", "SEASON PASS(12개월)"],
+  rows: [
+    ["주2회", "196,000", "497,000", "877,000", "-"],
+    ["주4회", "235,000", "599,000", "1,057,000", "1,545,000"],
+    ["주6회", "275,000", "700,000", "1,237,000", "2,145,000"]
+  ],
+  coupons: ["1회 쿠폰 40,000원", "5회 쿠폰 170,000원", "유효기간 1개월"]
+};
+
+export const scheduleOperationGuide = [
+  "문데이 및 공휴일 일정은 예약 앱 공지를 확인",
+  "특강 및 일정 변경도 예약 앱 공지에서 안내",
+  "첫 방문 전 카카오톡 상담 또는 1회 체험 예약 권장"
+];
+
 export const scheduleNotes = [
   "체험을 원하시는 분은 1회 쿠폰으로 수업에 참여하실 수 있습니다.",
   "사전에 카카오톡 또는 전화로 예약해 주세요.",
@@ -210,18 +235,18 @@ export const scheduleNotes = [
 export const pricingItems = [
   {
     title: "1회 체험",
-    price: "예약 문의",
-    description: "처음 방문하는 분은 1회 쿠폰으로 일반수업 또는 상담 가능한 수업에 참여할 수 있습니다."
+    price: "",
+    description: "처음 방문하시는 분들을 위한 체험 수업입니다. 예약 후 참여 가능합니다."
   },
   {
-    title: "일반수업",
-    price: "별도 문의",
-    description: "Ashtanga Yoga 1~5 단계 수업 기준으로 등록 기간과 횟수를 상담합니다."
+    title: "일반 수업",
+    price: "",
+    description: "주 4회 · 주 6회 등록이 가능합니다. 아래 회비표를 참고해주세요."
   },
   {
     title: "마이솔 클래스",
-    price: "별도 문의",
-    description: "마이솔, 셀프 프랙티스, 레드 클래스 참여 범위에 따라 등록 방식을 안내합니다."
+    price: "",
+    description: "주 2회 · 주 4회 · 주 6회 등록이 가능합니다. 아래 회비표를 참고해주세요."
   }
 ];
 
