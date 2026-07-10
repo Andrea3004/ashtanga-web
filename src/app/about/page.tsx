@@ -5,7 +5,7 @@ import { siteInfo } from "@/data/site";
 const aboutCards = [
   {
     title: "Studio",
-    body: "넓은 매트 간격과 조용한 분위기 속에서 새벽 수련부터 저녁 수련까지 이어갈 수 있는 프리미엄 아쉬탕가 공간입니다.",
+    body: "전문 요가원의 조용한 분위기 속에서 새벽 수련부터 저녁 수련까지 이어갈 수 있는 프리미엄 아쉬탕가 공간입니다.",
     href: "/about/studio"
   },
   {

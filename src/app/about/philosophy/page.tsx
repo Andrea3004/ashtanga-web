@@ -15,7 +15,7 @@ export default function PhilosophyPage() {
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">철학의 핵심</p>
           <p className="mt-4 text-lg leading-8 text-muted">
-            체계적인 프로그램과 검증된 시스템이어서 너무나 쉬운 아쉬탕가 요가
+            요가 철학에 근거한 체계적인 프로그램과 검증된 시스템이어서 너무나 쉬운 아쉬탕가 요가
           </p>
         </article>
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">

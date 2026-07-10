@@ -17,8 +17,8 @@ export function AboutDetailLayout({
   children
 }: AboutDetailLayoutProps) {
   const heroBackground = heroImage
-    ? `linear-gradient(95deg, rgba(8, 26, 32, 0.94) 0%, rgba(8, 26, 32, 0.72) 42%, rgba(8, 26, 32, 0.9) 100%), url(${heroImage})`
-    : `linear-gradient(95deg, rgba(8, 26, 32, 0.94) 0%, rgba(8, 26, 32, 0.72) 100%)`;
+    ? `linear-gradient(95deg, rgba(8, 26, 32, 0.3), rgba(8, 26, 32, 0.22)), url(${heroImage})`
+    : `linear-gradient(95deg, rgba(8, 26, 32, 0.3), rgba(8, 26, 32, 0.22))`;
 
   return (
     <main className="min-h-screen bg-background text-text">
