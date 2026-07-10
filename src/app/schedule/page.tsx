@@ -17,10 +17,34 @@ type PricingTableData = {
 };
 
 function PricingTable({ title, data }: { title: string; data: PricingTableData }) {
+  const periods = data.columns.slice(1);
+
   return (
     <div className="space-y-4">
       <h4 className="text-lg font-black text-text">{title}</h4>
-      <div className="overflow-x-auto rounded-lg border border-gold/25">
+      <div className="grid gap-4 md:hidden">
+        {data.rows.map((row) => (
+          <article key={row[0]} className="rounded-lg border border-gold/25 bg-surface p-5">
+            <h5 className="text-lg font-black text-gold">{row[0]}</h5>
+            <dl className="mt-4 grid gap-0 text-sm">
+              {periods.map((period, index) => {
+                const price = row[index + 1];
+
+                return (
+                  <div
+                    key={`${row[0]}-${period}`}
+                    className="flex items-center justify-between gap-4 border-t border-gold/15 py-3 first:border-t-0 first:pt-0 last:pb-0"
+                  >
+                    <dt className="text-muted">{period}</dt>
+                    <dd className="text-right font-black text-text">{price === "-" ? "–" : `${price}원`}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </article>
+        ))}
+      </div>
+      <div className="hidden overflow-x-auto rounded-lg border border-gold/25 md:block">
         <table className="w-full min-w-[680px] border-collapse bg-surface text-left text-sm">
           <thead>
             <tr className="bg-gold text-background">

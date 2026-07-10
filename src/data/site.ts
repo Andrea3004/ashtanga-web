@@ -211,7 +211,7 @@ export const generalClassPricingTable = {
 };
 
 export const mysoreClassPricingTable = {
-  columns: ["회비", "1개월", "BOOST PASS(3개월)", "FOCUS PASS(6개월)", "SEASON PASS(12개월)"],
+  columns: ["회비", "1개월", "3개월", "6개월", "12개월"],
   rows: [
     ["주2회", "196,000", "497,000", "877,000", "-"],
     ["주4회", "235,000", "599,000", "1,057,000", "1,545,000"],
