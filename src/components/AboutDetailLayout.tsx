@@ -9,6 +9,7 @@ type AboutDetailLayoutProps = {
   heroImage?: string;
   heroImageAlt?: string;
   heroImagePosition?: string;
+  heroOverlay?: boolean;
   children: ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function AboutDetailLayout({
   heroImage = "/images/about-hero.jpg",
   heroImageAlt = "",
   heroImagePosition = "center",
+  heroOverlay = true,
   children
 }: AboutDetailLayoutProps) {
   return (
@@ -34,7 +36,9 @@ export function AboutDetailLayout({
             className="object-cover"
             style={{ objectPosition: heroImagePosition }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]" />
+          {heroOverlay ? (
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]" />
+          ) : null}
           <div className="relative z-10 flex min-h-[320px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <div className="flex items-center justify-start">
               <Link
@@ -46,7 +50,7 @@ export function AboutDetailLayout({
               </Link>
             </div>
 
-            <div className="max-w-2xl">
+            <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">{eyebrow}</p>
               <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">{title}</h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">{description}</p>
