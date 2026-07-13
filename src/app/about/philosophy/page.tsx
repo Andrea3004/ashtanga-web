@@ -10,6 +10,9 @@ export default function PhilosophyPage() {
       eyebrow="ABOUT"
       title="Philosophy"
       description="체계적인 프로그램과 검증된 시스템"
+      heroImage="/images/philosophy-hero.jpg"
+      heroImageAlt=""
+      heroImagePosition="34% 50%"
     >
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">

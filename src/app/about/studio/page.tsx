@@ -10,6 +10,9 @@ export default function StudioPage() {
       eyebrow="ABOUT"
       title="Studio"
       description="조용히 깊어지는 수련을 위한 공간"
+      heroImage="/images/studio-hero.jpg"
+      heroImageAlt=""
+      heroImagePosition="50% 42%"
     >
       <div className="grid gap-6 lg:grid-cols-3">
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-6">

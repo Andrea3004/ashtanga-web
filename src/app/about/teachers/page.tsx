@@ -22,6 +22,9 @@ export default function TeachersPage() {
       eyebrow="ABOUT"
       title="Teachers"
       description="함께 수련을 안내하는 선생님들"
+      heroImage="/images/teacher-hero.jpg"
+      heroImageAlt=""
+      heroImagePosition="58% 44%"
     >
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {teachers.map((teacher) => (

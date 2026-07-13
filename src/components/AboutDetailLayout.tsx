@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 type AboutDetailLayoutProps = {
@@ -6,6 +7,8 @@ type AboutDetailLayoutProps = {
   title: string;
   description: string;
   heroImage?: string;
+  heroImageAlt?: string;
+  heroImagePosition?: string;
   children: ReactNode;
 };
 
@@ -13,26 +16,26 @@ export function AboutDetailLayout({
   eyebrow,
   title,
   description,
-  heroImage = "/images/about-hero.png",
+  heroImage = "/images/about-hero.jpg",
+  heroImageAlt = "",
+  heroImagePosition = "center",
   children
 }: AboutDetailLayoutProps) {
-  const heroBackground = heroImage
-    ? `linear-gradient(95deg, rgba(8, 26, 32, 0.3), rgba(8, 26, 32, 0.22)), url(${heroImage})`
-    : `linear-gradient(95deg, rgba(8, 26, 32, 0.3), rgba(8, 26, 32, 0.22))`;
-
   return (
     <main className="min-h-screen bg-background text-text">
       <section className="px-5 py-8 sm:px-8 lg:px-20 lg:py-10">
-        <div
-          className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft"
-          style={{
-            backgroundImage: heroBackground,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-          }}
-        >
-          <div className="relative flex min-h-[320px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
+        <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            fill
+            priority
+            sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+            className="object-cover"
+            style={{ objectPosition: heroImagePosition }}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]" />
+          <div className="relative z-10 flex min-h-[320px] flex-col justify-between px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <div className="flex items-center justify-start">
               <Link
                 href="/about"
