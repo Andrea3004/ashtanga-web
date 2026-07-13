@@ -12,7 +12,7 @@ export function GeneralScheduleSection() {
       <div>
         <p className="text-xs font-black uppercase text-gold">General Class</p>
         <h3 id="general-schedule-title" className="mt-2 text-2xl font-black text-text">
-          일반 수업 스케줄
+          일반 수업 스케줄(1시간)
         </h3>
       </div>
 

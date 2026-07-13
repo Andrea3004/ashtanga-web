@@ -110,8 +110,8 @@ export const navItems = [
 export const practicePrograms = [
   {
     title: "Beginner Class / 일반수업",
-    summary: "아쉬탕가 요가를 처음 시작하는 분도 순서와 호흡을 단계적으로 익힐 수 있는 수업입니다.",
-    meta: "Ashtanga Yoga 1~5"
+    summary: "아쉬탕가 요가를 처음 시작하는 분도 기본 순서와 호흡을 단계적으로 익힐 수 있는 수업입니다.",
+    meta: "Ashtanga Yoga 1~5(레벨)"
   },
   {
     title: "Mysore Class / 셀프·레드 클래스",
@@ -128,7 +128,7 @@ export const practicePrograms = [
 export const aboutSections = [
   {
     title: "Studio",
-    body: "넓은 매트 간격과 조용한 분위기 속에서 새벽 수련부터 저녁 수련까지 이어갈 수 있는 프리미엄 아쉬탕가 공간입니다."
+    body: "전문 요가원의 조용한 분위기 속에서 새벽 수련부터 저녁 수련까지 이어갈 수 있는 프리미엄 아쉬탕가 공간입니다."
   },
   {
     title: "Teacher",

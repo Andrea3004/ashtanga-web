@@ -41,9 +41,9 @@ export default function HomePage() {
 
       <section className="grid border-y border-line bg-line sm:grid-cols-3">
         {[
-          ["06:00", "평일 오픈"],
-          ["21:30", "평일 마지막 수련"],
-          ["12:00", "주말 오전 운영"]
+          ["05:30", "평일 오픈"],
+          ["20:40", "평일 마지막 수련"],
+          ["10:00", "토요일 오전 수업"]
         ].map(([value, label]) => (
           <div key={value} className="min-h-32 bg-soft px-5 py-7 sm:px-8 lg:px-20">
             <strong className="block text-3xl font-black leading-none text-gold">{value}</strong>
