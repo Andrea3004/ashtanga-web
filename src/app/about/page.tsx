@@ -50,7 +50,7 @@ export default function AboutPage() {
 
         <div className="mx-auto mt-10 max-w-6xl">
           <p className="mb-8 max-w-3xl text-lg text-muted">
-            {siteInfo.name}은 반복과 호흡을 통해 몸의 감각을 되찾는 전통 아쉬탕가 수련 공간입니다.
+            {siteInfo.name}는 반복과 호흡을 통해 몸의 감각을 되찾는 전통 아쉬탕가 수련 공간입니다.
             요가 경험이 없는 분도 자신의 속도에 맞춰 안정적으로 시작할 수 있도록 안내합니다.
           </p>
 
