@@ -35,8 +35,7 @@ export default function AboutPage() {
             fill
             priority
             sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
-            className="object-cover"
-            style={{ objectPosition: "34% 50%" }}
+            className="object-cover object-[58%_50%] sm:object-[34%_50%]"
           />
           <div className="relative z-10 flex min-h-[320px] flex-col justify-end px-6 py-8 [text-shadow:0_2px_10px_rgba(8,26,32,0.38)] sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">About</p>
@@ -44,30 +43,36 @@ export default function AboutPage() {
               조용히 깊어지는 수련을 위한 공간
             </h1>
             <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
-              {siteInfo.name}은 반복과 호흡을 통해 몸의 감각을 되찾는 전통 아쉬탕가 수련 공간입니다.
-              요가 경험이 없는 분도 자신의 속도에 맞춰 안정적으로 시작할 수 있도록 안내합니다.
+              반복과 호흡 속에서 몸의 감각을 차분히 되찾는 전통 아쉬탕가 수련 공간입니다.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-6xl gap-4 md:grid-cols-3">
-          {aboutCards.map((section) => (
-            <Link
-              key={section.title}
-              href={section.href}
-              className="group rounded-lg border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/80 hover:shadow-[0_12px_30px_rgba(255,204,102,0.12)] focus:outline-none focus:ring-2 focus:ring-gold/60"
-            >
-              <article className="h-full">
-                <h2 className="text-xl font-black text-gold">
-                  {section.title}
-                  <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </h2>
-                <p className="mt-3 text-muted">{section.body}</p>
-              </article>
-            </Link>
-          ))}
+        <div className="mx-auto mt-10 max-w-6xl">
+          <p className="mb-8 max-w-3xl text-lg text-muted">
+            {siteInfo.name}은 반복과 호흡을 통해 몸의 감각을 되찾는 전통 아쉬탕가 수련 공간입니다.
+            요가 경험이 없는 분도 자신의 속도에 맞춰 안정적으로 시작할 수 있도록 안내합니다.
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {aboutCards.map((section) => (
+              <Link
+                key={section.title}
+                href={section.href}
+                className="group rounded-lg border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/80 hover:shadow-[0_12px_30px_rgba(255,204,102,0.12)] focus:outline-none focus:ring-2 focus:ring-gold/60"
+              >
+                <article className="h-full">
+                  <h2 className="text-xl font-black text-gold">
+                    {section.title}
+                    <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </h2>
+                  <p className="mt-3 text-muted">{section.body}</p>
+                </article>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>
