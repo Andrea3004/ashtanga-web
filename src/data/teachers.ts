@@ -39,7 +39,7 @@ export const headTeacher: HeadTeacherProfile = {
   timeline: [
     {
       period: "2003",
-      title: "아쉬탕가 요가 수련 시작",
+      title: "아쉬탕가 요가 수련과 지도 시작",
       description: "Ashtanga Yoga Korea Founder"
     },
     {
@@ -50,7 +50,7 @@ export const headTeacher: HeadTeacherProfile = {
     {
       period: "현재",
       title: "Ashtanga Yoga Studio Founder & Head Teacher",
-    
+    description: "전통 아쉬탕가 요가와 차크라 각성 명상 지도"
     }
   ]
 };
