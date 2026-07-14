@@ -103,20 +103,22 @@ export default function TeachersPage() {
                 teachers.length
               )}`}
             >
-              <div className="relative aspect-[4/3] bg-background md:aspect-[4/5]">
+              <div className="relative aspect-[4/3] overflow-hidden bg-background md:aspect-[4/5]">
                 <Image
                   src={teacher.image}
                   alt={teacher.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 100vw"
-                  className="object-contain md:object-cover"
+                  className="scale-[1.08] object-contain md:scale-100 md:object-cover"
                   style={{ objectPosition: teacher.objectPosition }}
                 />
               </div>
               <div className="flex flex-1 flex-col p-4 md:p-5">
                 <h3 className="text-lg font-black text-text">{teacher.name}</h3>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-gold">{teacher.role}</p>
-                <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted md:mt-3 md:leading-7">{teacher.intro}</p>
+                <p className="mt-2 line-clamp-5 text-sm leading-6 text-muted md:mt-5 md:line-clamp-5 md:leading-7">
+                  {teacher.intro}
+                </p>
               </div>
             </article>
           ))}
