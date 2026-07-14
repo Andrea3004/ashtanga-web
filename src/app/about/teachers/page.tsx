@@ -29,7 +29,7 @@ export default function TeachersPage() {
       eyebrow="ABOUT"
       title="Teachers"
       description="함께 수련을 안내하는 선생님들"
-      heroImage="/images/teacher-hero.jpg"
+      heroImage="/images/head-teacher.jpg"
       heroImageAlt=""
       heroImagePosition="58% 44%"
     >
