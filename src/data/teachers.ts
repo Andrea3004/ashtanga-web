@@ -24,13 +24,15 @@ export type TeachingPhilosophyItem = {
   description: string;
 };
 
+export const teachingPhilosophyHeading = ["양우석 원장의", "요가 지도 철학은", "3가지입니다."];
+
 export const headTeacher: HeadTeacherProfile = {
   eyebrow: "HEAD TEACHER",
   name: "양우석",
   role: "Founder & Head Teacher",
   credential: "Authorized Level 2 Teacher",
   intro:
-    "전통적인 아쉬탕가 요가 수련을 바탕으로 각 수련자의 몸과 호흡을 세심하게 관찰하며 안정적인 수련의 방향을 안내합니다.",
+    "전통적인 아쉬탕가 요가 수련을 바탕으로 각 수련자의 몸과 호흡을 세심하게 관찰하며 안정적인 수련의 방향을 안내하고 차크라 각성 명상을 지도하고 있습니다.",
   image: "/images/head-teacher.jpg",
   imageAlt: "아쉬탕가 요가 수련을 지도하는 양우석 원장",
   objectPosition: "50% 40%",

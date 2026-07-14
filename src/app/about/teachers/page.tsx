@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AboutDetailLayout } from "@/components/AboutDetailLayout";
 import { externalLinks } from "@/data/site";
-import { headTeacher, teachers, teachingPhilosophy } from "@/data/teachers";
+import { headTeacher, teachers, teachingPhilosophy, teachingPhilosophyHeading } from "@/data/teachers";
 
 export const metadata = {
   title: "Teacher"
@@ -71,11 +71,12 @@ export default function TeachersPage() {
 
       <section className="mt-12 border-y border-line/70 py-9">
         <p className="mx-auto max-w-3xl text-center text-2xl font-black leading-relaxed text-text sm:text-3xl">
-          수련은 자세를 완성하는 것이 아니라
-          <br />
-          호흡과 집중을 통해
-          <br />
-          자신을 알아가는 과정입니다.
+          {teachingPhilosophyHeading.map((line, index) => (
+            <span key={line}>
+              {index > 0 ? <br /> : null}
+              {line}
+            </span>
+          ))}
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
