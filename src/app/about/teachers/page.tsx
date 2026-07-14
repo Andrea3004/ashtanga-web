@@ -29,7 +29,7 @@ export default function TeachersPage() {
       eyebrow="ABOUT"
       title="Teachers"
       description="함께 수련을 안내하는 선생님들"
-      heroImage="/images/head-teacher.jpg"
+      heroImage="/images/teacher-hero.jpg"
       heroImageAlt=""
       heroImagePosition="58% 44%"
     >
@@ -103,7 +103,7 @@ export default function TeachersPage() {
                 teachers.length
               )}`}
             >
-              <div className="relative aspect-[4/5] bg-background">
+             <div className="relative aspect-square bg-background md:aspect-[4/5]">
                 <Image
                   src={teacher.image}
                   alt={teacher.imageAlt}

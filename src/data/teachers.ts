@@ -31,7 +31,7 @@ export const headTeacher: HeadTeacherProfile = {
   credential: "Authorized Level 2 Teacher",
   intro:
     "전통적인 아쉬탕가 요가 수련을 바탕으로 각 수련자의 몸과 호흡을 세심하게 관찰하며 안정적인 수련의 방향을 안내합니다.",
-  image: "/images/teacher-hero.jpg",
+  image: "/images/head-teacher.jpg",
   imageAlt: "아쉬탕가 요가 수련을 지도하는 양우석 원장",
   objectPosition: "50% 40%",
   timeline: [
@@ -68,42 +68,42 @@ export const teachingPhilosophy: TeachingPhilosophyItem[] = [
 
 export const teachers: TeacherProfile[] = [
   {
-    name: "Teacher Name",
-    role: "Mysore Teacher",
-    intro: "수련자의 현재 상태에 맞춰 호흡과 움직임의 균형을 차분하게 안내합니다.",
-    image: "/images/teacher-hero.jpg",
+    name: "박소연",
+    role: "부원장",
+    intro: "요가는 제 삶을 변화시킨 가장 소중한 습관입니다. 몸을 움직이며 마음을 정돈하는 수련 속에서 삶의 균형을 배웠고, 그 경험을 많은 사람들과 함께 나누는 것이 지금의 저의 길입니다.",
+    image: "/images/teacher-01.jpg",
     imageAlt: "마이솔 수업 지도자",
     objectPosition: "50% 35%"
   },
   {
-    name: "Teacher Name",
-    role: "Led Class Teacher",
-    intro: "정해진 시퀀스 안에서 안정적인 리듬과 집중을 경험할 수 있도록 돕습니다.",
+    name: "조윤수",
+    role: "전임 티쳐",
+    intro: "두려움 속에서 시작한 아쉬탕가요가는 저의 몸과 마음, 삶을 변화시켰습니다. 꾸준한 수련은 누구에게나 변화를 가져다줍니다. 자신을 믿는다면 누구나 아쉬탕가요가를 할 수 있습니다.",
     image: "/images/teacher-hero.jpg",
     imageAlt: "레드 클래스 지도자",
     objectPosition: "50% 35%"
   },
   {
-    name: "Teacher Name",
-    role: "Beginner Class Teacher",
-    intro: "처음 수련을 시작하는 분들이 기본 자세와 호흡을 편안하게 익히도록 안내합니다.",
+    name: "이현진",
+    role: "전임 티쳐",
+    intro: "요가는 저에게 삶의 중심을 찾는 과정이었습니다. 작은 일상과 꾸준한 수련을 통해 몸과 마음의 균형을 배우며 성장했고, 그 따뜻한 경험을 더 많은 사람들과 함께 나누고 싶습니다.",
     image: "/images/teacher-hero.jpg",
     imageAlt: "비기너 클래스 지도자",
     objectPosition: "50% 35%"
   },
   {
-    name: "Teacher Name",
-    role: "Assistant Teacher",
-    intro: "수련자가 자신의 속도 안에서 안정적으로 Practice를 이어갈 수 있도록 돕습니다.",
-    image: "/images/teacher-hero.jpg",
+    name: "나혜숙",
+    role: "객원 티쳐",
+    intro: "아쉬탕가 요가는 매트 위에서 땀과 호흡을 넘어, 삶 전반을 단단히 세우는 수련입니다. 매일의 작은 꾸준함이 나를 깊이 변화시킵니다. 그 변화의 길 위에서 저는 오늘도 호흡합니다.",
+    image: "/images/teacher-04.jpg",
     imageAlt: "아쉬탕가 요가 어시스턴트 지도자",
     objectPosition: "50% 35%"
   },
   {
-    name: "Teacher Name",
-    role: "Practice Guide",
-    intro: "기본 시퀀스와 호흡의 흐름을 중심으로 꾸준한 수련의 기반을 안내합니다.",
-    image: "/images/teacher-hero.jpg",
+    name: "서나영",
+    role: "객원 티쳐",
+    intro: "니체의 말 중에 성공이란 ‘무엇을 달성했느냐’가 아니라‘얼만큼 성장 했느냐에 달려 있다’ 라고 합니다. 아쉬탕가 요가는 매일매일 성장하고 있다는 것을 느끼게 해주는 제 삶의 원동력입니다.",
+    image: "/images/teacher-05.jpg",
     imageAlt: "아쉬탕가 요가 수련 안내자",
     objectPosition: "50% 35%"
   }
