@@ -97,7 +97,7 @@ export const teachers: TeacherProfile[] = [
     intro: "아쉬탕가 요가는 매트 위에서 땀과 호흡을 넘어, 삶 전반을 단단히 세우는 수련입니다. 매일의 작은 꾸준함이 나를 깊이 변화시킵니다. 그 변화의 길 위에서 저는 오늘도 호흡합니다.",
     image: "/images/teacher-04.jpg",
     imageAlt: "아쉬탕가 요가 어시스턴트 지도자",
-    objectPosition: "50% 35%"
+    objectPosition: "45% 60%"
   },
   {
     name: "서나영",
@@ -105,6 +105,6 @@ export const teachers: TeacherProfile[] = [
     intro: "니체의 말 중에 성공이란 ‘무엇을 달성했느냐’가 아니라‘얼만큼 성장 했느냐에 달려 있다’ 라고 합니다. 아쉬탕가 요가는 매일매일 성장하고 있다는 것을 느끼게 해주는 제 삶의 원동력입니다.",
     image: "/images/teacher-05.jpg",
     imageAlt: "아쉬탕가 요가 수련 안내자",
-    objectPosition: "50% 35%"
+    objectPosition: "50% 60%"
   }
 ];
