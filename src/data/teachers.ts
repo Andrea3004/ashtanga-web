@@ -39,7 +39,8 @@ export const headTeacher: HeadTeacherProfile = {
   timeline: [
     {
       period: "2003",
-      title: "아쉬탕가 요가 수련 시작"
+      title: "아쉬탕가 요가 수련 시작",
+      description: "Ashtanga Yoga Korea Founder"
     },
     {
       period: "2010",
@@ -48,7 +49,8 @@ export const headTeacher: HeadTeacherProfile = {
     },
     {
       period: "현재",
-      title: "Ashtanga Yoga Studio Founder & Head Teacher"
+      title: "Ashtanga Yoga Studio Founder & Head Teacher",
+    
     }
   ]
 };
@@ -81,7 +83,7 @@ export const teachers: TeacherProfile[] = [
     name: "조윤수",
     role: "전임 티쳐",
     intro: "두려움 속에서 시작한 아쉬탕가요가는 저의 몸과 마음, 삶을 변화시켰습니다. 꾸준한 수련은 누구에게나 변화를 가져다줍니다. 자신을 믿는다면 누구나 아쉬탕가요가를 할 수 있습니다.",
-    image: "/images/teacher-hero.jpg",
+    image: "/images/teacher-02.jpg",
     imageAlt: "레드 클래스 지도자",
     objectPosition: "50% 35%"
   },
@@ -89,7 +91,7 @@ export const teachers: TeacherProfile[] = [
     name: "이현진",
     role: "전임 티쳐",
     intro: "요가는 저에게 삶의 중심을 찾는 과정이었습니다. 작은 일상과 꾸준한 수련을 통해 몸과 마음의 균형을 배우며 성장했고, 그 따뜻한 경험을 더 많은 사람들과 함께 나누고 싶습니다.",
-    image: "/images/teacher-hero.jpg",
+    image: "/images/teacher-03.jpg",
     imageAlt: "비기너 클래스 지도자",
     objectPosition: "50% 35%"
   },
