@@ -4,16 +4,16 @@ import { externalLinks } from "@/data/site";
 
 const practiceSteps = [
   {
-    title: "1. 예약 앱 공지 확인 (회원 전용)",
-    body: "기존 회원은 예약 앱에서 수업 공지와 예약 가능 시간을 확인합니다."
+    title: "처음 방문하시는 분",
+    body: "처음 방문 전 카카오톡 상담을 통해 수련 경험과 몸 상태를 알려주시면 가장 자연스러운 시작 방법을 안내해드립니다."
   },
   {
-    title: "2. 카카오톡 상담",
-    body: "처음 방문하시는 분은 수련 경험과 몸 상태를 공유하면 가장 자연스러운 시작 방법을 안내받을 수 있습니다."
+    title: "회원 전용 Practice App",
+    body: "등록 회원은 Practice App에서 수업 예약과 공지 확인, 자신의 수련 기록과 성장 과정을 체계적으로 관리할 수 있습니다."
   },
   {
-    title: "3. 1회 체험 예약 후 방문",
-    body: "체험 예약 후 수업의 흐름을 경험하며 편안하게 첫 수련을 시작할 수 있습니다."
+    title: "수련 기록과 성장 관리",
+    body: "출석 히트맵, 레벨별 학습 진행도, 수련 데이터 분석 리포트를 통해 자신의 수련 과정을 확인할 수 있습니다."
   }
 ];
 
@@ -89,7 +89,7 @@ export default function PracticePage() {
         </div>
 
         <div className="mt-10 rounded-[1.25rem] border border-line bg-surface p-6 sm:p-8">
-          <h2 className="text-2xl font-black text-text">처음 수련을 시작하는 분들을 위한 안내</h2>
+          <h2 className="text-2xl font-black text-text">처음 방문과 회원 전용 수련 관리 안내</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {practiceSteps.map((step) => (
               <div key={step.title} className="rounded-[1rem] border border-line/70 bg-background/70 p-5">
@@ -100,22 +100,23 @@ export default function PracticePage() {
           </div>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <a
-              href={externalLinks.reservationApp}
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
-              target="_blank"
-              rel="noreferrer"
-            >
-              예약 앱 바로가기
-            </a>
-            <a
               href={externalLinks.kakaoTalk}
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
               target="_blank"
               rel="noreferrer"
             >
               카카오톡 상담하기
             </a>
+            <a
+              href={externalLinks.reservationApp}
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Practice App 로그인
+            </a>
           </div>
+          <p className="mt-4 text-sm leading-6 text-muted">Practice App은 등록 회원 전용이며 회원가입 후 이용할 수 있습니다.</p>
         </div>
       </Section>
     </main>
