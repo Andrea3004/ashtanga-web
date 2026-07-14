@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/Section";
+import { practiceAppShowcase } from "@/data/practiceApp";
 import { externalLinks } from "@/data/site";
 
 const practiceSteps = [
@@ -21,6 +22,39 @@ const practiceSteps = [
 export const metadata = {
   title: "수련"
 };
+
+function PracticeAppScreenPlaceholder() {
+  return (
+    <div className="flex h-full flex-col rounded-[1.25rem] border border-gold/30 bg-surface/80 p-4">
+      <div className="flex items-center justify-between border-b border-line/70 pb-3">
+        <div className="h-2 w-16 rounded-full bg-gold/70" />
+        <div className="h-5 w-5 rounded-full border border-gold/50" />
+      </div>
+      <div className="mt-5 space-y-3">
+        <div className="h-3 rounded-full bg-text/20" />
+        <div className="h-3 w-3/4 rounded-full bg-text/15" />
+        <div className="grid grid-cols-4 gap-2">
+          {Array.from({ length: 16 }).map((_, index) => (
+            <span key={index} className={`h-7 rounded-md ${index % 4 === 0 ? "bg-gold/45" : "bg-text/10"}`} />
+          ))}
+        </div>
+        <div className="h-20 rounded-lg border border-line/70 bg-background/70" />
+        <div className="grid gap-2">
+          <div className="h-8 rounded-lg bg-text/10" />
+          <div className="h-8 rounded-lg bg-text/10" />
+        </div>
+      </div>
+      <p className="mt-auto pt-5 text-center text-[0.65rem] font-medium tracking-[0.08em] text-muted">
+        App screen coming soon
+      </p>
+      <div className="mt-4 grid grid-cols-4 gap-2 border-t border-line/70 pt-3">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <span key={index} className="h-2 rounded-full bg-gold/30" />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function PracticePage() {
   return (
@@ -141,6 +175,69 @@ export default function PracticePage() {
           </div>
           <p className="mt-4 text-sm leading-6 text-muted">Practice App은 등록 회원 전용이며 회원가입 후 이용할 수 있습니다.</p>
         </div>
+
+        <section className="mt-10 rounded-[1.25rem] border border-line bg-surface p-7 sm:p-8 lg:p-9">
+          <div className="max-w-2xl">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Members Only</p>
+            <h2 className="mt-4 text-2xl font-black text-text sm:text-3xl">회원 전용 Practice App</h2>
+            <p className="mt-4 text-xl font-black leading-relaxed text-text sm:text-2xl">
+              예약을 넘어
+              <br />
+              수련의 성장 과정을
+              <br />
+              기록하고 관리합니다.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {practiceAppShowcase.map((feature) => (
+              <article key={feature.title} className="rounded-[1rem] border border-line/70 bg-background/70 px-5 py-4">
+                <h3 className="text-lg font-black text-text">{feature.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{feature.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="-mx-7 mt-7 flex snap-x snap-mandatory gap-4 overflow-x-auto px-7 pb-2 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:-mx-3 lg:grid-cols-4 lg:gap-3">
+            {practiceAppShowcase.map((screen) => (
+              <article
+                key={screen.title}
+                className="min-w-[82%] snap-start overflow-hidden rounded-[1rem] border border-line/70 bg-background/70 sm:min-w-[54%] md:min-w-0"
+              >
+                <div className="relative aspect-[9/16] overflow-hidden border-b border-line/70 bg-background p-4">
+                  {screen.image ? (
+                    <Image
+                      src={screen.image}
+                      alt={screen.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 260px, (min-width: 768px) 45vw, 78vw"
+                      className="object-contain"
+                    />
+                  ) : (
+                    <PracticeAppScreenPlaceholder />
+                  )}
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-black text-text">{screen.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <p className="max-w-xl text-sm leading-7 text-muted">
+              Practice App은 등록 회원에게 제공되는 회원 전용 수련 관리 시스템입니다.
+            </p>
+            <a
+              href={externalLinks.reservationApp}
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 text-sm font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Practice App 로그인
+            </a>
+          </div>
+        </section>
       </Section>
     </main>
   );
