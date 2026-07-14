@@ -24,7 +24,7 @@ export type TeachingPhilosophyItem = {
   description: string;
 };
 
-export const teachingPhilosophyHeading = ["양우석 원장의 요가 지도 철학은", "3가지입니다."];
+export const teachingPhilosophyHeading = ["양우석 원장의", "요가 지도 철학은", "3가지입니다."];
 
 export const headTeacher: HeadTeacherProfile = {
   eyebrow: "HEAD TEACHER",
