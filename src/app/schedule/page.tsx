@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/Section";
 import { CTAButton } from "@/components/CTAButton";
 import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
@@ -86,8 +87,32 @@ export const metadata = {
 
 export default function SchedulePage() {
   return (
-    <main>
-      <Section eyebrow="Schedule" title="운영 시간과 수련 일정" className="bg-charcoal" tone="dark">
+    <main className="min-h-screen bg-background text-text">
+      <section className="px-5 pt-8 sm:px-8 lg:px-20 lg:pt-10">
+        <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
+          <Image
+            src="/images/schedule-hero.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+            className="object-cover"
+            style={{ objectPosition: "50% 45%" }}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]" />
+          <div className="relative z-10 flex min-h-[320px] items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
+            <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">SCHEDULE</p>
+              <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">운영 시간과 수련 일정</h1>
+              <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
+                수업 시간표와 수강료, 예약 전 확인할 안내를 한곳에서 확인합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Section className="bg-charcoal pt-10 lg:pt-14" tone="dark">
         <div className="grid gap-12">
           <GeneralScheduleSection />
           <MysoreScheduleSection />

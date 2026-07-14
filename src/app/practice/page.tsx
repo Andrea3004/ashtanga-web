@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { externalLinks } from "@/data/site";
@@ -23,12 +24,34 @@ export const metadata = {
 
 export default function PracticePage() {
   return (
-    <main>
-      <Section eyebrow="PRACTICE" title="호흡, 시선, 움직임을 하나의 리듬으로 연결합니다">
-        <p className="mb-10 max-w-3xl text-lg leading-8 text-muted">
-          아쉬탕가 요가는 몸과 호흡을 함께 읽어가며, 각자의 속도에 맞춘 수련을 이어가는 방식입니다.
-        </p>
+    <main className="min-h-screen bg-background text-text">
+      <section className="px-5 pt-8 sm:px-8 lg:px-20 lg:pt-10">
+        <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
+          <Image
+            src="/images/practice-hero.jpg"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"
+            className="object-cover"
+            style={{ objectPosition: "50% 45%" }}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]" />
+          <div className="relative z-10 flex min-h-[320px] items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
+            <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">PRACTICE</p>
+              <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+                호흡, 시선, 움직임을 하나의 리듬으로 연결합니다
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
+                아쉬탕가 요가는 몸과 호흡을 함께 읽어가며, 각자의 속도에 맞춘 수련을 이어가는 방식입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <Section className="pt-10 lg:pt-14">
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-[1.25rem] border border-line bg-surface p-6">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">For Beginner</p>
