@@ -4,13 +4,15 @@ import type { AnchorHTMLAttributes, ReactNode } from "react";
 type CTAButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "dark";
+  variant?: "primary" | "secondary" | "dark" | "member";
 };
 
 const variantClasses = {
   primary: "border-gold bg-gold text-background hover:border-text hover:bg-text hover:text-background",
   secondary: "border-text/70 bg-transparent text-text hover:border-gold hover:bg-gold hover:text-background",
-  dark: "border-gold bg-gold text-background hover:border-text hover:bg-text hover:text-background"
+  dark: "border-gold bg-gold text-background hover:border-text hover:bg-text hover:text-background",
+  member:
+    "border-gold bg-background text-gold hover:border-gold hover:bg-gold hover:text-background focus-visible:border-gold focus-visible:bg-gold focus-visible:text-background active:border-gold active:bg-gold active:text-background"
 };
 
 export function CTAButton({

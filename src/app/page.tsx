@@ -35,6 +35,9 @@ export default function HomePage() {
             <CTAButton href={externalLinks.naverMap} variant="secondary">
               위치 보기
             </CTAButton>
+            <CTAButton href="/practice#practice-app" variant="member">
+              수련과 성장 기록
+            </CTAButton>
           </div>
         </div>
       </section>

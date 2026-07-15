@@ -176,7 +176,10 @@ export default function PracticePage() {
           <p className="mt-4 text-sm leading-6 text-muted">Practice App은 등록 회원 전용이며 회원가입 후 이용할 수 있습니다.</p>
         </div>
 
-        <section className="mt-10 rounded-[1.25rem] border border-line bg-surface p-7 sm:p-8 lg:p-9">
+        <section
+          id="practice-app"
+          className="mt-10 scroll-mt-24 rounded-[1.25rem] border border-line bg-surface p-7 sm:p-8 lg:p-9"
+        >
           <div className="max-w-2xl">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Members Only</p>
             <h2 className="mt-4 text-2xl font-black text-text sm:text-3xl">회원 전용 Practice App</h2>
