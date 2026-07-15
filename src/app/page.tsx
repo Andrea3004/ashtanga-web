@@ -24,8 +24,8 @@ export default function HomePage() {
             매일의 호흡을 쌓는 정통 아쉬탕가 수련
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-text/90 sm:mt-6 sm:text-lg">
-            {siteInfo.address}에 위치한 {siteInfo.nameKo}입니다. 아쉬탕가 요가 스튜디오는 전통적인 마이솔 방식과 현대적 수업 구성을 
-            조화롭게 운영합니다. 검증되고 체계적인 시스템으로 몸과 호흡에 맞춰 꾸준히 이어갈 수 있도록 안내합니다.
+            {siteInfo.address}에 위치한 {siteInfo.nameKo}입니다. 전통적인 마이솔 방식과 현대적 수업 구성을 
+            조화롭게 운영하며, 몸과 호흡에 맞춰 꾸준히 이어갈 수 있도록 안내합니다.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <CTAButton href={externalLinks.kakaoTalk}>1회 체험 문의</CTAButton>
