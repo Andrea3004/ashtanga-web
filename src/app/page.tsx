@@ -4,6 +4,14 @@ import { PracticeCard } from "@/components/PracticeCard";
 import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
 import { Section } from "@/components/Section";
 import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "정통 아쉬탕가 요가 수련",
+  description:
+    "ASHTANGA YOGA STUDIO의 수련 공간, 일반 수업, 마이솔 클래스, 명상, 시간표, 회원 전용 Practice App 안내를 확인하세요.",
+  path: "/"
+});
 
 export default function HomePage() {
   return (
@@ -89,7 +97,9 @@ export default function HomePage() {
             <a
               key={link.title}
               href={link.href}
-              className="rounded-lg border border-line bg-surface p-5 transition hover:border-gold hover:-translate-y-0.5"
+              className="rounded-lg border border-line bg-surface p-5 transition hover:border-gold hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+              target="_blank"
+              rel="noreferrer"
             >
               <h3 className="text-lg font-black text-gold">{link.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted">{link.description}</p>

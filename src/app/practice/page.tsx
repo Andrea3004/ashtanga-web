@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/Section";
 import { practiceAppShowcase } from "@/data/practiceApp";
 import { externalLinks } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
 const practiceSteps = [
   {
@@ -19,9 +20,11 @@ const practiceSteps = [
   }
 ];
 
-export const metadata = {
-  title: "수련"
-};
+export const metadata = createPageMetadata({
+  title: "수련",
+  description: "일반 수업, 마이솔 클래스, 명상, 회원 전용 Practice App으로 이어지는 수련 방식을 안내합니다.",
+  path: "/practice"
+});
 
 function PracticeAppScreenPlaceholder() {
   return (

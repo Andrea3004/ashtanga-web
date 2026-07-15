@@ -43,7 +43,7 @@ export function AboutDetailLayout({
             <div className="flex items-center justify-start">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors duration-200 hover:text-text"
+                className="inline-flex items-center gap-2 rounded-sm text-sm font-medium text-gold transition-colors duration-200 hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
               >
                 <span aria-hidden="true">←</span>
                 <span>About</span>
@@ -65,7 +65,7 @@ export function AboutDetailLayout({
             <div className="mt-10 border-t border-line/60 pt-6">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors duration-200 hover:text-text"
+                className="inline-flex items-center gap-2 rounded-sm text-sm font-medium text-gold transition-colors duration-200 hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
               >
                 <span aria-hidden="true">←</span>
                 <span>About으로 돌아가기</span>

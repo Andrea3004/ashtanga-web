@@ -1,10 +1,13 @@
 import { CTAButton } from "@/components/CTAButton";
 import { Section } from "@/components/Section";
 import { externalLinks, siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "문의"
-};
+export const metadata = createPageMetadata({
+  title: "문의",
+  description: "ASHTANGA YOGA STUDIO 위치, 상담 방법, 예약 앱, 카카오톡과 SNS 채널을 안내합니다.",
+  path: "/contact"
+});
 
 export default function ContactPage() {
   return (

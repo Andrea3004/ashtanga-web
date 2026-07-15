@@ -10,6 +10,7 @@ import {
   scheduleOperationGuide,
   siteInfo
 } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
 type PricingTableData = {
   columns: string[];
@@ -81,9 +82,11 @@ function PricingTable({ title, data }: { title: string; data: PricingTableData }
   );
 }
 
-export const metadata = {
-  title: "시간표"
-};
+export const metadata = createPageMetadata({
+  title: "시간표",
+  description: "ASHTANGA YOGA STUDIO의 일반 수업, 마이솔 클래스, 운영 시간, 수강료 안내를 확인하세요.",
+  path: "/schedule"
+});
 
 export default function SchedulePage() {
   return (

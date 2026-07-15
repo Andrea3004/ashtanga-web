@@ -17,7 +17,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
         onClick={() => setIsOpen((current) => !current)}
-        className="grid size-11 shrink-0 place-items-center rounded-full border border-current text-current"
+        className="grid size-11 shrink-0 place-items-center rounded-full border border-current text-current focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
       >
         <span className="sr-only">메뉴 열기</span>
         <span className="relative block h-0.5 w-5 bg-current before:absolute before:left-0 before:top-[-7px] before:h-0.5 before:w-5 before:bg-current before:content-[''] after:absolute after:left-0 after:top-[7px] after:h-0.5 after:w-5 after:bg-current after:content-['']" />
@@ -34,7 +34,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block rounded-md px-4 py-4 text-base font-black hover:bg-background hover:text-gold"
+              className="block rounded-md px-4 py-4 text-base font-black hover:bg-background hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               {item.label}
             </Link>

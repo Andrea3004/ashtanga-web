@@ -16,7 +16,13 @@ export function Footer() {
       <div className="flex flex-wrap gap-3">
         <p>{siteInfo.businessHours}</p>
         {socialLinks.map((link) => (
-          <a key={link.label} href={link.href} className="hover:text-gold">
+          <a
+            key={link.label}
+            href={link.href}
+            className="rounded-sm hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+            target="_blank"
+            rel="noreferrer"
+          >
             {link.label}
           </a>
         ))}

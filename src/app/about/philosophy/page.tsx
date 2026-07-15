@@ -1,8 +1,11 @@
 import { AboutDetailLayout } from "@/components/AboutDetailLayout";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Philosophy"
-};
+export const metadata = createPageMetadata({
+  title: "Philosophy",
+  description: "아쉬탕가 요가 수련의 방향과 ASHTANGA YOGA STUDIO가 중요하게 여기는 수련 철학을 소개합니다.",
+  path: "/about/philosophy"
+});
 
 export default function PhilosophyPage() {
   return (

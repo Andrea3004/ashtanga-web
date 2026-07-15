@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
 const aboutCards = [
   {
@@ -20,9 +21,11 @@ const aboutCards = [
   }
 ];
 
-export const metadata = {
-  title: "요가원 소개"
-};
+export const metadata = createPageMetadata({
+  title: "요가원 소개",
+  description: "ASHTANGA YOGA STUDIO의 공간, 지도 방향, 수련 철학을 소개합니다.",
+  path: "/about"
+});
 
 export default function AboutPage() {
   return (

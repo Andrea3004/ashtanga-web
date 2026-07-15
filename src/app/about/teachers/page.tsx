@@ -3,10 +3,13 @@ import Link from "next/link";
 import { AboutDetailLayout } from "@/components/AboutDetailLayout";
 import { externalLinks } from "@/data/site";
 import { headTeacher, teachers, teachingPhilosophy, teachingPhilosophyHeading } from "@/data/teachers";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Teacher"
-};
+export const metadata = createPageMetadata({
+  title: "Teachers",
+  description: "ASHTANGA YOGA STUDIO의 원장과 함께 수련을 안내하는 지도진을 소개합니다.",
+  path: "/about/teachers"
+});
 
 function getTeacherCardLayoutClass(index: number, total: number) {
   const lastRowCount = total % 3;

@@ -1,8 +1,11 @@
 import { AboutDetailLayout } from "@/components/AboutDetailLayout";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Studio"
-};
+export const metadata = createPageMetadata({
+  title: "Studio",
+  description: "ASHTANGA YOGA STUDIO의 수련 공간, 운영 방향, 성장 기록을 돕는 수련 환경을 소개합니다.",
+  path: "/about/studio"
+});
 
 export default function StudioPage() {
   return (

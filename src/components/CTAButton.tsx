@@ -20,11 +20,19 @@ export function CTAButton({
   children,
   variant = "primary",
   className = "",
+  target,
+  rel,
   ...props
 }: CTAButtonProps) {
+  const isExternal = /^https?:\/\//.test(href);
+  const linkTarget = target ?? (isExternal ? "_blank" : undefined);
+  const linkRel = rel ?? (isExternal ? "noreferrer" : undefined);
+
   return (
     <Link
       href={href}
+      target={linkTarget}
+      rel={linkRel}
       className={`inline-flex min-h-12 items-center justify-center rounded-md border px-5 text-sm font-black transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 ${variantClasses[variant]} ${className}`}
       {...props}
     >
