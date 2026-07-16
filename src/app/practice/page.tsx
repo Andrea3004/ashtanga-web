@@ -210,14 +210,14 @@ export default function PracticePage() {
                 key={screen.title}
                 className="min-w-[82%] snap-start overflow-hidden rounded-[1rem] border border-line/70 bg-background/70 sm:min-w-[54%] md:min-w-0"
               >
-                <div className="relative aspect-[9/16] overflow-hidden border-b border-line/70 bg-background p-4">
+                <div className="relative aspect-[9/19.5] overflow-hidden border-b border-line/70 bg-background p-4">
                   {screen.image ? (
                     <Image
                       src={screen.image}
                       alt={screen.imageAlt}
                       fill
                       sizes="(min-width: 1024px) 260px, (min-width: 768px) 45vw, 78vw"
-                      className="object-contain"
+                      className="object-contain object-top"
                     />
                   ) : (
                     <PracticeAppScreenPlaceholder />
