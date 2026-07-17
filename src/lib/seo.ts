@@ -6,7 +6,7 @@ export const siteName = "ASHTANGA YOGA STUDIO";
 export const defaultDescription =
   "서울 서초구 아쉬탕가 요가 스튜디오의 수업, 마이솔 클래스, 명상, 회원 전용 Practice App 안내를 확인하세요.";
 export const ogImage = {
-  url: "/images/ashtanga-shala-hero.png",
+  url: "/images/og/og-home.jpg",
   width: 1200,
   height: 630,
   alt: `${siteName} 수련 공간`
