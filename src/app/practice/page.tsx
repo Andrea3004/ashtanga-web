@@ -210,7 +210,7 @@ export default function PracticePage() {
                 key={screen.title}
                 className="min-w-[82%] snap-start overflow-hidden rounded-[0.875rem] border border-line/70 bg-background/70 sm:min-w-[54%] md:min-w-0"
               >
-                <div className="border-b border-line/70 bg-background px-3 py-3.5">
+                <div className="border-b border-line/70 bg-[#183942] px-3 py-3.5">
                   <div className="mx-auto w-full max-w-[15.5rem] rounded-[2rem] bg-[#1E1E1E] p-[0.44rem] shadow-[0_12px_28px_rgba(8,26,32,0.2)]">
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.55rem] bg-background">
                       {screen.image ? (
