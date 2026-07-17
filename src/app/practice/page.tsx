@@ -195,36 +195,40 @@ export default function PracticePage() {
             </p>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {practiceAppShowcase.map((feature) => (
-              <article key={feature.title} className="rounded-[1rem] border border-line/70 bg-background/70 px-5 py-4">
-                <h3 className="text-lg font-black text-text">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{feature.description}</p>
+              <article key={feature.title} className="rounded-[0.875rem] border border-line/70 bg-background/70 px-4 py-3.5">
+                <h3 className="text-base font-black text-text">{feature.title}</h3>
+                <p className="mt-1.5 text-[0.8125rem] leading-5 text-muted">{feature.description}</p>
               </article>
             ))}
           </div>
 
-          <div className="-mx-7 mt-7 flex snap-x snap-mandatory gap-4 overflow-x-auto px-7 pb-2 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:-mx-3 lg:grid-cols-4 lg:gap-3">
+          <div className="-mx-7 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-7 pb-2 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:-mx-2 lg:grid-cols-4 lg:gap-2.5">
             {practiceAppShowcase.map((screen) => (
               <article
                 key={screen.title}
-                className="min-w-[82%] snap-start overflow-hidden rounded-[1rem] border border-line/70 bg-background/70 sm:min-w-[54%] md:min-w-0"
+                className="min-w-[82%] snap-start overflow-hidden rounded-[0.875rem] border border-line/70 bg-background/70 sm:min-w-[54%] md:min-w-0"
               >
-                <div className="relative aspect-[9/19.5] overflow-hidden border-b border-line/70 bg-background p-4">
-                  {screen.image ? (
-                    <Image
-                      src={screen.image}
-                      alt={screen.imageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 260px, (min-width: 768px) 45vw, 78vw"
-                      className="object-contain object-top"
-                    />
-                  ) : (
-                    <PracticeAppScreenPlaceholder />
-                  )}
+                <div className="border-b border-line/70 bg-background px-3 py-3.5">
+                  <div className="mx-auto w-full max-w-[15.5rem] rounded-[2rem] bg-[#1E1E1E] p-[0.44rem] shadow-[0_12px_28px_rgba(8,26,32,0.2)]">
+                    <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.55rem] bg-background">
+                      {screen.image ? (
+                        <Image
+                          src={screen.image}
+                          alt={screen.imageAlt}
+                          fill
+                          sizes="(min-width: 1024px) 220px, (min-width: 768px) 42vw, 74vw"
+                          className="object-cover object-top"
+                        />
+                      ) : (
+                        <PracticeAppScreenPlaceholder />
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-black text-text">{screen.title}</h3>
+                <div className="px-4 py-3.5">
+                  <h3 className="text-base font-black text-text">{screen.title}</h3>
                 </div>
               </article>
             ))}
