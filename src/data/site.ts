@@ -238,7 +238,7 @@ export const scheduleNotes = [
 
 export const pricingItems = [
   {
-    title: "1회 체험",
+    title: "1회 체험(유료)",
     price: "",
     description: "처음 방문하시는 분들을 위한 체험 수업입니다. 예약 후 참여 가능합니다."
   },
