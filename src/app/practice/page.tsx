@@ -99,7 +99,7 @@ export default function PracticePage() {
             </p>
             <TrackedLink
               href="/schedule"
-              analytics={{ event: "beginner_click", location: "practice", label: "일반 수업 시간표 보기", destination: "internal" }}
+              analytics={{ event: "schedule_click", location: "practice", label: "일반 수업 시간표 보기", destination: "internal" }}
               className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               일반 수업 시간표 보기
@@ -133,7 +133,7 @@ export default function PracticePage() {
             <TrackedLink
               href="/schedule#mysore"
               analytics={{
-                event: "mysore_click",
+                event: "schedule_click",
                 location: "practice",
                 label: "마이솔 시간표 보기",
                 destination: "internal"

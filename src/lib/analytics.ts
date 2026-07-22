@@ -1,18 +1,12 @@
 export type AnalyticsEventName =
-  | "beginner_click"
   | "kakao_click"
   | "map_click"
-  | "meditation_click"
-  | "mysore_click"
   | "phone_click"
-  | "philosophy_cta_click"
-  | "pricing_click"
   | "reservation_app_click"
   | "schedule_click"
-  | "teacher_cta_click"
   | "trial_click";
 
-export type AnalyticsLocation = "hero" | "navbar" | "mobile_menu" | "section" | "footer" | "contact" | "schedule" | "practice";
+export type AnalyticsLocation = "hero" | "navbar" | "section" | "footer" | "contact" | "schedule" | "practice";
 
 export type AnalyticsDestination = "internal" | "kakao" | "tel" | "map" | "reservation_app";
 

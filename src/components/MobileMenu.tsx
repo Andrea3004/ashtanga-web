@@ -35,7 +35,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
               href={item.href}
               analytics={
                 item.href === "/schedule"
-                  ? { event: "schedule_click", location: "mobile_menu", label: item.label, destination: "internal" }
+                  ? { event: "schedule_click", location: "navbar", label: item.label, destination: "internal" }
                   : undefined
               }
               onClick={() => setIsOpen(false)}

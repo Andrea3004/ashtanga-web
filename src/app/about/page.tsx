@@ -62,23 +62,6 @@ export default function AboutPage() {
               <TrackedLink
                 key={section.title}
                 href={section.href}
-                analytics={
-                  section.href === "/about/teachers"
-                    ? {
-                        event: "teacher_cta_click",
-                        location: "section",
-                        label: section.title,
-                        destination: "internal"
-                      }
-                    : section.href === "/about/philosophy"
-                      ? {
-                          event: "philosophy_cta_click",
-                          location: "section",
-                          label: section.title,
-                          destination: "internal"
-                        }
-                      : undefined
-                }
                 className="group rounded-lg border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/80 hover:shadow-[0_12px_30px_rgba(255,204,102,0.12)] focus:outline-none focus:ring-2 focus:ring-gold/60"
               >
                 <article className="h-full">
