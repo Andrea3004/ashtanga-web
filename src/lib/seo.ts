@@ -69,7 +69,7 @@ export function createPageMetadata({ title, description, path }: PageMetadataOpt
 export function getStructuredDataJsonLd() {
   const organizationId = `${siteUrl}/#organization`;
   const websiteId = `${siteUrl}/#website`;
-  const localBusinessId = `${siteUrl}/#local-business`;
+  const studioId = `${siteUrl}/#studio`;
   const logoUrl = new URL("/assets/brand/home-logo.png", siteUrl).toString();
   const imageUrl = new URL(ogImage.url, siteUrl).toString();
 
@@ -98,8 +98,8 @@ export function getStructuredDataJsonLd() {
         inLanguage: "ko-KR"
       },
       {
-        "@type": ["SportsActivityLocation", "LocalBusiness"],
-        "@id": localBusinessId,
+        "@type": "SportsActivityLocation",
+        "@id": studioId,
         name: siteName,
         alternateName: siteInfo.name,
         description: defaultDescription,

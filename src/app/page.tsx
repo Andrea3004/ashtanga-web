@@ -43,7 +43,7 @@ export default function HomePage() {
                 event: "trial_click",
                 location: "hero",
                 label: "1회 체험 문의",
-                destination: externalLinks.kakaoTalk
+                destination: "kakao"
               }}
             >
               1회 체험 문의
@@ -51,7 +51,7 @@ export default function HomePage() {
             <CTAButton
               href="/schedule"
               variant="secondary"
-              analytics={{ event: "schedule_click", location: "hero", label: "시간표 보기", destination: "/schedule" }}
+              analytics={{ event: "schedule_click", location: "hero", label: "시간표 보기", destination: "internal" }}
             >
               시간표 보기
             </CTAButton>
@@ -62,7 +62,7 @@ export default function HomePage() {
                 event: "map_click",
                 location: "hero",
                 label: "위치 보기",
-                destination: externalLinks.naverMap
+                destination: "map"
               }}
             >
               위치 보기
@@ -111,10 +111,10 @@ export default function HomePage() {
           <CTAButton
             href={externalLinks.reservationApp}
             analytics={{
-              event: "reservation_click",
+              event: "reservation_app_click",
               location: "section",
               label: "예약앱에서 일정 확인",
-              destination: externalLinks.reservationApp
+              destination: "reservation_app"
             }}
           >
             예약앱에서 일정 확인
@@ -126,7 +126,7 @@ export default function HomePage() {
               event: "kakao_click",
               location: "section",
               label: "방문 전 문의",
-              destination: externalLinks.kakaoTalk
+              destination: "kakao"
             }}
           >
             방문 전 문의
@@ -142,12 +142,12 @@ export default function HomePage() {
               href={link.href}
               analytics={
                 link.href === externalLinks.naverMap
-                  ? { event: "map_click", location: "section", label: link.title, destination: link.href }
+                  ? { event: "map_click", location: "section", label: link.title, destination: "map" }
                   : undefined
               }
               className="rounded-lg border border-line bg-surface p-5 transition hover:border-gold hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <h3 className="text-lg font-black text-gold">{link.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted">{link.description}</p>
@@ -190,10 +190,10 @@ export default function HomePage() {
               variant="dark"
               className="w-full"
               analytics={{
-                event: "reservation_click",
+                event: "reservation_app_click",
                 location: "section",
                 label: "수업 예약하기(회원전용)",
-                destination: externalLinks.reservationApp
+                destination: "reservation_app"
               }}
             >
               수업 예약하기(회원전용)

@@ -68,14 +68,14 @@ export default function AboutPage() {
                         event: "teacher_cta_click",
                         location: "section",
                         label: section.title,
-                        destination: section.href
+                        destination: "internal"
                       }
                     : section.href === "/about/philosophy"
                       ? {
                           event: "philosophy_cta_click",
                           location: "section",
                           label: section.title,
-                          destination: section.href
+                          destination: "internal"
                         }
                       : undefined
                 }

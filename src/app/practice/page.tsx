@@ -99,7 +99,7 @@ export default function PracticePage() {
             </p>
             <TrackedLink
               href="/schedule"
-              analytics={{ event: "beginner_click", location: "section", label: "일반 수업 시간표 보기", destination: "/schedule" }}
+              analytics={{ event: "beginner_click", location: "practice", label: "일반 수업 시간표 보기", destination: "internal" }}
               className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               일반 수업 시간표 보기
@@ -134,9 +134,9 @@ export default function PracticePage() {
               href="/schedule#mysore"
               analytics={{
                 event: "mysore_click",
-                location: "section",
+                location: "practice",
                 label: "마이솔 시간표 보기",
-                destination: "/schedule#mysore"
+                destination: "internal"
               }}
               className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
@@ -170,27 +170,27 @@ export default function PracticePage() {
               href={externalLinks.kakaoTalk}
               analytics={{
                 event: "kakao_click",
-                location: "section",
+                location: "practice",
                 label: "카카오톡 상담하기",
-                destination: externalLinks.kakaoTalk
+                destination: "kakao"
               }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               카카오톡 상담하기
             </TrackedLink>
             <TrackedLink
               href={externalLinks.reservationApp}
               analytics={{
-                event: "reservation_click",
-                location: "section",
+                event: "reservation_app_click",
+                location: "practice",
                 label: "Practice App 로그인",
-                destination: externalLinks.reservationApp
+                destination: "reservation_app"
               }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Practice App 로그인
             </TrackedLink>
@@ -260,14 +260,14 @@ export default function PracticePage() {
             <TrackedLink
               href={externalLinks.reservationApp}
               analytics={{
-                event: "reservation_click",
-                location: "section",
+                event: "reservation_app_click",
+                location: "practice",
                 label: "Practice App 로그인",
-                destination: externalLinks.reservationApp
+                destination: "reservation_app"
               }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 text-sm font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Practice App 로그인
             </TrackedLink>

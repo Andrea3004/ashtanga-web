@@ -18,6 +18,10 @@ export const externalLinks = {
   reservationApp: "https://app.ashtanga.or.kr"
 };
 
+export const contactLinks = {
+  phone: "tel:025824401"
+};
+
 export const socialLinks = [
   {
     title: "네이버 지도",

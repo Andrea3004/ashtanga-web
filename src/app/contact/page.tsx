@@ -1,7 +1,8 @@
 import { CTAButton } from "@/components/CTAButton";
 import { Section } from "@/components/Section";
-import { externalLinks, siteInfo } from "@/data/site";
-import { createPageMetadata } from "@/lib/seo";
+import { TrackedLink } from "@/components/TrackedLink";
+import { contactLinks, externalLinks, siteInfo } from "@/data/site";
+import { createPageMetadata, siteName } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "위치와 문의",
@@ -21,6 +22,10 @@ export default function ContactPage() {
             </p>
             <dl className="mt-8 grid gap-4 text-muted">
               <div>
+                <dt className="font-black text-ink">상호</dt>
+                <dd>{siteName}</dd>
+              </div>
+              <div>
                 <dt className="font-black text-ink">운영 시간</dt>
                 <dd>{siteInfo.businessHours}</dd>
               </div>
@@ -30,7 +35,15 @@ export default function ContactPage() {
               </div>
               <div>
                 <dt className="font-black text-ink">전화번호</dt>
-                <dd>{siteInfo.phone}</dd>
+                <dd>
+                  <TrackedLink
+                    href={contactLinks.phone}
+                    analytics={{ event: "phone_click", location: "contact", label: "전화번호", destination: "tel" }}
+                    className="rounded-sm hover:text-clay focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+                  >
+                    {siteInfo.phone}
+                  </TrackedLink>
+                </dd>
               </div>
             </dl>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -41,7 +54,7 @@ export default function ContactPage() {
                   event: "kakao_click",
                   location: "contact",
                   label: "카카오톡 문의",
-                  destination: externalLinks.kakaoTalk
+                  destination: "kakao"
                 }}
               >
                 카카오톡 문의
@@ -53,7 +66,7 @@ export default function ContactPage() {
                   event: "map_click",
                   location: "contact",
                   label: "네이버 지도",
-                  destination: externalLinks.naverMap
+                  destination: "map"
                 }}
               >
                 네이버 지도
@@ -62,10 +75,10 @@ export default function ContactPage() {
                 href={externalLinks.reservationApp}
                 variant="dark"
                 analytics={{
-                  event: "reservation_click",
+                  event: "reservation_app_click",
                   location: "contact",
                   label: "예약 앱",
-                  destination: externalLinks.reservationApp
+                  destination: "reservation_app"
                 }}
               >
                 예약 앱
@@ -86,7 +99,7 @@ export default function ContactPage() {
                 event: "trial_click",
                 location: "contact",
                 label: "카카오톡으로 1회 체험 문의",
-                destination: externalLinks.kakaoTalk
+                destination: "kakao"
               }}
             >
               카카오톡으로 1회 체험 문의

@@ -159,10 +159,10 @@ export default function SchedulePage() {
             href={externalLinks.reservationApp}
             className="focus-visible:!border-text focus-visible:!bg-text focus-visible:!text-background active:!border-text active:!bg-text active:!text-background"
             analytics={{
-              event: "reservation_click",
+              event: "reservation_app_click",
               location: "schedule",
               label: "예약앱에서 확인",
-              destination: externalLinks.reservationApp
+              destination: "reservation_app"
             }}
           >
             예약앱에서 확인
@@ -175,7 +175,7 @@ export default function SchedulePage() {
               event: "kakao_click",
               location: "schedule",
               label: "카카오톡 문의",
-              destination: externalLinks.kakaoTalk
+              destination: "kakao"
             }}
           >
             카카오톡 문의

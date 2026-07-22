@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import type { AnalyticsEventName } from "@/lib/analytics";
+import type { AnalyticsDestination, AnalyticsEventName, AnalyticsLocation } from "@/lib/analytics";
 import { TrackedLink } from "./TrackedLink";
 
 type CTAButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -8,9 +8,9 @@ type CTAButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   variant?: "primary" | "secondary" | "dark" | "member";
   analytics?: {
     event: AnalyticsEventName;
-    location: string;
+    location: AnalyticsLocation;
     label: string;
-    destination?: string;
+    destination: AnalyticsDestination;
   };
 };
 
@@ -34,7 +34,7 @@ export function CTAButton({
 }: CTAButtonProps) {
   const isExternal = /^https?:\/\//.test(href);
   const linkTarget = target ?? (isExternal ? "_blank" : undefined);
-  const linkRel = rel ?? (isExternal ? "noreferrer" : undefined);
+  const linkRel = rel ?? (isExternal ? "noopener noreferrer" : undefined);
 
   return (
     <TrackedLink

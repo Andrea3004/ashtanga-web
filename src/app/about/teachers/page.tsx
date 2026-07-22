@@ -134,7 +134,7 @@ export default function TeachersPage() {
         <div className="mt-6 flex flex-wrap gap-3 text-sm">
           <TrackedLink
             href="/schedule"
-            analytics={{ event: "schedule_click", location: "section", label: "수련 시간표 보기", destination: "/schedule" }}
+            analytics={{ event: "schedule_click", location: "section", label: "수련 시간표 보기", destination: "internal" }}
             className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
           >
             수련 시간표 보기
@@ -145,11 +145,11 @@ export default function TeachersPage() {
               event: "kakao_click",
               location: "section",
               label: "카카오톡 상담하기",
-              destination: externalLinks.kakaoTalk
+              destination: "kakao"
             }}
             className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             카카오톡 상담하기
           </TrackedLink>

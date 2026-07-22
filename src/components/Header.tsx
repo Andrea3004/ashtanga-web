@@ -32,7 +32,7 @@ export function Header() {
         {navItems.map((item) => {
           const analytics =
             item.href === "/schedule"
-              ? { event: "schedule_click" as const, location: "navbar", label: item.label, destination: item.href }
+              ? { event: "schedule_click" as const, location: "navbar" as const, label: item.label, destination: "internal" as const }
               : undefined;
 
           return (

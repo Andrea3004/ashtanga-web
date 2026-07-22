@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
-import type { AnalyticsEventName } from "@/lib/analytics";
+import type { AnalyticsDestination, AnalyticsEventName, AnalyticsLocation } from "@/lib/analytics";
 import { trackEvent } from "@/lib/analytics";
 
 type AnalyticsLinkOptions = {
   event: AnalyticsEventName;
-  location: string;
+  location: AnalyticsLocation;
   label: string;
-  destination?: string;
+  destination: AnalyticsDestination;
 };
 
 type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -28,7 +28,7 @@ export function TrackedLink({ href, children, analytics, onClick, ...props }: Tr
         page: pathname,
         location: analytics.location,
         label: analytics.label,
-        destination: analytics.destination ?? href
+        destination: analytics.destination
       });
     }
 

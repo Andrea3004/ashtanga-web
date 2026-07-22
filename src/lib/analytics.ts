@@ -4,18 +4,23 @@ export type AnalyticsEventName =
   | "map_click"
   | "meditation_click"
   | "mysore_click"
+  | "phone_click"
   | "philosophy_cta_click"
   | "pricing_click"
-  | "reservation_click"
+  | "reservation_app_click"
   | "schedule_click"
   | "teacher_cta_click"
   | "trial_click";
 
+export type AnalyticsLocation = "hero" | "navbar" | "mobile_menu" | "section" | "footer" | "contact" | "schedule" | "practice";
+
+export type AnalyticsDestination = "internal" | "kakao" | "tel" | "map" | "reservation_app";
+
 export type AnalyticsEventParams = {
   page?: string;
-  location?: string;
+  location?: AnalyticsLocation;
   label?: string;
-  destination?: string;
+  destination?: AnalyticsDestination;
 };
 
 declare global {
@@ -49,18 +54,6 @@ export function initializeGoogleAnalytics() {
 }
 
 export function getSafeDestination(destination?: string) {
-  if (!destination) {
-    return undefined;
-  }
-
-  if (destination.startsWith("tel:")) {
-    return "phone";
-  }
-
-  if (destination.startsWith("mailto:")) {
-    return "email";
-  }
-
   return destination;
 }
 

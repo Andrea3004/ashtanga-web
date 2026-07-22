@@ -1,4 +1,5 @@
-import { externalLinks, siteInfo } from "@/data/site";
+import { contactLinks, externalLinks, siteInfo } from "@/data/site";
+import { siteName } from "@/lib/seo";
 import { TrackedLink } from "./TrackedLink";
 
 export function Footer() {
@@ -12,7 +13,14 @@ export function Footer() {
   return (
     <footer className="flex flex-wrap justify-between gap-3 border-t border-line bg-background px-5 py-7 text-sm text-muted sm:px-8 lg:px-20">
       <p>
-        {siteInfo.name} · {siteInfo.address}
+        {siteName} · {siteInfo.address} ·{" "}
+        <TrackedLink
+          href={contactLinks.phone}
+          analytics={{ event: "phone_click", location: "footer", label: "전화번호", destination: "tel" }}
+          className="rounded-sm hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+        >
+          {siteInfo.phone}
+        </TrackedLink>
       </p>
       <div className="flex flex-wrap gap-3">
         <p>{siteInfo.businessHours}</p>
@@ -22,12 +30,12 @@ export function Footer() {
             href={link.href}
             analytics={
               link.href === externalLinks.naverMap
-                ? { event: "map_click", location: "footer", label: link.label, destination: link.href }
+                ? { event: "map_click", location: "footer", label: link.label, destination: "map" }
                 : undefined
             }
             className="rounded-sm hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {link.label}
           </TrackedLink>
