@@ -21,8 +21,8 @@ const practiceSteps = [
 ];
 
 export const metadata = createPageMetadata({
-  title: "수련",
-  description: "일반 수업, 마이솔 클래스, 명상, 회원 전용 Practice App으로 이어지는 수련 방식을 안내합니다.",
+  title: "수련 프로그램",
+  description: "초보자를 위한 일반 수업, 마이솔 클래스, 레드 클래스, 명상, 회원 전용 Practice App으로 이어지는 수련 방식을 안내합니다.",
   path: "/practice"
 });
 
@@ -66,7 +66,7 @@ export default function PracticePage() {
         <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
           <Image
             src="/images/practice-hero.jpg"
-            alt=""
+            alt="아쉬탕가 요가 수련 자세"
             fill
             priority
             sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"

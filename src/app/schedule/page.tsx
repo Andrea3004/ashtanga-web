@@ -83,8 +83,8 @@ function PricingTable({ title, data }: { title: string; data: PricingTableData }
 }
 
 export const metadata = createPageMetadata({
-  title: "시간표",
-  description: "ASHTANGA YOGA STUDIO의 일반 수업, 마이솔 클래스, 운영 시간, 수강료 안내를 확인하세요.",
+  title: "수업 시간표와 회비",
+  description: "아쉬탕가 요가 스튜디오의 일반 수업과 마이솔 클래스 시간표, 운영 시간, 수강료와 예약 전 안내를 확인하세요.",
   path: "/schedule"
 });
 
@@ -95,7 +95,7 @@ export default function SchedulePage() {
         <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
           <Image
             src="/images/schedule-hero.jpg"
-            alt=""
+            alt="아쉬탕가 요가 스튜디오 수업 시간표 안내 이미지"
             fill
             priority
             sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"

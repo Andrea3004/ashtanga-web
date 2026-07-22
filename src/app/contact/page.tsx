@@ -4,8 +4,8 @@ import { externalLinks, siteInfo } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "문의",
-  description: "ASHTANGA YOGA STUDIO 위치, 상담 방법, 예약 앱, 카카오톡과 SNS 채널을 안내합니다.",
+  title: "위치와 문의",
+  description: "서울 서초구 아쉬탕가 요가 스튜디오의 위치, 운영 시간, 전화번호, 카카오톡 상담, 예약 앱과 SNS 채널을 안내합니다.",
   path: "/contact"
 });
 

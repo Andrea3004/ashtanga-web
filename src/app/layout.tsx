@@ -4,17 +4,26 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
-import { defaultDescription, getLocalBusinessJsonLd, ogImage, siteName, siteUrl } from "@/lib/seo";
+import { StructuredData } from "@/components/StructuredData";
+import { defaultDescription, defaultTitle, ogImage, siteKeywords, siteName, siteUrl } from "@/lib/seo";
+
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | 공식 홈페이지`,
+    default: defaultTitle,
     template: `%s | ${siteName}`
   },
   description: defaultDescription,
   applicationName: siteName,
+  keywords: siteKeywords,
+  authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: siteUrl
+  },
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -42,7 +51,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: siteUrl,
     siteName,
-    title: `${siteName} | 공식 홈페이지`,
+    title: defaultTitle,
     description: defaultDescription,
     images: [
       {
@@ -55,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | 공식 홈페이지`,
+    title: defaultTitle,
     description: defaultDescription,
     images: [ogImage.url]
   },
@@ -66,7 +75,14 @@ export const metadata: Metadata = {
       index: true,
       follow: true
     }
-  }
+  },
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification
+        }
+      }
+    : {})
 };
 
 export const viewport: Viewport = {
@@ -74,15 +90,10 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const localBusinessJsonLd = getLocalBusinessJsonLd();
-
   return (
     <html lang="ko">
       <body className="font-sans antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-        />
+        <StructuredData />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>

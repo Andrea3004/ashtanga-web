@@ -22,8 +22,8 @@ const aboutCards = [
 ];
 
 export const metadata = createPageMetadata({
-  title: "요가원 소개",
-  description: "ASHTANGA YOGA STUDIO의 공간, 지도 방향, 수련 철학을 소개합니다.",
+  title: "스튜디오 소개",
+  description: "아쉬탕가 요가 스튜디오의 공간, 지도 방향, 수련 철학을 소개하고 처음 수련을 시작하는 분을 위한 안내를 제공합니다.",
   path: "/about"
 });
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="relative overflow-hidden rounded-[2rem] border border-line/80 bg-surface shadow-soft">
           <Image
             src="/images/about-hero.jpg"
-            alt=""
+            alt="아쉬탕가 요가 스튜디오의 조용한 수련 공간"
             fill
             priority
             sizes="(min-width: 1024px) calc(100vw - 10rem), (min-width: 640px) calc(100vw - 4rem), calc(100vw - 2.5rem)"

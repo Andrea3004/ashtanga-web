@@ -2,8 +2,8 @@ import { AboutDetailLayout } from "@/components/AboutDetailLayout";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Philosophy",
-  description: "아쉬탕가 요가 수련의 방향과 ASHTANGA YOGA STUDIO가 중요하게 여기는 수련 철학을 소개합니다.",
+  title: "수련 철학",
+  description: "아쉬탕가 요가를 움직임, 호흡, 집중, 몸과 의식의 균형으로 바라보는 스튜디오의 수련 철학을 소개합니다.",
   path: "/about/philosophy"
 });
 
@@ -14,7 +14,7 @@ export default function PhilosophyPage() {
       title="Philosophy"
       description="체계적인 프로그램과 검증된 시스템"
       heroImage="/images/philosophy-hero.jpg"
-      heroImageAlt=""
+      heroImageAlt="아쉬탕가 요가 수련 철학을 상징하는 자세"
       heroImagePosition="18% 50%"
       heroOverlay={false}
     >

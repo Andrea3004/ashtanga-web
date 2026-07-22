@@ -6,8 +6,8 @@ import { headTeacher, teachers, teachingPhilosophy, teachingPhilosophyHeading } 
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Teachers",
-  description: "ASHTANGA YOGA STUDIO의 원장과 함께 수련을 안내하는 지도진을 소개합니다.",
+  title: "지도자 소개",
+  description: "아쉬탕가 요가 스튜디오의 원장과 함께 수련을 안내하는 지도진, 지도 철학, 수련 이력을 소개합니다.",
   path: "/about/teachers"
 });
 
@@ -33,7 +33,7 @@ export default function TeachersPage() {
       title="Teachers"
       description="함께 수련을 안내하는 선생님들"
       heroImage="/images/teacher-hero.jpg"
-      heroImageAlt=""
+      heroImageAlt="아쉬탕가 요가 수련을 안내하는 지도자"
       heroImagePosition="58% 44%"
     >
       <section className="grid gap-7 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,1fr)] lg:items-center lg:gap-10">

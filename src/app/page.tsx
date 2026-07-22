@@ -8,9 +8,9 @@ import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } fr
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "정통 아쉬탕가 요가 수련",
+  title: "서울 아쉬탕가 요가·마이솔 전문",
   description:
-    "ASHTANGA YOGA STUDIO의 수련 공간, 일반 수업, 마이솔 클래스, 명상, 시간표, 회원 전용 Practice App 안내를 확인하세요.",
+    "서울 서초구 아쉬탕가 요가 스튜디오에서 초보자 수업, 마이솔 클래스, 레드 클래스, 명상과 회원 전용 Practice App 안내를 확인하세요.",
   path: "/"
 });
 

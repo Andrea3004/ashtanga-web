@@ -2,8 +2,8 @@ import { AboutDetailLayout } from "@/components/AboutDetailLayout";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Studio",
-  description: "ASHTANGA YOGA STUDIO의 수련 공간, 운영 방향, 성장 기록을 돕는 수련 환경을 소개합니다.",
+  title: "아쉬탕가 요가 전문 스튜디오",
+  description: "조용한 수련 공간, 꾸준한 리듬, 회원 전용 앱을 통한 성장 기록 등 아쉬탕가 요가 스튜디오의 수련 환경을 소개합니다.",
   path: "/about/studio"
 });
 
@@ -14,7 +14,7 @@ export default function StudioPage() {
       title="Studio"
       description="조용히 깊어지는 수련을 위한 공간"
       heroImage="/images/studio-hero.jpg"
-      heroImageAlt=""
+      heroImageAlt="아쉬탕가 요가 스튜디오 내부 수련 공간"
       heroImagePosition="50% 42%"
     >
       <div className="grid gap-6 lg:grid-cols-3">
