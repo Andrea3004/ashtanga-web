@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import { TrackedLink } from "./TrackedLink";
 
 type MobileMenuProps = {
   items: Array<{ href: string; label: string }>;
@@ -30,14 +30,19 @@ export function MobileMenu({ items }: MobileMenuProps) {
           className="absolute left-5 right-5 top-20 rounded-lg border border-line bg-surface p-2 text-text shadow-soft"
         >
           {items.map((item) => (
-            <Link
+            <TrackedLink
               key={item.href}
               href={item.href}
+              analytics={
+                item.href === "/schedule"
+                  ? { event: "schedule_click", location: "mobile_menu", label: item.label, destination: item.href }
+                  : undefined
+              }
               onClick={() => setIsOpen(false)}
               className="block rounded-md px-4 py-4 text-base font-black hover:bg-background hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               {item.label}
-            </Link>
+            </TrackedLink>
           ))}
         </nav>
       ) : null}

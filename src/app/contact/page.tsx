@@ -34,13 +34,40 @@ export default function ContactPage() {
               </div>
             </dl>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton href={externalLinks.kakaoTalk} variant="dark">
+              <CTAButton
+                href={externalLinks.kakaoTalk}
+                variant="dark"
+                analytics={{
+                  event: "kakao_click",
+                  location: "contact",
+                  label: "카카오톡 문의",
+                  destination: externalLinks.kakaoTalk
+                }}
+              >
                 카카오톡 문의
               </CTAButton>
-              <CTAButton href={externalLinks.naverMap} variant="dark">
+              <CTAButton
+                href={externalLinks.naverMap}
+                variant="dark"
+                analytics={{
+                  event: "map_click",
+                  location: "contact",
+                  label: "네이버 지도",
+                  destination: externalLinks.naverMap
+                }}
+              >
                 네이버 지도
               </CTAButton>
-              <CTAButton href={externalLinks.reservationApp} variant="dark">
+              <CTAButton
+                href={externalLinks.reservationApp}
+                variant="dark"
+                analytics={{
+                  event: "reservation_click",
+                  location: "contact",
+                  label: "예약 앱",
+                  destination: externalLinks.reservationApp
+                }}
+              >
                 예약 앱
               </CTAButton>
             </div>
@@ -51,7 +78,17 @@ export default function ContactPage() {
               이 MVP에서는 회원가입, DB 저장, 비회원 예약 저장 기능을 만들지 않습니다. 실제 상담과 예약은
               아래 외부 채널을 사용합니다.
             </p>
-            <CTAButton href={externalLinks.kakaoTalk} variant="dark" className="w-full">
+            <CTAButton
+              href={externalLinks.kakaoTalk}
+              variant="dark"
+              className="w-full"
+              analytics={{
+                event: "trial_click",
+                location: "contact",
+                label: "카카오톡으로 1회 체험 문의",
+                destination: externalLinks.kakaoTalk
+              }}
+            >
               카카오톡으로 1회 체험 문의
             </CTAButton>
             <CTAButton href={externalLinks.instagram} variant="dark" className="w-full">

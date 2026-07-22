@@ -3,6 +3,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { PracticeCard } from "@/components/PracticeCard";
 import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/components/ScheduleSections";
 import { Section } from "@/components/Section";
+import { TrackedLink } from "@/components/TrackedLink";
 import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -36,11 +37,34 @@ export default function HomePage() {
             조화롭게 운영하며, 몸과 호흡에 맞춰 꾸준히 이어갈 수 있도록 안내합니다.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <CTAButton href={externalLinks.kakaoTalk}>1회 체험 문의</CTAButton>
-            <CTAButton href="/schedule" variant="secondary">
+            <CTAButton
+              href={externalLinks.kakaoTalk}
+              analytics={{
+                event: "trial_click",
+                location: "hero",
+                label: "1회 체험 문의",
+                destination: externalLinks.kakaoTalk
+              }}
+            >
+              1회 체험 문의
+            </CTAButton>
+            <CTAButton
+              href="/schedule"
+              variant="secondary"
+              analytics={{ event: "schedule_click", location: "hero", label: "시간표 보기", destination: "/schedule" }}
+            >
               시간표 보기
             </CTAButton>
-            <CTAButton href={externalLinks.naverMap} variant="secondary">
+            <CTAButton
+              href={externalLinks.naverMap}
+              variant="secondary"
+              analytics={{
+                event: "map_click",
+                location: "hero",
+                label: "위치 보기",
+                destination: externalLinks.naverMap
+              }}
+            >
               위치 보기
             </CTAButton>
             <CTAButton href="/practice#practice-app" variant="member">
@@ -84,8 +108,27 @@ export default function HomePage() {
           <ScheduleNotes />
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <CTAButton href={externalLinks.reservationApp}>예약앱에서 일정 확인</CTAButton>
-          <CTAButton href={externalLinks.kakaoTalk} variant="secondary">
+          <CTAButton
+            href={externalLinks.reservationApp}
+            analytics={{
+              event: "reservation_click",
+              location: "section",
+              label: "예약앱에서 일정 확인",
+              destination: externalLinks.reservationApp
+            }}
+          >
+            예약앱에서 일정 확인
+          </CTAButton>
+          <CTAButton
+            href={externalLinks.kakaoTalk}
+            variant="secondary"
+            analytics={{
+              event: "kakao_click",
+              location: "section",
+              label: "방문 전 문의",
+              destination: externalLinks.kakaoTalk
+            }}
+          >
             방문 전 문의
           </CTAButton>
         </div>
@@ -94,16 +137,21 @@ export default function HomePage() {
       <Section eyebrow="Connect" title="다양한 채널에서 아쉬탕가 요가 스튜디오를 만나보세요" className="bg-background">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {socialLinks.map((link) => (
-            <a
+            <TrackedLink
               key={link.title}
               href={link.href}
+              analytics={
+                link.href === externalLinks.naverMap
+                  ? { event: "map_click", location: "section", label: link.title, destination: link.href }
+                  : undefined
+              }
               className="rounded-lg border border-line bg-surface p-5 transition hover:border-gold hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
               target="_blank"
               rel="noreferrer"
             >
               <h3 className="text-lg font-black text-gold">{link.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted">{link.description}</p>
-            </a>
+            </TrackedLink>
           ))}
         </div>
       </Section>
@@ -137,7 +185,17 @@ export default function HomePage() {
           <p className="text-lg font-black text-ink">수련 예약 및 상담</p>
           <p className="mt-3 text-muted">{siteInfo.businessHours}</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-            <CTAButton href={externalLinks.reservationApp} variant="dark" className="w-full">
+            <CTAButton
+              href={externalLinks.reservationApp}
+              variant="dark"
+              className="w-full"
+              analytics={{
+                event: "reservation_click",
+                location: "section",
+                label: "수업 예약하기(회원전용)",
+                destination: externalLinks.reservationApp
+              }}
+            >
               수업 예약하기(회원전용)
             </CTAButton>
             <CTAButton href="/contact" variant="dark" className="w-full">

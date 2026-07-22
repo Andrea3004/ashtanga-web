@@ -1,4 +1,5 @@
 import { externalLinks, siteInfo } from "@/data/site";
+import { TrackedLink } from "./TrackedLink";
 
 export function Footer() {
   const socialLinks = [
@@ -16,15 +17,20 @@ export function Footer() {
       <div className="flex flex-wrap gap-3">
         <p>{siteInfo.businessHours}</p>
         {socialLinks.map((link) => (
-          <a
+          <TrackedLink
             key={link.label}
             href={link.href}
+            analytics={
+              link.href === externalLinks.naverMap
+                ? { event: "map_click", location: "footer", label: link.label, destination: link.href }
+                : undefined
+            }
             className="rounded-sm hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             target="_blank"
             rel="noreferrer"
           >
             {link.label}
-          </a>
+          </TrackedLink>
         ))}
       </div>
     </footer>

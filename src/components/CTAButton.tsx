@@ -1,10 +1,17 @@
-import Link from "next/link";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnalyticsEventName } from "@/lib/analytics";
+import { TrackedLink } from "./TrackedLink";
 
 type CTAButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary" | "dark" | "member";
+  analytics?: {
+    event: AnalyticsEventName;
+    location: string;
+    label: string;
+    destination?: string;
+  };
 };
 
 const variantClasses = {
@@ -22,6 +29,7 @@ export function CTAButton({
   className = "",
   target,
   rel,
+  analytics,
   ...props
 }: CTAButtonProps) {
   const isExternal = /^https?:\/\//.test(href);
@@ -29,14 +37,15 @@ export function CTAButton({
   const linkRel = rel ?? (isExternal ? "noreferrer" : undefined);
 
   return (
-    <Link
+    <TrackedLink
       href={href}
       target={linkTarget}
       rel={linkRel}
+      analytics={analytics}
       className={`inline-flex min-h-12 items-center justify-center rounded-md border px-5 text-sm font-black transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 ${variantClasses[variant]} ${className}`}
       {...props}
     >
       {children}
-    </Link>
+    </TrackedLink>
   );
 }

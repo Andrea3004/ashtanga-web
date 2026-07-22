@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Section } from "@/components/Section";
+import { TrackedLink } from "@/components/TrackedLink";
 import { practiceAppShowcase } from "@/data/practiceApp";
 import { externalLinks } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
@@ -97,13 +97,14 @@ export default function PracticePage() {
               아쉬탕가 요가를 처음 접하는 분들을 위한 입문 수업입니다.
               기본 순서와 호흡, 움직임의 원리를 단계적으로 배워갑니다.
             </p>
-            <Link
+            <TrackedLink
               href="/schedule"
+              analytics={{ event: "beginner_click", location: "section", label: "일반 수업 시간표 보기", destination: "/schedule" }}
               className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               일반 수업 시간표 보기
               <span aria-hidden="true">→</span>
-            </Link>
+            </TrackedLink>
           </article>
 
           <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-2">
@@ -129,13 +130,19 @@ export default function PracticePage() {
                 </p>
               </div>
             </div>
-            <Link
+            <TrackedLink
               href="/schedule#mysore"
+              analytics={{
+                event: "mysore_click",
+                location: "section",
+                label: "마이솔 시간표 보기",
+                destination: "/schedule#mysore"
+              }}
               className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
             >
               마이솔 시간표 보기
               <span aria-hidden="true">→</span>
-            </Link>
+            </TrackedLink>
           </article>
 
           <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-3">
@@ -159,22 +166,34 @@ export default function PracticePage() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
-            <a
+            <TrackedLink
               href={externalLinks.kakaoTalk}
+              analytics={{
+                event: "kakao_click",
+                location: "section",
+                label: "카카오톡 상담하기",
+                destination: externalLinks.kakaoTalk
+              }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
               target="_blank"
               rel="noreferrer"
             >
               카카오톡 상담하기
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href={externalLinks.reservationApp}
+              analytics={{
+                event: "reservation_click",
+                location: "section",
+                label: "Practice App 로그인",
+                destination: externalLinks.reservationApp
+              }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
               target="_blank"
               rel="noreferrer"
             >
               Practice App 로그인
-            </a>
+            </TrackedLink>
           </div>
           <p className="mt-4 text-sm leading-6 text-muted">Practice App은 등록 회원 전용이며 회원가입 후 이용할 수 있습니다.</p>
         </div>
@@ -238,14 +257,20 @@ export default function PracticePage() {
             <p className="max-w-xl text-sm leading-7 text-muted">
               Practice App은 등록 회원에게 제공되는 회원 전용 수련 관리 시스템입니다.
             </p>
-            <a
+            <TrackedLink
               href={externalLinks.reservationApp}
+              analytics={{
+                event: "reservation_click",
+                location: "section",
+                label: "Practice App 로그인",
+                destination: externalLinks.reservationApp
+              }}
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 text-sm font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
               target="_blank"
               rel="noreferrer"
             >
               Practice App 로그인
-            </a>
+            </TrackedLink>
           </div>
         </section>
       </Section>

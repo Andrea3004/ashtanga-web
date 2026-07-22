@@ -158,6 +158,12 @@ export default function SchedulePage() {
           <CTAButton
             href={externalLinks.reservationApp}
             className="focus-visible:!border-text focus-visible:!bg-text focus-visible:!text-background active:!border-text active:!bg-text active:!text-background"
+            analytics={{
+              event: "reservation_click",
+              location: "schedule",
+              label: "예약앱에서 확인",
+              destination: externalLinks.reservationApp
+            }}
           >
             예약앱에서 확인
           </CTAButton>
@@ -165,6 +171,12 @@ export default function SchedulePage() {
             href={externalLinks.kakaoTalk}
             variant="secondary"
             className="!border-gold !bg-transparent !text-gold hover:!border-gold hover:!bg-gold hover:!text-background focus-visible:!border-gold focus-visible:!bg-gold focus-visible:!text-background active:!border-gold active:!bg-gold active:!text-background"
+            analytics={{
+              event: "kakao_click",
+              location: "schedule",
+              label: "카카오톡 문의",
+              destination: externalLinks.kakaoTalk
+            }}
           >
             카카오톡 문의
           </CTAButton>

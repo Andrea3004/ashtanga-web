@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { TrackedLink } from "@/components/TrackedLink";
 import { siteInfo } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -59,9 +59,26 @@ export default function AboutPage() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {aboutCards.map((section) => (
-              <Link
+              <TrackedLink
                 key={section.title}
                 href={section.href}
+                analytics={
+                  section.href === "/about/teachers"
+                    ? {
+                        event: "teacher_cta_click",
+                        location: "section",
+                        label: section.title,
+                        destination: section.href
+                      }
+                    : section.href === "/about/philosophy"
+                      ? {
+                          event: "philosophy_cta_click",
+                          location: "section",
+                          label: section.title,
+                          destination: section.href
+                        }
+                      : undefined
+                }
                 className="group rounded-lg border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/80 hover:shadow-[0_12px_30px_rgba(255,204,102,0.12)] focus:outline-none focus:ring-2 focus:ring-gold/60"
               >
                 <article className="h-full">
@@ -73,7 +90,7 @@ export default function AboutPage() {
                   </h2>
                   <p className="mt-3 text-muted">{section.body}</p>
                 </article>
-              </Link>
+              </TrackedLink>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { navItems, siteInfo } from "@/data/site";
 import { MobileMenu } from "./MobileMenu";
+import { TrackedLink } from "./TrackedLink";
 
 export function Header() {
   return (
@@ -28,15 +29,23 @@ export function Header() {
       </Link>
 
       <nav className="hidden items-center gap-8 text-sm font-black lg:flex" aria-label="주요 메뉴">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-sm transition hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
-          >
-            {item.label}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          const analytics =
+            item.href === "/schedule"
+              ? { event: "schedule_click" as const, location: "navbar", label: item.label, destination: item.href }
+              : undefined;
+
+          return (
+            <TrackedLink
+              key={item.href}
+              href={item.href}
+              analytics={analytics}
+              className="rounded-sm transition hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+            >
+              {item.label}
+            </TrackedLink>
+          );
+        })}
       </nav>
 
       <MobileMenu items={navItems} />

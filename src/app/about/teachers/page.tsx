@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { AboutDetailLayout } from "@/components/AboutDetailLayout";
+import { TrackedLink } from "@/components/TrackedLink";
 import { externalLinks } from "@/data/site";
 import { headTeacher, teachers, teachingPhilosophy, teachingPhilosophyHeading } from "@/data/teachers";
 import { createPageMetadata } from "@/lib/seo";
@@ -132,20 +132,27 @@ export default function TeachersPage() {
       <section className="mt-12 rounded-[1.25rem] border border-line bg-background/70 p-6 sm:p-8">
         <h2 className="text-2xl font-black text-text">수련을 시작할 준비가 되셨나요?</h2>
         <div className="mt-6 flex flex-wrap gap-3 text-sm">
-          <Link
+          <TrackedLink
             href="/schedule"
+            analytics={{ event: "schedule_click", location: "section", label: "수련 시간표 보기", destination: "/schedule" }}
             className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-gold px-4 py-2 font-black text-background transition hover:-translate-y-0.5 hover:border-text hover:bg-text hover:text-background focus-visible:border-text focus-visible:bg-text focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:border-text active:bg-text active:text-background"
           >
             수련 시간표 보기
-          </Link>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={externalLinks.kakaoTalk}
+            analytics={{
+              event: "kakao_click",
+              location: "section",
+              label: "카카오톡 상담하기",
+              destination: externalLinks.kakaoTalk
+            }}
             className="inline-flex min-h-11 items-center justify-center rounded-md border border-gold bg-transparent px-4 py-2 font-black text-gold transition hover:-translate-y-0.5 hover:bg-gold hover:text-background focus-visible:bg-gold focus-visible:text-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 active:bg-gold active:text-background"
             target="_blank"
             rel="noreferrer"
           >
             카카오톡 상담하기
-          </a>
+          </TrackedLink>
         </div>
       </section>
     </AboutDetailLayout>
