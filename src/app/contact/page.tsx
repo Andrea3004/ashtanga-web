@@ -20,6 +20,7 @@ export default function ContactPage() {
               방문 전 위치, 수련 가능 시간, 1회 체험 가능 여부를 확인해 주세요. 예약과 상담은 우선
               카카오톡, 전화, 외부 예약 앱으로 연결합니다.
             </p>
+            <p className="mt-4 text-xs font-medium text-gold">* 1회 체험은 유료 프로그램입니다.</p>
             <dl className="mt-8 grid gap-4 text-muted">
               <div>
                 <dt className="font-black text-ink">상호</dt>

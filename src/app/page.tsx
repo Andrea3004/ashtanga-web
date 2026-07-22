@@ -71,6 +71,7 @@ export default function HomePage() {
               수련과 성장 기록
             </CTAButton>
           </div>
+          <p className="mt-5 text-center text-xs font-medium text-gold">* 1회 체험은 유료 프로그램입니다.</p>
         </div>
       </section>
 
