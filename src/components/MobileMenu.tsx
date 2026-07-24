@@ -29,7 +29,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
           aria-label="모바일 메뉴"
           className="absolute left-5 right-5 top-20 rounded-lg border border-line bg-surface p-2 text-text shadow-soft"
         >
-          <ul className="grid gap-2">
+          <ul className="grid gap-1">
             {items.map((item) => (
               <li key={item.href}>
                 <TrackedLink
@@ -40,7 +40,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
                       : undefined
                   }
                   onClick={() => setIsOpen(false)}
-                  className="group block rounded-md px-4 py-4 hover:bg-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+                  className="group block rounded-md px-4 py-2 hover:bg-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
                 >
                   <span className="block text-base font-black text-text transition group-hover:text-gold">{item.label}</span>
                   {item.description ? (
