@@ -6,6 +6,36 @@ import {
   scheduleNotes
 } from "@/data/site";
 
+const weekdayEnglishLabels: Record<string, string> = {
+  월: "Mon",
+  화: "Tue",
+  수: "Wed",
+  목: "Thu",
+  금: "Fri",
+  토: "Sat",
+  일: "Sun",
+  "월~목": "Mon-Thu"
+};
+
+function WeekdayLabel({ day, tone = "card" }: { day: string; tone?: "card" | "table" }) {
+  const englishDay = weekdayEnglishLabels[day];
+
+  if (!englishDay) {
+    return <>{day}</>;
+  }
+
+  const englishClass = tone === "table" ? "text-background/70" : "text-muted";
+
+  return (
+    <span aria-label={`${day} ${englishDay}`} className="inline-flex flex-col leading-tight">
+      <span aria-hidden="true">{day}</span>
+      <span aria-hidden="true" className={`mt-0.5 text-[0.72em] leading-none ${englishClass}`}>
+        {englishDay}
+      </span>
+    </span>
+  );
+}
+
 export function GeneralScheduleSection() {
   return (
     <section aria-labelledby="general-schedule-title" className="space-y-5">
@@ -19,13 +49,17 @@ export function GeneralScheduleSection() {
       <div className="grid gap-3 md:hidden">
         {generalClassDays.map((item) => (
           <article key={item.day} className="rounded-lg border border-gold/25 bg-surface p-5">
-            <h4 className="text-lg font-black text-gold">{item.day}</h4>
+            <h4 className="text-lg font-black text-gold">
+              <WeekdayLabel day={item.day} />
+            </h4>
             <p className="mt-2 font-bold text-text">{item.title}</p>
             <p className="mt-3 text-sm leading-6 text-muted">{generalClassTimes.join(" · ")}</p>
           </article>
         ))}
         <article className="rounded-lg border border-gold/25 bg-surface p-5">
-          <h4 className="text-lg font-black text-gold">{saturdayGeneralClass.day}</h4>
+          <h4 className="text-lg font-black text-gold">
+            <WeekdayLabel day={saturdayGeneralClass.day} />
+          </h4>
           <p className="mt-2 font-bold text-text">{saturdayGeneralClass.title}</p>
           <p className="mt-3 text-sm leading-6 text-muted">{saturdayGeneralClass.time}</p>
         </article>
@@ -36,10 +70,12 @@ export function GeneralScheduleSection() {
           <span className="p-3">시간</span>
           {generalClassDays.map((item) => (
             <span key={item.day} className="border-l border-background/20 p-3">
-              {item.day}
+              <WeekdayLabel day={item.day} tone="table" />
             </span>
           ))}
-          <span className="border-l border-background/20 p-3">{saturdayGeneralClass.day}</span>
+          <span className="border-l border-background/20 p-3">
+            <WeekdayLabel day={saturdayGeneralClass.day} tone="table" />
+          </span>
         </div>
         {generalClassTimes.map((time) => (
           <div key={time} className="grid grid-cols-[0.8fr_repeat(6,1fr)] border-t border-gold/20 bg-surface text-sm">
@@ -79,7 +115,9 @@ export function MysoreScheduleSection() {
       <div className="grid gap-4 lg:grid-cols-3">
         {mysoreScheduleItems.map((item) => (
           <article key={item.day} className="rounded-lg border border-gold/25 bg-surface p-5">
-            <h4 className="text-lg font-black text-gold">{item.day}</h4>
+            <h4 className="text-lg font-black text-gold">
+              <WeekdayLabel day={item.day} />
+            </h4>
             <div className="mt-4 grid gap-3">
               {item.sessions.map((session) => (
                 <div key={`${item.day}-${session.time}-${session.title}`} className="border-t border-gold/15 pt-3 first:border-t-0 first:pt-0">

@@ -6,15 +6,18 @@ import { navItems } from "@/data/site";
 import { MobileMenu } from "./MobileMenu";
 import { TrackedLink } from "./TrackedLink";
 
-const englishNavItems = [
-  { href: "/", label: "KR", description: "Korean site" },
-  { href: "/schedule", label: "Schedule", description: "Class times" },
-  { href: "/contact", label: "Contact", description: "Ask before visiting" }
-];
+function getEnglishNavItems(isEnglishPage: boolean) {
+  return [
+    { href: "/", label: "KR", description: "Korean site" },
+    { href: "/schedule", label: "Schedule", description: "Class times" },
+    { href: isEnglishPage ? "#contact" : "/en#contact", label: "Contact", description: "Ask before visiting" }
+  ];
+}
 
 export function HeaderNavigation() {
   const pathname = usePathname();
   const isEnglishPage = pathname === "/en";
+  const englishNavItems = getEnglishNavItems(isEnglishPage);
   const desktopItems = isEnglishPage ? englishNavItems : navItems;
   const mobileItems = isEnglishPage
     ? englishNavItems

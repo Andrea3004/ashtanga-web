@@ -53,7 +53,7 @@ const teacherFacts = [
   "KPJAYI Authorized Level 2 Teacher",
   "Traditional sequence-based instruction",
   "Individual guidance",
-  "Primary and Intermediate practice"
+  "Experience with Primary, Intermediate, and Advanced A Series"
 ];
 
 const visitSteps = [
@@ -75,7 +75,7 @@ const visitSteps = [
   }
 ];
 
-const bringItems = ["Comfortable practice clothes", "A small towel", "Water", "Your own mat, if available"];
+const bringItems = ["Comfortable practice clothes", "A small towel", "Your own mat, if available"];
 
 const faqItems = [
   {
@@ -205,9 +205,8 @@ export default function EnglishPage() {
               View Class Schedule
             </CTAButton>
             <CTAButton
-              href={externalLinks.kakaoTalk}
+              href="#contact"
               variant="secondary"
-              analytics={{ event: "kakao_click", location: "english_page", label: "Contact Us", destination: "kakao" }}
             >
               Contact Us
             </CTAButton>
@@ -219,7 +218,7 @@ export default function EnglishPage() {
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-surface shadow-soft">
             <Image
-              src="/images/studio-hero.jpg"
+              src="/images/schedule-hero.jpg"
               alt="Calm Ashtanga Yoga Studio practice space"
               fill
               sizes="(min-width: 1024px) 46vw, 100vw"
@@ -333,7 +332,7 @@ export default function EnglishPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Contact" title="Contact & Visit" className="bg-charcoal" tone="dark">
+      <Section id="contact" eyebrow="Contact" title="Contact & Visit" className="bg-charcoal" tone="dark">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-lg border border-line bg-surface p-6 shadow-soft">
             <dl className="grid gap-5 text-sm leading-7">
