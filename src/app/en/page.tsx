@@ -59,7 +59,7 @@ const teacherFacts = [
 const visitSteps = [
   {
     title: "Contact us",
-    body: "Send us a message before your first visit."
+    body: "Send us a message on Instagram or by phone before your first visit."
   },
   {
     title: "Choose a class",
@@ -346,11 +346,11 @@ export default function EnglishPage() {
               </div>
               <div>
                 <dt className="font-black uppercase text-gold">Phone</dt>
-                <dd className="mt-1">
+                <dd className="mt-1 text-text">
                   <CTAButton
                     href="tel:025824401"
                     variant="secondary"
-                    className="min-h-11 px-4"
+                    className="min-h-11 px-4 text-xs"
                     analytics={{ event: "phone_click", location: "english_page", label: siteInfo.phone, destination: "tel" }}
                   >
                     {siteInfo.phone}
@@ -367,21 +367,22 @@ export default function EnglishPage() {
             <div>
               <h3 className="text-2xl font-black text-text">Please contact us before your first visit.</h3>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
-                Tell us about your yoga experience and preferred time. We will reply with the most suitable class option.
+                Send us a direct message before your first visit. Tell us about your yoga experience and preferred time.
               </p>
             </div>
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
               <CTAButton
-                href={externalLinks.kakaoTalk}
+                href={externalLinks.instagram}
                 className="w-full"
+                aria-label="Message Ashtanga Yoga Studio on Instagram, opens in a new tab"
                 analytics={{
-                  event: "kakao_click",
+                  event: "instagram_click",
                   location: "english_page",
-                  label: "Contact on KakaoTalk",
-                  destination: "kakao"
+                  label: "Message us on Instagram",
+                  destination: "instagram"
                 }}
               >
-                Contact on KakaoTalk
+                Message us on Instagram
               </CTAButton>
               <CTAButton
                 href="/schedule"
@@ -397,12 +398,19 @@ export default function EnglishPage() {
                 View Class Schedule
               </CTAButton>
               <CTAButton
-                href={externalLinks.naverMap}
+                href={externalLinks.googleMaps}
                 variant="secondary"
                 className="w-full"
-                analytics={{ event: "map_click", location: "english_page", label: "View Location", destination: "map" }}
+                aria-label="Open Ashtanga Yoga Studio in Google Maps, opens in a new tab"
+                analytics={{
+                  event: "map_click",
+                  location: "english_page",
+                  label: "Open in Google Maps",
+                  destination: "map",
+                  map_provider: "google"
+                }}
               >
-                View Location
+                Open in Google Maps
               </CTAButton>
             </div>
           </div>

@@ -11,6 +11,7 @@ type CTAButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
     location: AnalyticsLocation;
     label: string;
     destination: AnalyticsDestination;
+    map_provider?: "google" | "naver";
   };
 };
 

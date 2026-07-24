@@ -12,6 +12,7 @@ export const siteInfo = {
 export const externalLinks = {
   kakaoTalk: "https://open.kakao.com/o/sJnCNVKh",
   naverMap: "https://naver.me/FEgn2WqB",
+  googleMaps: "https://maps.app.goo.gl/jEGWnjz4eStNZZHJA",
   naverBlog: "https://blog.naver.com/davidyoga",
   naverCafe: "https://cafe.naver.com/ashtangayoga",
   instagram: "https://www.instagram.com/ashtangayoga_korea",

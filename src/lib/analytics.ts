@@ -1,4 +1,5 @@
 export type AnalyticsEventName =
+  | "instagram_click"
   | "kakao_click"
   | "map_click"
   | "phone_click"
@@ -8,13 +9,14 @@ export type AnalyticsEventName =
 
 export type AnalyticsLocation = "hero" | "navbar" | "section" | "footer" | "contact" | "schedule" | "practice" | "english_page";
 
-export type AnalyticsDestination = "internal" | "kakao" | "tel" | "map" | "reservation_app";
+export type AnalyticsDestination = "internal" | "instagram" | "kakao" | "tel" | "map" | "reservation_app";
 
 export type AnalyticsEventParams = {
   page?: string;
   location?: AnalyticsLocation;
   label?: string;
   destination?: AnalyticsDestination;
+  map_provider?: "google" | "naver";
 };
 
 declare global {

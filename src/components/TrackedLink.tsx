@@ -11,6 +11,7 @@ type AnalyticsLinkOptions = {
   location: AnalyticsLocation;
   label: string;
   destination: AnalyticsDestination;
+  map_provider?: "google" | "naver";
 };
 
 type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -28,7 +29,8 @@ export function TrackedLink({ href, children, analytics, onClick, ...props }: Tr
         page: pathname,
         location: analytics.location,
         label: analytics.label,
-        destination: analytics.destination
+        destination: analytics.destination,
+        map_provider: analytics.map_provider
       });
     }
 
