@@ -4,7 +4,7 @@ import { useState } from "react";
 import { TrackedLink } from "./TrackedLink";
 
 type MobileMenuProps = {
-  items: Array<{ href: string; label: string }>;
+  items: Array<{ href: string; label: string; description?: string }>;
 };
 
 export function MobileMenu({ items }: MobileMenuProps) {
@@ -29,21 +29,27 @@ export function MobileMenu({ items }: MobileMenuProps) {
           aria-label="모바일 메뉴"
           className="absolute left-5 right-5 top-20 rounded-lg border border-line bg-surface p-2 text-text shadow-soft"
         >
-          {items.map((item) => (
-            <TrackedLink
-              key={item.href}
-              href={item.href}
-              analytics={
-                item.href === "/schedule"
-                  ? { event: "schedule_click", location: "navbar", label: item.label, destination: "internal" }
-                  : undefined
-              }
-              onClick={() => setIsOpen(false)}
-              className="block rounded-md px-4 py-4 text-base font-black hover:bg-background hover:text-gold focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
-            >
-              {item.label}
-            </TrackedLink>
-          ))}
+          <ul className="grid gap-2">
+            {items.map((item) => (
+              <li key={item.href}>
+                <TrackedLink
+                  href={item.href}
+                  analytics={
+                    item.href === "/schedule"
+                      ? { event: "schedule_click", location: "navbar", label: item.label, destination: "internal" }
+                      : undefined
+                  }
+                  onClick={() => setIsOpen(false)}
+                  className="group block rounded-md px-4 py-4 hover:bg-background focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+                >
+                  <span className="block text-base font-black text-text transition group-hover:text-gold">{item.label}</span>
+                  {item.description ? (
+                    <span className="mt-1 block text-sm font-medium leading-relaxed text-gold">{item.description}</span>
+                  ) : null}
+                </TrackedLink>
+              </li>
+            ))}
+          </ul>
         </nav>
       ) : null}
     </div>

@@ -104,11 +104,11 @@ export const placeholderAudit = [
 ];
 
 export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/practice", label: "Practice" },
-  { href: "/schedule", label: "Schedule" },
-  { href: "/contact", label: "Contact" }
+  { href: "/", label: "Home", description: "스튜디오 소개" },
+  { href: "/about", label: "About", description: "스튜디오 · 티쳐 · 지도철학" },
+  { href: "/practice", label: "Practice", description: "일반수업 · 마이솔 · 명상" },
+  { href: "/schedule", label: "Schedule", description: "시간표 · 회비" },
+  { href: "/contact", label: "Contact", description: "문의 · 온라인 채널" }
 ];
 
 export const practicePrograms = [

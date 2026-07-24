@@ -87,10 +87,10 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="grid gap-4 rounded-lg border border-line bg-surface p-6 shadow-soft">
-            <p className="text-lg font-black text-ink">외부 채널</p>
+            <p className="text-lg font-black text-ink">문의 및 온라인 채널</p>
             <p className="text-sm leading-6 text-muted">
-              이 MVP에서는 회원가입, DB 저장, 비회원 예약 저장 기능을 만들지 않습니다. 실제 상담과 예약은
-              아래 외부 채널을 사용합니다.
+              1회 체험과 수련 상담은 카카오톡을 통해 안내해드립니다. 스튜디오의 수련 소식과 교육 안내는
+              인스타그램, 네이버 블로그, 네이버 카페에서 확인하실 수 있습니다.
             </p>
             <CTAButton
               href={externalLinks.kakaoTalk}
