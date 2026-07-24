@@ -6,7 +6,7 @@ export type AnalyticsEventName =
   | "schedule_click"
   | "trial_click";
 
-export type AnalyticsLocation = "hero" | "navbar" | "section" | "footer" | "contact" | "schedule" | "practice";
+export type AnalyticsLocation = "hero" | "navbar" | "section" | "footer" | "contact" | "schedule" | "practice" | "english_page";
 
 export type AnalyticsDestination = "internal" | "kakao" | "tel" | "map" | "reservation_app";
 
