@@ -22,15 +22,13 @@ export default function PhilosophyPage() {
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">철학의 핵심</p>
           <p className="mt-4 text-lg leading-8 text-muted">
-            요가 철학에 근거한 체계적인 프로그램과 검증된 시스템이어서 너무나 쉬운 아쉬탕가 요가
+            전통적으로는 파탄잘리 요가 철학에 근거한 체계적인 프로그램과 검증된 시스템을 계승합니다.
           </p>
         </article>
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">
           <p className="text-lg leading-8 text-muted">
-            아쉬탕가 요가는 단지 ‘운동’이 아닙니다.
-            그것은 유연성, 근지구력, 신진대사, 집중력, 그리고 육체와 의식의 균형이라는
-            다섯 개의 축을 통해 모든 연령의 결핍을 정교하게 보완하고,
-            삶의 에너지를 회복하게 해주는 ‘완성형 요가 수련법’입니다.
+            현대적으로는 유연성, 근지구력, 호흡집중력의 수련체계로 이미 검증된 심신의 밸런스, 신진대사
+            를 향상시켜 근골격계의 퇴화방지와 노화지연을 추구합니다.
           </p>
         </article>
       </div>
