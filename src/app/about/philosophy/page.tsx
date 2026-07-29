@@ -26,6 +26,7 @@ export default function PhilosophyPage() {
           </p>
         </article>
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">현대적 가치</p>
           <p className="text-lg leading-8 text-muted">
             현대적으로는 유연성, 근지구력, 호흡집중력의 수련체계로 이미 검증된 심신의 밸런스, 신진대사
             를 향상시켜 근골격계의 퇴화방지와 노화지연을 추구합니다.
