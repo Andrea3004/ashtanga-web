@@ -33,11 +33,11 @@ export default function PhilosophyPage() {
           </p>
         </article>
         <article className="rounded-[1.25rem] border border-line/70 bg-background/70 p-8 lg:col-span-2">
-          <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">개별적인 수련</p>
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">수련의 목적</p>
           <p className="mt-4 text-lg leading-8 text-muted">
-            아쉬탕가 요가는 모든 사람이 같은 방식으로 수련하는 것이 아니라, 각자의 신체 구조와 움직임, 호흡의
-            특성, 회복 속도를 존중합니다. 세심한 관찰과 신체 리딩, 지속적인 피드백을 통해 현재 단계에 가장 적합한
-            수련을 이어가며, 안전하고 지속 가능한 성장을 추구합니다.
+            아쉬탕가 요가는 몸을 단련하는 운동을 넘어, 호흡과 움직임, 집중을 하나로 연결하며 평생 이어갈
+            수 있는 수련의 길을 제시합니다. 우리의 목표는 어려운 자세를 만드는 것이 아니라, 자신의 몸과 
+            마음을 깊이 이해하고 균형 있게 성장하는 것입니다.
           </p>
         </article>
       </div>
