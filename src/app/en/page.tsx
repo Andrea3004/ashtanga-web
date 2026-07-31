@@ -6,6 +6,8 @@ import { Section } from "@/components/Section";
 import { externalLinks, siteInfo } from "@/data/site";
 import { headTeacher } from "@/data/teachers";
 import { NoticeBar } from "@/features/notices/components/NoticeBar";
+import { NoticePopup } from "@/features/notices/components/NoticePopup";
+import { getActivePopupNotice } from "@/features/notices/queries";
 import { ogImage, siteName, siteUrl } from "@/lib/seo";
 
 const pageTitle = "Ashtanga Yoga Studio Seoul | Mysore & Led Classes";
@@ -136,7 +138,8 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default function EnglishPage() {
+export default async function EnglishPage() {
+  const popupNotice = await getActivePopupNotice("en");
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -178,6 +181,7 @@ export default function EnglishPage() {
   return (
     <main lang="en">
       <NoticeBar language="en" />
+      <NoticePopup language="en" notice={popupNotice} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">

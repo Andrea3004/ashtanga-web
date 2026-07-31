@@ -40,6 +40,12 @@ model Notice {
   isPinned    Boolean    @default(false)
   isPublished Boolean    @default(false)
   showOnTop   Boolean    @default(true)
+  showPopup   Boolean    @default(false)
+  popupPriority Int      @default(0)
+  popupButtonLabelKo String?
+  popupButtonLabelEn String?
+  popupButtonUrl String?
+  popupImageUrl String?
   showOnKo    Boolean    @default(true)
   showOnEn    Boolean    @default(false)
   createdAt   DateTime   @default(now())
@@ -47,6 +53,7 @@ model Notice {
 
   @@index([isPublished, startsAt, endsAt])
   @@index([showOnTop])
+  @@index([showPopup, popupPriority, startsAt])
   @@index([showOnKo])
   @@index([showOnEn])
   @@index([isPinned, updatedAt])

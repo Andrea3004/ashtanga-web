@@ -14,6 +14,12 @@ export type NoticeRecord = {
   isPinned: boolean;
   isPublished: boolean;
   showOnTop: boolean;
+  showPopup: boolean;
+  popupPriority: number;
+  popupButtonLabelKo: string | null;
+  popupButtonLabelEn: string | null;
+  popupButtonUrl: string | null;
+  popupImageUrl: string | null;
   showOnKo: boolean;
   showOnEn: boolean;
   createdAt: Date;

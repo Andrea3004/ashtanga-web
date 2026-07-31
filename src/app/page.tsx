@@ -6,6 +6,8 @@ import { Section } from "@/components/Section";
 import { TrackedLink } from "@/components/TrackedLink";
 import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
 import { NoticeBar } from "@/features/notices/components/NoticeBar";
+import { NoticePopup } from "@/features/notices/components/NoticePopup";
+import { getActivePopupNotice } from "@/features/notices/queries";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -17,10 +19,13 @@ export const metadata = createPageMetadata({
 
 export const dynamic = "force-dynamic";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const popupNotice = await getActivePopupNotice("ko");
+
   return (
     <main>
       <NoticeBar language="ko" />
+      <NoticePopup language="ko" notice={popupNotice} />
       <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">
         <Image
           src="/images/ashtanga-shala-hero.png"

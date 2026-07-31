@@ -83,6 +83,9 @@ export default async function AdminNoticesPage({ searchParams }: AdminNoticesPag
                         <span className="rounded bg-[#b8873a] px-2 py-1 text-xs font-black text-[#081a20]">상단 노출</span>
                       ) : null}
                     </div>
+                    {notice.showPopup ? (
+                      <span className="mt-2 inline-flex rounded bg-[#10252c] px-2 py-1 text-xs font-black text-white">팝업 노출</span>
+                    ) : null}
                     <h2 className="mt-3 text-xl font-black">{notice.titleKo || notice.titleEn}</h2>
                     <dl className="mt-4 grid gap-2 text-sm font-semibold text-[#5e6a67] sm:grid-cols-2 lg:grid-cols-4">
                       <div>

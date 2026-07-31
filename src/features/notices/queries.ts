@@ -34,18 +34,54 @@ export async function getActiveNotice(language: NoticeLanguage): Promise<NoticeR
   }
 
   const now = new Date();
-  const prisma = getPrisma();
 
-  return prisma.notice.findFirst({
-    where: {
-      isPublished: true,
-      showOnTop: true,
-      startsAt: { lte: now },
-      OR: [{ endsAt: null }, { endsAt: { gte: now } }],
-      ...(language === "ko" ? { showOnKo: true } : { showOnEn: true })
-    },
-    orderBy: [{ isPinned: "desc" }, { startsAt: "desc" }]
-  });
+  try {
+    return await getPrisma().notice.findFirst({
+      where: {
+        isPublished: true,
+        showOnTop: true,
+        startsAt: { lte: now },
+        OR: [{ endsAt: null }, { endsAt: { gte: now } }],
+        ...(language === "ko" ? { showOnKo: true } : { showOnEn: true })
+      },
+      orderBy: [{ isPinned: "desc" }, { startsAt: "desc" }]
+    });
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error("Failed to load active notice.", error);
+    }
+
+    return null;
+  }
+}
+
+export async function getActivePopupNotice(language: NoticeLanguage): Promise<NoticeRecord | null> {
+  if (!hasDatabaseUrl) {
+    return null;
+  }
+
+  const now = new Date();
+
+  try {
+    return await getPrisma().notice.findFirst({
+      where: {
+        isPublished: true,
+        showPopup: true,
+        startsAt: { lte: now },
+        OR: [{ endsAt: null }, { endsAt: { gte: now } }],
+        ...(language === "ko"
+          ? { showOnKo: true, titleKo: { not: "" }, contentKo: { not: "" } }
+          : { showOnEn: true, titleEn: { not: "" }, contentEn: { not: "" } })
+      },
+      orderBy: [{ popupPriority: "desc" }, { startsAt: "desc" }]
+    });
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error("Failed to load popup notice.", error);
+    }
+
+    return null;
+  }
 }
 
 export async function getPublicNoticeBySlug(slug: string, language: NoticeLanguage): Promise<NoticeRecord | null> {
