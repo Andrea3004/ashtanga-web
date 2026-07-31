@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.1.2",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "lint": "eslint .",
+    "postinstall": "prisma generate",
     "admin:create": "tsx scripts/create-admin.ts"
   },
   "dependencies": {
