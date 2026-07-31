@@ -1,7 +1,6 @@
-import type { NoticeType } from "@prisma/client";
-
 export type NoticeStatus = "draft" | "scheduled" | "published" | "expired";
 export type NoticeLanguage = "ko" | "en";
+export type NoticeType = "GENERAL" | "MOON_DAY" | "HOLIDAY" | "SUMMER_BREAK" | "SCHEDULE_CHANGE" | "WORKSHOP";
 export type NoticeRecord = {
   id: string;
   slug: string;

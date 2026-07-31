@@ -1,11 +1,14 @@
 "use server";
 
-import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/adminAuth";
 import { getPrisma } from "@/lib/prisma";
 import { createSlugSource, slugify, validateNoticeForm } from "./validation";
+
+function hasPrismaErrorCode(error: unknown, code: string) {
+  return typeof error === "object" && error !== null && "code" in error && (error as { code?: unknown }).code === code;
+}
 
 async function createUniqueSlug(source: string, currentId?: string) {
   const prisma = getPrisma();
@@ -58,7 +61,7 @@ export async function createNoticeAction(_: { errors?: string[] } | undefined, f
     });
     revalidateNoticePaths(slug);
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
+    if (hasPrismaErrorCode(error, "P2002")) {
       return { errors: ["같은 slug의 공지가 이미 있습니다. 제목을 조금 다르게 입력해 주세요."] };
     }
 

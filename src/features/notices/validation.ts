@@ -1,6 +1,5 @@
-import type { NoticeType } from "@prisma/client";
 import { parseSeoulDateTimeInput } from "./date";
-import { noticeTypes } from "./types";
+import { noticeTypes, type NoticeType } from "./types";
 
 export type NoticeFormValues = {
   type: NoticeType;
