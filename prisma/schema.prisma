@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum NoticeType {
+  GENERAL
+  MOON_DAY
+  HOLIDAY
+  SUMMER_BREAK
+  SCHEDULE_CHANGE
+  WORKSHOP
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([isActive])
+}
+
+model Notice {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  titleKo     String
+  titleEn     String
+  contentKo   String
+  contentEn   String
+  type        NoticeType @default(GENERAL)
+  startsAt    DateTime
+  endsAt      DateTime?
+  isPinned    Boolean    @default(false)
+  isPublished Boolean    @default(false)
+  showOnTop   Boolean    @default(true)
+  showOnKo    Boolean    @default(true)
+  showOnEn    Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([isPublished, startsAt, endsAt])
+  @@index([showOnTop])
+  @@index([showOnKo])
+  @@index([showOnEn])
+  @@index([isPinned, updatedAt])
+}

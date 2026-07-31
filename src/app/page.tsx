@@ -5,6 +5,7 @@ import { GeneralScheduleSection, MysoreScheduleSection, ScheduleNotes } from "@/
 import { Section } from "@/components/Section";
 import { TrackedLink } from "@/components/TrackedLink";
 import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
+import { NoticeBar } from "@/features/notices/components/NoticeBar";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -14,9 +15,12 @@ export const metadata = createPageMetadata({
   path: "/"
 });
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <main>
+      <NoticeBar language="ko" />
       <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">
         <Image
           src="/images/ashtanga-shala-hero.png"

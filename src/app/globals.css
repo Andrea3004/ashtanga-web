@@ -30,3 +30,95 @@ select,
 textarea {
   font: inherit;
 }
+
+.admin-panel {
+  border: 1px solid #d8cab5;
+  border-radius: 8px;
+  background: #fffdf8;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(8, 26, 32, 0.08);
+}
+
+.admin-input {
+  min-height: 2.75rem;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #c9b99f;
+  background: #ffffff;
+  padding: 0.75rem;
+  color: #10252c;
+  outline: none;
+}
+
+.admin-input:focus {
+  border-color: #b8873a;
+  box-shadow: 0 0 0 4px rgba(184, 135, 58, 0.18);
+}
+
+.admin-checkbox {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid #d8cab5;
+  border-radius: 6px;
+  background: #f9f5ee;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.admin-button-primary,
+.admin-button-secondary,
+.admin-button-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 900;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.admin-button-primary {
+  border: 1px solid #b8873a;
+  background: #b8873a;
+  color: #081a20;
+}
+
+.admin-button-primary:hover {
+  border-color: #081a20;
+  background: #081a20;
+  color: #f6f2ea;
+}
+
+.admin-button-secondary {
+  border: 1px solid #c9b99f;
+  background: #fffdf8;
+  color: #10252c;
+}
+
+.admin-button-secondary:hover {
+  border-color: #b8873a;
+  color: #8a5a20;
+}
+
+.admin-button-dark {
+  border: 1px solid #10252c;
+  background: #10252c;
+  color: #f6f2ea;
+}
+
+.admin-link-danger {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 900;
+  color: #b91c1c;
+}

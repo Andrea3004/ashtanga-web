@@ -5,6 +5,7 @@ import { EnglishFaq } from "@/components/EnglishFaq";
 import { Section } from "@/components/Section";
 import { externalLinks, siteInfo } from "@/data/site";
 import { headTeacher } from "@/data/teachers";
+import { NoticeBar } from "@/features/notices/components/NoticeBar";
 import { ogImage, siteName, siteUrl } from "@/lib/seo";
 
 const pageTitle = "Ashtanga Yoga Studio Seoul | Mysore & Led Classes";
@@ -133,6 +134,8 @@ export const metadata: Metadata = {
   }
 };
 
+export const dynamic = "force-dynamic";
+
 export default function EnglishPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -174,6 +177,7 @@ export default function EnglishPage() {
 
   return (
     <main lang="en">
+      <NoticeBar language="en" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">
