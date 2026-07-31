@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AdminShell } from "@/features/notices/components/AdminShell";
 import { formatSeoulDateTime } from "@/features/notices/date";
-import { getNoticeDashboardStats } from "@/features/notices/queries";
+import { getNoticeDashboardStats, getNoticeStatus } from "@/features/notices/queries";
 import { noticeStatusLabels, type NoticeStatus } from "@/features/notices/types";
 import { requireAdmin } from "@/lib/adminAuth";
 
@@ -40,7 +40,7 @@ export default async function AdminDashboardPage() {
         <div className="mt-5 grid gap-3">
           {stats.recent.length ? (
             stats.recent.map((notice) => {
-              const status = notice.status;
+              const status: NoticeStatus = getNoticeStatus(notice);
 
               return (
                 <Link

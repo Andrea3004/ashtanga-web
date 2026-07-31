@@ -2,7 +2,7 @@ import Link from "next/link";
 import { AdminShell } from "@/features/notices/components/AdminShell";
 import { DeleteNoticeButton } from "@/features/notices/components/DeleteNoticeButton";
 import { formatSeoulDateTime } from "@/features/notices/date";
-import { getAdminNotices } from "@/features/notices/queries";
+import { getAdminNotices, getNoticeStatus } from "@/features/notices/queries";
 import { noticeStatusLabels, noticeTypeLabels, type NoticeStatus } from "@/features/notices/types";
 import { requireAdmin } from "@/lib/adminAuth";
 
@@ -65,7 +65,7 @@ export default async function AdminNoticesPage({ searchParams }: AdminNoticesPag
       <div className="grid gap-4">
         {notices.length ? (
           notices.map((notice) => {
-            const status = notice.status;
+            const status: NoticeStatus = getNoticeStatus(notice);
 
             return (
               <article key={notice.id} className="admin-panel">
