@@ -29,7 +29,7 @@ function withNoticeStatus(notice: Notice): NoticeWithStatus {
   };
 }
 
-export async function getActiveNotice(language: NoticeLanguage) {
+export async function getActiveNotice(language: NoticeLanguage): Promise<Notice | null> {
   if (!hasDatabaseUrl) {
     return null;
   }
@@ -49,7 +49,7 @@ export async function getActiveNotice(language: NoticeLanguage) {
   });
 }
 
-export async function getPublicNoticeBySlug(slug: string, language: NoticeLanguage) {
+export async function getPublicNoticeBySlug(slug: string, language: NoticeLanguage): Promise<Notice | null> {
   if (!hasDatabaseUrl) {
     return null;
   }
@@ -68,7 +68,7 @@ export async function getPublicNoticeBySlug(slug: string, language: NoticeLangua
   });
 }
 
-export async function getPublicNotices(language: NoticeLanguage) {
+export async function getPublicNotices(language: NoticeLanguage): Promise<Notice[]> {
   if (!hasDatabaseUrl) {
     return [];
   }
@@ -100,7 +100,7 @@ export async function getAdminNotices(status?: NoticeStatus): Promise<NoticeWith
   return status ? noticesWithStatus.filter((notice) => notice.status === status) : noticesWithStatus;
 }
 
-export async function getAdminNotice(id: string) {
+export async function getAdminNotice(id: string): Promise<Notice | null> {
   if (!hasDatabaseUrl) {
     return null;
   }
