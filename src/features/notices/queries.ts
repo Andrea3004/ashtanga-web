@@ -1,10 +1,9 @@
-import type { Notice } from "@prisma/client";
 import { getPrisma } from "@/lib/prisma";
-import type { NoticeLanguage, NoticeStatus, NoticeWithStatus } from "./types";
+import type { NoticeLanguage, NoticeRecord, NoticeStatus, NoticeWithStatus } from "./types";
 
 const hasDatabaseUrl = Boolean(process.env.DATABASE_URL);
 
-type NoticeStatusInput = Pick<Notice, "isPublished" | "startsAt" | "endsAt">;
+type NoticeStatusInput = Pick<NoticeRecord, "isPublished" | "startsAt" | "endsAt">;
 
 export function getNoticeStatus(notice: NoticeStatusInput, now = new Date()): NoticeStatus {
   if (!notice.isPublished) {
@@ -22,14 +21,14 @@ export function getNoticeStatus(notice: NoticeStatusInput, now = new Date()): No
   return "published";
 }
 
-function withNoticeStatus(notice: Notice): NoticeWithStatus {
+function withNoticeStatus(notice: NoticeRecord): NoticeWithStatus {
   return {
     ...notice,
     status: getNoticeStatus(notice)
   };
 }
 
-export async function getActiveNotice(language: NoticeLanguage): Promise<Notice | null> {
+export async function getActiveNotice(language: NoticeLanguage): Promise<NoticeRecord | null> {
   if (!hasDatabaseUrl) {
     return null;
   }
@@ -49,7 +48,7 @@ export async function getActiveNotice(language: NoticeLanguage): Promise<Notice 
   });
 }
 
-export async function getPublicNoticeBySlug(slug: string, language: NoticeLanguage): Promise<Notice | null> {
+export async function getPublicNoticeBySlug(slug: string, language: NoticeLanguage): Promise<NoticeRecord | null> {
   if (!hasDatabaseUrl) {
     return null;
   }
@@ -68,7 +67,7 @@ export async function getPublicNoticeBySlug(slug: string, language: NoticeLangua
   });
 }
 
-export async function getPublicNotices(language: NoticeLanguage): Promise<Notice[]> {
+export async function getPublicNotices(language: NoticeLanguage): Promise<NoticeRecord[]> {
   if (!hasDatabaseUrl) {
     return [];
   }
@@ -100,7 +99,7 @@ export async function getAdminNotices(status?: NoticeStatus): Promise<NoticeWith
   return status ? noticesWithStatus.filter((notice) => notice.status === status) : noticesWithStatus;
 }
 
-export async function getAdminNotice(id: string): Promise<Notice | null> {
+export async function getAdminNotice(id: string): Promise<NoticeRecord | null> {
   if (!hasDatabaseUrl) {
     return null;
   }

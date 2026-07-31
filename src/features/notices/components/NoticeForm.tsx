@@ -1,13 +1,12 @@
 "use client";
 
-import type { Notice } from "@prisma/client";
 import { useActionState } from "react";
 import { createNoticeAction, updateNoticeAction } from "../actions";
 import { toSeoulDateTimeInput } from "../date";
-import { noticeTypeLabels, noticeTypes } from "../types";
+import { noticeTypeLabels, noticeTypes, type NoticeRecord } from "../types";
 
 type NoticeFormProps = {
-  notice?: Notice;
+  notice?: NoticeRecord;
 };
 
 const defaultStart = toSeoulDateTimeInput(new Date());

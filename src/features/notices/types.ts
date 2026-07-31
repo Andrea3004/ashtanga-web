@@ -1,8 +1,26 @@
-import type { Notice, NoticeType } from "@prisma/client";
+import type { NoticeType } from "@prisma/client";
 
 export type NoticeStatus = "draft" | "scheduled" | "published" | "expired";
 export type NoticeLanguage = "ko" | "en";
-export type NoticeWithStatus = Notice & { status: NoticeStatus };
+export type NoticeRecord = {
+  id: string;
+  slug: string;
+  titleKo: string;
+  titleEn: string;
+  contentKo: string;
+  contentEn: string;
+  type: NoticeType;
+  startsAt: Date;
+  endsAt: Date | null;
+  isPinned: boolean;
+  isPublished: boolean;
+  showOnTop: boolean;
+  showOnKo: boolean;
+  showOnEn: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+};
+export type NoticeWithStatus = NoticeRecord & { status: NoticeStatus };
 
 export const noticeTypes: NoticeType[] = [
   "GENERAL",

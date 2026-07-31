@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import type { Notice } from "@prisma/client";
 import Link from "next/link";
 import { formatSeoulDateTime } from "@/features/notices/date";
 import { getPublicNotices } from "@/features/notices/queries";
-import { noticeTypeLabels } from "@/features/notices/types";
+import { noticeTypeLabels, type NoticeRecord } from "@/features/notices/types";
 import { siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function NoticesPage() {
-  const notices: Notice[] = await getPublicNotices("ko");
+  const notices: NoticeRecord[] = await getPublicNotices("ko");
 
   return (
     <main className="bg-background px-5 py-16 text-text sm:px-8 lg:px-20">
