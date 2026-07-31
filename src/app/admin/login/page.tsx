@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { LoginForm } from "@/features/notices/components/LoginForm";
 import { isAdminAuthenticated } from "@/lib/adminAuth";
@@ -14,7 +15,9 @@ export default async function AdminLoginPage() {
         <h1 className="mt-2 text-3xl font-black">관리자 로그인</h1>
         <p className="mt-3 text-sm font-semibold text-[#5e6a67]">공지 관리를 위해 로그인해 주세요.</p>
         <div className="mt-8">
-          <LoginForm />
+          <Suspense>
+            <LoginForm />
+          </Suspense>
         </div>
       </div>
     </main>

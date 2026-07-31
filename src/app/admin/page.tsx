@@ -7,7 +7,21 @@ import { requireAdmin } from "@/lib/adminAuth";
 
 export default async function AdminDashboardPage() {
   await requireAdmin();
-  const stats = await getNoticeDashboardStats();
+  const emptyCounts: Record<NoticeStatus, number> = {
+    draft: 0,
+    scheduled: 0,
+    published: 0,
+    expired: 0
+  };
+  const stats = await getNoticeDashboardStats().catch((error) => {
+    console.error("Failed to load admin dashboard notices.", error);
+
+    return {
+      counts: emptyCounts,
+      recent: [],
+      error: true
+    };
+  });
   const cards: { label: string; status: NoticeStatus }[] = [
     { label: "게시 중", status: "published" },
     { label: "예약", status: "scheduled" },
@@ -37,8 +51,13 @@ export default async function AdminDashboardPage() {
 
       <section className="admin-panel mt-8">
         <h2 className="text-xl font-black">최근 수정한 공지</h2>
+        {"error" in stats ? (
+          <p className="mt-4 rounded-md bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
+            공지 데이터를 불러오지 못했습니다. DATABASE_URL과 운영 DB 연결 상태를 확인해 주세요.
+          </p>
+        ) : null}
         <div className="mt-5 grid gap-3">
-          {stats.recent.length ? (
+          {"error" in stats ? null : stats.recent.length ? (
             stats.recent.map((notice) => {
               const status: NoticeStatus = getNoticeStatus(notice);
 
