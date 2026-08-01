@@ -77,7 +77,7 @@ export default function PracticePage() {
           <div className="relative z-10 flex min-h-[320px] items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">PRACTICE</p>
-              <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+              <h1 className="text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
                 호흡, 시선, 움직임을 하나의 리듬으로 연결합니다
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
@@ -92,7 +92,7 @@ export default function PracticePage() {
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-[1.25rem] border border-line bg-surface p-6">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">For Beginner</p>
-            <h2 className="mt-4 text-2xl font-black text-text">일반 수업 · Beginner Class</h2>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">일반 수업 · Beginner Class</h2>
             <p className="mt-4 leading-7 text-muted">
               아쉬탕가 요가를 처음 접하는 분들을 위한 입문 수업입니다.
               기본 순서와 호흡, 움직임의 원리를 단계적으로 배워갑니다.
@@ -109,7 +109,7 @@ export default function PracticePage() {
 
           <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-2">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">For Practitioner</p>
-            <h2 className="mt-4 text-2xl font-black text-text">마이솔 클래스 · Mysore Class</h2>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">마이솔 클래스 · Mysore Class</h2>
             <p className="mt-4 max-w-3xl leading-7 text-muted">
               개인의 호흡과 리듬에 맞추어 자신의 수련을 만들어가는 전통적인 아쉬탕가 수련 방식입니다.
             </p>
@@ -147,7 +147,7 @@ export default function PracticePage() {
 
           <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-3">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Meditation</p>
-            <h2 className="mt-4 text-2xl font-black text-text">명상</h2>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">명상</h2>
             <p className="mt-4 leading-7 text-muted">
               이완과 집중, 감각의 회복을 통해
               몸과 의식의 균형을 경험하는 수련입니다.
@@ -156,7 +156,7 @@ export default function PracticePage() {
         </div>
 
         <div className="mt-10 rounded-[1.25rem] border border-line bg-surface p-6 sm:p-8">
-          <h2 className="text-2xl font-black text-text">처음 방문과 회원 전용 수련 관리 안내</h2>
+          <h2 className="text-2xl font-semibold tracking-[-0.02em] text-text">처음 방문과 회원 전용 수련 관리 안내</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {practiceSteps.map((step) => (
               <div key={step.title} className="rounded-[1rem] border border-line/70 bg-background/70 p-5">
@@ -204,7 +204,7 @@ export default function PracticePage() {
         >
           <div className="max-w-2xl">
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Members Only</p>
-            <h2 className="mt-4 text-2xl font-black text-text sm:text-3xl">회원 전용 Practice App</h2>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text sm:text-3xl">회원 전용 Practice App</h2>
             <p className="mt-4 text-xl font-black leading-relaxed text-text sm:text-2xl">
               예약을 넘어
               <br />

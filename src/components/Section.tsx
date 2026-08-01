@@ -18,7 +18,9 @@ export function Section({ eyebrow, title, children, className = "", id, tone = "
         <div className="mb-10 max-w-3xl">
           {eyebrow ? <p className="mb-3 text-xs font-black uppercase text-clay">{eyebrow}</p> : null}
           {title ? (
-            <h2 className={`text-3xl font-black leading-tight sm:text-4xl lg:text-5xl ${titleClass}`}>{title}</h2>
+            <h2 className={`text-2xl font-semibold leading-tight tracking-[-0.02em] md:text-3xl lg:text-4xl ${titleClass}`}>
+              {title}
+            </h2>
           ) : null}
         </div>
       )}

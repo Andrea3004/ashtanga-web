@@ -196,7 +196,7 @@ export default async function EnglishPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.92),rgba(8,26,32,0.62)_58%,rgba(8,26,32,0.28)),linear-gradient(0deg,rgba(8,26,32,0.64),rgba(8,26,32,0.08)_52%)]" />
         <div className="relative z-10 flex max-w-4xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:px-20 lg:pb-28">
           <p className="mb-4 text-xs font-black uppercase text-gold">ASHTANGA YOGA STUDIO - SEOUL</p>
-          <h1 className="max-w-3xl text-3xl font-black leading-tight sm:text-5xl lg:text-7xl">
+          <h1 className="max-w-3xl text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
             Traditional Ashtanga Yoga in Seoul
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-text/90 sm:mt-6 sm:text-lg">
@@ -282,7 +282,7 @@ export default async function EnglishPage() {
           </div>
           <div>
             <p className="text-sm font-black uppercase text-gold">Head Teacher</p>
-            <h3 className="mt-3 text-3xl font-black text-text sm:text-4xl">Wooseok Yang</h3>
+            <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-text sm:text-3xl">Wooseok Yang</h3>
             <p className="mt-2 text-base font-semibold text-gold">Founder & Head Teacher</p>
             <div className="mt-6 max-w-2xl space-y-4 text-base leading-8 text-muted sm:text-lg">
               <p>
@@ -373,7 +373,7 @@ export default async function EnglishPage() {
           </div>
           <div className="flex flex-col justify-between rounded-lg border border-line bg-surface p-6 shadow-soft">
             <div>
-              <h3 className="text-2xl font-black text-text">Please contact us before your first visit.</h3>
+              <h3 className="text-2xl font-semibold tracking-[-0.02em] text-text">Please contact us before your first visit.</h3>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
                 Send us a direct message before your first visit. Tell us about your yoga experience and preferred time.
               </p>

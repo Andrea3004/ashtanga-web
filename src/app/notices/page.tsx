@@ -30,7 +30,9 @@ export default async function NoticesPage() {
     <main className="bg-background px-5 py-16 text-text sm:px-8 lg:px-20">
       <section className="mx-auto max-w-5xl">
         <p className="text-xs font-black uppercase text-gold">Notice</p>
-        <h1 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">공지사항</h1>
+        <h1 className="mt-3 text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
+          공지사항
+        </h1>
         <div className="mt-10 grid gap-4">
           {notices.length ? (
             notices.map((notice) => (
@@ -45,7 +47,7 @@ export default async function NoticesPage() {
                   </span>
                   {notice.isPinned ? <span className="rounded bg-gold px-2 py-1 text-xs font-black text-background">중요</span> : null}
                 </div>
-                <h2 className="mt-3 text-xl font-black text-text">{notice.titleKo}</h2>
+                <h2 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-text">{notice.titleKo}</h2>
                 <p className="mt-3 text-sm font-bold text-muted">{formatSeoulDateTime(notice.startsAt)}</p>
               </Link>
             ))

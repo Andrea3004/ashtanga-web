@@ -106,7 +106,9 @@ export default function SchedulePage() {
           <div className="relative z-10 flex min-h-[320px] items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">SCHEDULE</p>
-              <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">운영 시간과 수련 일정</h1>
+              <h1 className="text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
+                운영 시간과 수련 일정
+              </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
                 수업 시간표와 수강료, 예약 전 확인할 안내를 한곳에서 확인합니다.
               </p>
@@ -123,7 +125,7 @@ export default function SchedulePage() {
           <section aria-labelledby="pricing-title" className="space-y-5">
             <div>
               <p className="text-xs font-black uppercase text-gold">Pricing</p>
-              <h3 id="pricing-title" className="mt-2 text-2xl font-black text-text">
+              <h3 id="pricing-title" className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-text">
                 수강료 안내
               </h3>
             </div>

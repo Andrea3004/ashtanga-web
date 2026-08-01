@@ -42,7 +42,7 @@ export default function AboutPage() {
           />
           <div className="relative z-10 flex min-h-[320px] flex-col justify-end px-6 py-8 [text-shadow:0_2px_10px_rgba(8,26,32,0.38)] sm:px-10 sm:py-10 lg:px-14 lg:py-12">
             <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">About</p>
-            <h1 className="max-w-2xl text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+            <h1 className="max-w-2xl text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
               조용히 깊어지는 수련을 위한 공간
             </h1>
             <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 className="group rounded-lg border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/80 hover:shadow-[0_12px_30px_rgba(255,204,102,0.12)] focus:outline-none focus:ring-2 focus:ring-gold/60"
               >
                 <article className="h-full">
-                  <h2 className="text-xl font-black text-gold">
+                  <h2 className="text-xl font-semibold text-gold">
                     {section.title}
                     <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
                       →

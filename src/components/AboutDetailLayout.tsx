@@ -52,7 +52,9 @@ export function AboutDetailLayout({
 
             <div className="max-w-2xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">{eyebrow}</p>
-              <h1 className="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">{title}</h1>
+              <h1 className="text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
+                {title}
+              </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-text/80 sm:text-lg">{description}</p>
             </div>
           </div>

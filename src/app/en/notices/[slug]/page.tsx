@@ -53,7 +53,9 @@ export default async function EnglishNoticePage({ params }: NoticePageProps) {
     <main className="bg-background px-5 py-16 text-text sm:px-8 lg:px-20" lang="en">
       <article className="mx-auto max-w-3xl">
         <p className="text-xs font-black uppercase text-gold">{noticeTypeLabels[notice.type].en}</p>
-        <h1 className="mt-4 text-3xl font-black leading-tight sm:text-5xl">{notice.titleEn}</h1>
+        <h1 className="mt-4 text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
+          {notice.titleEn}
+        </h1>
         <p className="mt-4 text-sm font-bold text-muted">Published {formatSeoulDateTime(notice.startsAt)}</p>
         <div className="mt-10 whitespace-pre-wrap rounded-lg border border-line bg-surface p-6 text-base leading-8 text-text shadow-soft">
           {notice.contentEn}

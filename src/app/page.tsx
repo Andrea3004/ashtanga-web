@@ -38,7 +38,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.9),rgba(8,26,32,0.55)_56%,rgba(8,26,32,0.24)),linear-gradient(0deg,rgba(8,26,32,0.58),rgba(8,26,32,0.08)_48%)]" />
         <div className="relative z-10 flex max-w-3xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:px-20 lg:pb-28">
           <p className="mb-4 text-xs font-black uppercase text-gold">{siteInfo.tagline}</p>
-          <h1 className="text-3xl font-black leading-tight sm:text-5xl lg:text-7xl">
+          <h1 className="text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
             매일의 호흡을 쌓는 정통 아쉬탕가 수련
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-text/90 sm:mt-6 sm:text-lg">
@@ -181,7 +181,7 @@ export default async function HomePage() {
       <section className="grid gap-10 bg-soft px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_0.7fr] lg:px-20 lg:py-28">
         <div>
           <p className="mb-3 text-xs font-black uppercase text-clay">Contact</p>
-          <h2 className="text-3xl font-black leading-tight text-ink sm:text-4xl lg:text-5xl">
+          <h2 className="text-2xl font-semibold leading-tight tracking-[-0.02em] text-ink md:text-3xl lg:text-4xl">
             방문 전 편하게 문의하세요
           </h2>
           <p className="mt-5 max-w-2xl text-muted">

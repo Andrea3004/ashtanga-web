@@ -51,7 +51,7 @@ export default function TeachersPage() {
 
         <div className="lg:py-2">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">{headTeacher.eyebrow}</p>
-          <h2 className="mt-4 text-3xl font-black leading-tight text-text sm:text-4xl">{headTeacher.name}</h2>
+          <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.02em] text-text sm:text-3xl">{headTeacher.name}</h2>
           <p className="mt-2 text-base font-semibold text-gold">{headTeacher.role}</p>
           {headTeacher.credential ? (
             <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-muted">
@@ -73,7 +73,7 @@ export default function TeachersPage() {
       </section>
 
       <section className="mt-12 border-y border-line/70 py-9">
-        <p className="mx-auto max-w-3xl text-center text-2xl font-black leading-relaxed text-text sm:text-3xl">
+        <p className="mx-auto max-w-3xl text-center text-xl font-semibold leading-relaxed tracking-[-0.02em] text-text sm:text-2xl">
           {teachingPhilosophyHeading.map((line, index) => (
             <span key={line}>
               {index > 0 ? <br /> : null}
@@ -95,7 +95,7 @@ export default function TeachersPage() {
       <section className="mt-12">
         <div className="mb-6">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Our Teachers</p>
-          <h2 className="mt-3 text-2xl font-black text-text sm:text-3xl">함께 수련을 이끄는 지도진</h2>
+          <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-text sm:text-3xl">함께 수련을 이끄는 지도진</h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
@@ -130,7 +130,7 @@ export default function TeachersPage() {
       </section>
 
       <section className="mt-12 rounded-[1.25rem] border border-line bg-background/70 p-6 sm:p-8">
-        <h2 className="text-2xl font-black text-text">수련을 시작할 준비가 되셨나요?</h2>
+        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-text">수련을 시작할 준비가 되셨나요?</h2>
         <div className="mt-6 flex flex-wrap gap-3 text-sm">
           <TrackedLink
             href="/schedule"
