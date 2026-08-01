@@ -48,7 +48,7 @@ export const practiceDetailPages = {
     heroImageAlt: "아쉬탕가 요가 일반수업 자세",
     representativeImage: {
       src: "/images/practice/beginner-structure.png",
-      alt: "유연성 30%, 근지구력 30%, 호흡과 집중력 40%로 구성된 아쉬탕가 요가 일반수업 구조도",
+      alt: "Ashtanga Yoga Beginner Class balance structure",
       width: 1024,
       height: 1536
     },
@@ -83,8 +83,9 @@ export const practiceDetailPages = {
       { label: "1회 체험 문의", href: externalLinks.kakaoTalk, variant: "secondary" }
     ],
     metadata: {
-      title: "Beginner Class / 일반수업",
-      description: "초보자를 위한 1시간 아쉬탕가 요가 일반수업. 유연성, 근지구력, 호흡과 집중을 단계적으로 익힙니다."
+      title: "Beginner Class | Ashtanga Yoga Studio Seoul",
+      description:
+        "Learn the foundations of Ashtanga Yoga through a structured beginner program focusing on flexibility, endurance, breath, and concentration."
     }
   },
   mysore: {
@@ -99,7 +100,7 @@ export const practiceDetailPages = {
     heroImageAlt: scheduleHero.imageAlt,
     representativeImage: {
       src: "/images/practice/mysore-system.png",
-      alt: "개별 지도와 자기 속도 수련, 점진적인 도전을 설명하는 아쉬탕가 마이솔 클래스 시스템",
+      alt: "Traditional Ashtanga Mysore Class learning system",
       width: 2400,
       height: 3000
     },
@@ -135,8 +136,8 @@ export const practiceDetailPages = {
       { label: "첫 방문 문의", href: externalLinks.kakaoTalk, variant: "secondary" }
     ],
     metadata: {
-      title: "Mysore Class / 마이솔 클래스",
-      description: "자신의 호흡과 진도에 따라 수련하며 개별 지도를 받는 전통적인 아쉬탕가 마이솔 클래스입니다."
+      title: "Mysore Class | Ashtanga Yoga Studio Seoul",
+      description: "Experience the traditional Mysore method with individual guidance, self-paced practice, and progressive development."
     }
   },
   meditation: {
@@ -151,7 +152,7 @@ export const practiceDetailPages = {
     heroImageAlt: "고요한 명상 자세",
     representativeImage: {
       src: "/images/practice/meditation-system.png",
-      alt: "이완, 집중, 심상화의 3단계를 설명하는 차크라 각성 명상 시스템",
+      alt: "Chakra Awakening Meditation system",
       width: 1024,
       height: 1536
     },
@@ -187,8 +188,8 @@ export const practiceDetailPages = {
       { label: "프로그램 안내", href: "/contact", variant: "secondary" }
     ],
     metadata: {
-      title: "Meditation / 명상",
-      description: "이완, 집중, 심상화의 3단계로 누구나 쉽게 깊은 명상을 체험하는 차크라 각성 명상 프로그램입니다."
+      title: "Chakra Awakening Meditation | Ashtanga Yoga Studio Seoul",
+      description: "Experience a structured chakra awakening meditation system through relaxation, concentration, and visualization."
     }
   }
 } satisfies Record<string, PracticeDetailPageData>;
