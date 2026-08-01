@@ -7,7 +7,7 @@ import { TrackedLink } from "@/components/TrackedLink";
 import { externalLinks, practicePrograms, siteInfo, socialLinks, visitSteps } from "@/data/site";
 import { NoticeBar } from "@/features/notices/components/NoticeBar";
 import { NoticePopup } from "@/features/notices/components/NoticePopup";
-import { getActivePopupNotice } from "@/features/notices/queries";
+import { getActiveNotice, getActivePopupNotice } from "@/features/notices/queries";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -20,11 +20,11 @@ export const metadata = createPageMetadata({
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const popupNotice = await getActivePopupNotice("ko");
+  const [activeNotice, popupNotice] = await Promise.all([getActiveNotice("ko"), getActivePopupNotice("ko")]);
 
   return (
     <main>
-      <NoticeBar language="ko" />
+      <NoticeBar language="ko" notice={activeNotice} />
       <NoticePopup language="ko" notice={popupNotice} />
       <section className="relative grid min-h-[calc(100svh-72px)] overflow-hidden text-text">
         <Image

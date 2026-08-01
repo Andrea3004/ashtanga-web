@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { getActiveNotice } from "../queries";
-import { noticeTypeLabels, type NoticeLanguage } from "../types";
+import { noticeTypeLabels, type NoticeLanguage, type NoticeRecord } from "../types";
 
 type NoticeBarProps = {
   language: NoticeLanguage;
+  notice?: NoticeRecord | null;
 };
 
-export async function NoticeBar({ language }: NoticeBarProps) {
-  const notice = await getActiveNotice(language);
+export async function NoticeBar({ language, notice: providedNotice }: NoticeBarProps) {
+  const notice = providedNotice === undefined ? await getActiveNotice(language) : providedNotice;
 
   if (!notice) {
     return null;

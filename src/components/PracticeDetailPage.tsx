@@ -31,14 +31,14 @@ function DiagramCards({ page, className = "" }: PracticeDetailPageProps & { clas
 function BeginnerStructureImage() {
   return (
     <section className="my-10 sm:my-12">
-      <div className="mx-auto flex justify-center px-0 sm:px-4">
+      <div className="mx-auto flex w-fit max-w-full justify-center rounded-2xl border border-gold/25 bg-[#0d2430] p-4 shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:p-5">
         <Image
           src="/images/practice/beginner-structure.png"
           alt="유연성 30%, 근지구력 30%, 호흡과 집중력 40%로 구성된 아쉬탕가 요가 일반수업 구조도"
           width={1024}
           height={1536}
           sizes="(min-width: 1024px) 760px, calc(100vw - 2.5rem)"
-          className="mx-auto h-auto w-auto max-w-full rounded-xl border border-gold/20 object-contain shadow-[0_10px_24px_rgba(8,26,32,0.12)] md:max-h-[72vh] lg:max-h-[760px]"
+          className="mx-auto h-auto w-auto max-w-full rounded-md object-contain md:max-h-[72vh] lg:max-h-[760px]"
           priority={false}
         />
       </div>
@@ -181,6 +181,7 @@ export function PracticeDetailPage({ page }: PracticeDetailPageProps) {
           </div>
           <Link
             href="/"
+            prefetch
             className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gold transition hover:text-gold/80 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50"
           >
             ← 홈으로 돌아가기
