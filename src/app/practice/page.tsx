@@ -90,26 +90,46 @@ export default function PracticePage() {
 
       <Section className="pt-10 lg:pt-14">
         <div className="grid gap-4 lg:grid-cols-3">
-          <article className="rounded-[1.25rem] border border-line bg-surface p-6">
+          <TrackedLink
+            href="/practice/beginner"
+            aria-label="Beginner Class 일반수업 상세 페이지로 이동"
+            className="group rounded-[1.25rem] border border-line bg-surface p-6 transition hover:-translate-y-0.5 hover:border-gold/80 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
+          >
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">For Beginner</p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">일반 수업 · Beginner Class</h2>
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <h2 className="text-2xl font-semibold tracking-[-0.02em] text-text">일반 수업 · Beginner Class</h2>
+              <span
+                aria-hidden="true"
+                className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/35 text-sm text-gold transition group-hover:border-gold group-hover:bg-gold group-hover:text-background"
+              >
+                →
+              </span>
+            </div>
             <p className="mt-4 leading-7 text-muted">
               아쉬탕가 요가를 처음 접하는 분들을 위한 입문 수업입니다.
               기본 순서와 호흡, 움직임의 원리를 단계적으로 배워갑니다.
             </p>
-            <TrackedLink
-              href="/schedule"
-              analytics={{ event: "schedule_click", location: "practice", label: "일반 수업 시간표 보기", destination: "internal" }}
-              className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
-            >
+            <span className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors group-hover:border-gold/70 group-hover:bg-gold/20">
               일반 수업 시간표 보기
               <span aria-hidden="true">→</span>
-            </TrackedLink>
-          </article>
+            </span>
+          </TrackedLink>
 
-          <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-2">
+          <TrackedLink
+            href="/practice/mysore"
+            aria-label="Mysore Class 마이솔 클래스 상세 페이지로 이동"
+            className="group rounded-[1.25rem] border border-line bg-surface p-6 transition hover:-translate-y-0.5 hover:border-gold/80 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 lg:col-span-2"
+          >
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">For Practitioner</p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">마이솔 클래스 · Mysore Class</h2>
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <h2 className="text-2xl font-semibold tracking-[-0.02em] text-text">마이솔 클래스 · Mysore Class</h2>
+              <span
+                aria-hidden="true"
+                className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/35 text-sm text-gold transition group-hover:border-gold group-hover:bg-gold group-hover:text-background"
+              >
+                →
+              </span>
+            </div>
             <p className="mt-4 max-w-3xl leading-7 text-muted">
               개인의 호흡과 리듬에 맞추어 자신의 수련을 만들어가는 전통적인 아쉬탕가 수련 방식입니다.
             </p>
@@ -130,29 +150,32 @@ export default function PracticePage() {
                 </p>
               </div>
             </div>
-            <TrackedLink
-              href="/schedule#mysore"
-              analytics={{
-                event: "schedule_click",
-                location: "practice",
-                label: "마이솔 시간표 보기",
-                destination: "internal"
-              }}
-              className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:border-gold/70 hover:bg-gold/20 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30"
-            >
+            <span className="mt-6 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold transition-colors group-hover:border-gold/70 group-hover:bg-gold/20">
               마이솔 시간표 보기
               <span aria-hidden="true">→</span>
-            </TrackedLink>
-          </article>
+            </span>
+          </TrackedLink>
 
-          <article className="rounded-[1.25rem] border border-line bg-surface p-6 lg:col-span-3">
+          <TrackedLink
+            href="/practice/meditation"
+            aria-label="Meditation 명상 상세 페이지로 이동"
+            className="group rounded-[1.25rem] border border-line bg-surface p-6 transition hover:-translate-y-0.5 hover:border-gold/80 focus-visible:outline focus-visible:outline-4 focus-visible:outline-gold/30 lg:col-span-3"
+          >
             <p className="text-sm font-black uppercase tracking-[0.3em] text-gold">Meditation</p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-text">명상</h2>
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <h2 className="text-2xl font-semibold tracking-[-0.02em] text-text">명상</h2>
+              <span
+                aria-hidden="true"
+                className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/35 text-sm text-gold transition group-hover:border-gold group-hover:bg-gold group-hover:text-background"
+              >
+                →
+              </span>
+            </div>
             <p className="mt-4 leading-7 text-muted">
               이완과 집중, 감각의 회복을 통해
               몸과 의식의 균형을 경험하는 수련입니다.
             </p>
-          </article>
+          </TrackedLink>
         </div>
 
         <div className="mt-10 rounded-[1.25rem] border border-line bg-surface p-6 sm:p-8">

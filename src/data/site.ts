@@ -116,17 +116,20 @@ export const practicePrograms = [
   {
     title: "Beginner Class / 일반수업",
     summary: "아쉬탕가 요가를 처음 시작하는 분도 기본 순서와 호흡을 단계적으로 익힐 수 있는 수업입니다.",
-    meta: "Ashtanga Yoga 1~5(레벨)"
+    meta: "Ashtanga Yoga 1~5(레벨)",
+    href: "/practice/beginner"
   },
   {
     title: "Mysore Class / 셀프·레드 클래스",
     summary: "개인의 진도에 맞춰 수련하거나 레드 클래스에서 카운트와 리듬을 함께 점검합니다.",
-    meta: "Mysore · Led"
+    meta: "Mysore · Led",
+    href: "/practice/mysore"
   },
   {
     title: "Meditation / 명상",
     summary: "움직임 이후 호흡과 감각을 정돈하며 집중과 회복의 시간을 마련합니다.",
-    meta: "Breath · Awareness"
+    meta: "Breath · Awareness",
+    href: "/practice/meditation"
   }
 ];
 
