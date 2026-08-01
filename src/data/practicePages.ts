@@ -1,4 +1,4 @@
-import { externalLinks } from "@/data/site";
+import { externalLinks, scheduleHero } from "@/data/site";
 
 export type PracticeDetailPageData = {
   slug: "beginner" | "mysore" | "meditation";
@@ -9,6 +9,12 @@ export type PracticeDetailPageData = {
   description: string;
   heroImage: string;
   heroImageAlt: string;
+  representativeImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   diagramTitle: string;
   diagramItems: string[];
   features: Array<{
@@ -17,6 +23,7 @@ export type PracticeDetailPageData = {
   }>;
   flow: string[];
   audience: string[];
+  finalMessage: string[];
   ctas: Array<{
     label: string;
     href: string;
@@ -39,6 +46,12 @@ export const practiceDetailPages = {
       "처음 요가를 시작하는 분도 아쉬탕가 요가 레벨 1~5 구조 안에서 유연성, 근지구력, 호흡, 집중을 단계적으로 익힙니다. 단순한 스트레칭을 넘어 자세 인식과 집중력을 회복하고, 몸과 마음의 균형을 다시 세우는 수업입니다.",
     heroImage: "/images/practice-hero.jpg",
     heroImageAlt: "아쉬탕가 요가 일반수업 자세",
+    representativeImage: {
+      src: "/images/practice/beginner-structure.png",
+      alt: "유연성 30%, 근지구력 30%, 호흡과 집중력 40%로 구성된 아쉬탕가 요가 일반수업 구조도",
+      width: 1024,
+      height: 1536
+    },
     diagramTitle: "1시간 안의 5요소 흐름",
     diagramItems: ["유연성", "근지구력", "호흡·집중", "균형", "회복"],
     features: [
@@ -61,6 +74,10 @@ export const practiceDetailPages = {
       "운동, 호흡, 집중을 한 시간 안에서 체계적으로 경험하고 싶은 분",
       "몸의 긴장과 흐트러진 자세를 차분히 회복하고 싶은 분"
     ],
+    finalMessage: [
+      "30년 이상의 수련과 지도 경험을 바탕으로,",
+      "움직임·호흡·집중을 하나의 흐름으로 익힐 수 있도록 설계한 프로그램입니다."
+    ],
     ctas: [
       { label: "일반수업 시간표 보기", href: "/schedule", variant: "primary" },
       { label: "1회 체험 문의", href: externalLinks.kakaoTalk, variant: "secondary" }
@@ -78,8 +95,14 @@ export const practiceDetailPages = {
     lead: "자신의 능력과 시간에 제한받지 않고, 깊이 있는 요가를 마음껏 수련하고 도전할 수 있는 클래스",
     description:
       "마이솔 클래스는 각자 자신의 호흡과 속도에 맞춰 시퀀스를 수행하고, 티쳐가 개별적으로 관찰하며 지도하는 전통적인 아쉬탕가 수련 방식입니다. 초보자와 숙련자가 같은 공간에서 서로 다른 진도로 수련하며 자신의 몸과 가능성을 깊이 이해합니다.",
-    heroImage: "/images/practice-hero.jpg",
-    heroImageAlt: "아쉬탕가 요가 마이솔 클래스 수련",
+    heroImage: scheduleHero.image,
+    heroImageAlt: scheduleHero.imageAlt,
+    representativeImage: {
+      src: "/images/practice/mysore-system.png",
+      alt: "개별 지도와 자기 속도 수련, 점진적인 도전을 설명하는 아쉬탕가 마이솔 클래스 시스템",
+      width: 2400,
+      height: 3000
+    },
     diagramTitle: "마이솔 수련의 중심",
     diagramItems: ["Individual Guidance", "Self-Paced Practice", "Progressive Challenge"],
     features: [
@@ -102,6 +125,11 @@ export const practiceDetailPages = {
       "정해진 구령보다 호흡과 흐름에 더 집중하고 싶은 분",
       "개별 지도를 통해 다음 자세와 단계에 도전하고 싶은 분"
     ],
+    finalMessage: [
+      "자신의 호흡과 리듬을 존중하며,",
+      "깊이 있는 수련을 이어갈 수 있는",
+      "아쉬탕가 요가의 전통적인 수련 방식입니다."
+    ],
     ctas: [
       { label: "마이솔 시간표 보기", href: "/schedule", variant: "primary" },
       { label: "첫 방문 문의", href: externalLinks.kakaoTalk, variant: "secondary" }
@@ -121,6 +149,12 @@ export const practiceDetailPages = {
       "명상을 어렵거나 특별한 사람만의 수행처럼 설명하지 않습니다. 이완, 집중, 심상화의 단계 안에서 몸의 감각을 회복하고, 호흡과 의식을 결합하며, 차크라 호흡과 심상화를 통해 깊은 안정으로 들어갑니다.",
     heroImage: "/images/philosophy-hero.jpg",
     heroImageAlt: "고요한 명상 자세",
+    representativeImage: {
+      src: "/images/practice/meditation-system.png",
+      alt: "이완, 집중, 심상화의 3단계를 설명하는 차크라 각성 명상 시스템",
+      width: 1024,
+      height: 1536
+    },
     diagramTitle: "명상의 3단계",
     diagramItems: ["이완", "집중", "심상화"],
     features: [
@@ -142,6 +176,11 @@ export const practiceDetailPages = {
       "명상을 처음 시작하지만 쉽게 접근하고 싶은 분",
       "몸의 감각과 호흡을 차분히 회복하고 싶은 분",
       "깊은 이완과 집중, 내면의 안정을 경험하고 싶은 분"
+    ],
+    finalMessage: [
+      "누구나 쉽게 시작할 수 있지만,",
+      "깊은 명상으로 자연스럽게 이어질 수 있도록",
+      "설계한 차크라 각성 명상 시스템입니다."
     ],
     ctas: [
       { label: "명상 수업 문의", href: externalLinks.kakaoTalk, variant: "primary" },

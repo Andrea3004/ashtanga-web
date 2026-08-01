@@ -28,15 +28,19 @@ function DiagramCards({ page, className = "" }: PracticeDetailPageProps & { clas
   );
 }
 
-function BeginnerStructureImage() {
+function RepresentativeImageFrame({ page }: PracticeDetailPageProps) {
+  if (!page.representativeImage) {
+    return null;
+  }
+
   return (
     <section className="my-10 sm:my-12">
       <div className="mx-auto flex w-fit max-w-full justify-center rounded-2xl border border-gold/25 bg-[#0d2430] p-4 shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:p-5">
         <Image
-          src="/images/practice/beginner-structure.png"
-          alt="유연성 30%, 근지구력 30%, 호흡과 집중력 40%로 구성된 아쉬탕가 요가 일반수업 구조도"
-          width={1024}
-          height={1536}
+          src={page.representativeImage.src}
+          alt={page.representativeImage.alt}
+          width={page.representativeImage.width}
+          height={page.representativeImage.height}
           sizes="(min-width: 1024px) 760px, calc(100vw - 2.5rem)"
           className="mx-auto h-auto w-auto max-w-full rounded-md object-contain md:max-h-[72vh] lg:max-h-[760px]"
           priority={false}
@@ -48,6 +52,7 @@ function BeginnerStructureImage() {
 
 export function PracticeDetailPage({ page }: PracticeDetailPageProps) {
   const canonical = new URL(page.path, siteUrl).toString();
+  const usesScheduleHero = page.slug === "mysore";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -104,8 +109,18 @@ export function PracticeDetailPage({ page }: PracticeDetailPageProps) {
             className="object-cover"
             style={{ objectPosition: page.slug === "meditation" ? "18% 50%" : "50% 45%" }}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.88),rgba(8,26,32,0.6)_56%,rgba(8,26,32,0.34)),linear-gradient(0deg,rgba(8,26,32,0.58),rgba(8,26,32,0.12)_52%)]" />
-          <div className="relative z-10 flex min-h-[340px] items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
+          <div
+            className={
+              usesScheduleHero
+                ? "absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.86),rgba(8,26,32,0.58)_54%,rgba(8,26,32,0.32)),linear-gradient(0deg,rgba(8,26,32,0.54),rgba(8,26,32,0.1)_52%)]"
+                : "absolute inset-0 bg-[linear-gradient(90deg,rgba(8,26,32,0.88),rgba(8,26,32,0.6)_56%,rgba(8,26,32,0.34)),linear-gradient(0deg,rgba(8,26,32,0.58),rgba(8,26,32,0.12)_52%)]"
+            }
+          />
+          <div
+            className={`relative z-10 flex ${
+              usesScheduleHero ? "min-h-[320px]" : "min-h-[340px]"
+            } items-end px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12`}
+          >
             <div className="max-w-3xl [text-shadow:0_2px_10px_rgba(8,26,32,0.38)]">
               <p className="mb-3 text-xs font-black uppercase tracking-[0.35em] text-gold/90">{page.eyebrow}</p>
               <h1 className="text-[2rem] font-semibold leading-[1.22] tracking-[-0.02em] sm:text-4xl lg:text-5xl lg:leading-[1.15] lg:tracking-[-0.025em]">
@@ -128,8 +143,7 @@ export function PracticeDetailPage({ page }: PracticeDetailPageProps) {
           </div>
         </div>
 
-        {page.slug === "beginner" ? <BeginnerStructureImage /> : null}
-        {page.slug !== "beginner" ? <DiagramCards page={page} className="mx-auto mt-10 max-w-4xl" /> : null}
+        {page.representativeImage ? <RepresentativeImageFrame page={page} /> : <DiagramCards page={page} className="mx-auto mt-10 max-w-4xl" />}
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {page.features.map((feature) => (
@@ -166,6 +180,17 @@ export function PracticeDetailPage({ page }: PracticeDetailPageProps) {
             </ul>
           </section>
         </div>
+
+        <section className="mx-auto mt-12 max-w-2xl border-y border-line/70 py-8 text-center">
+          <p className="text-base font-medium leading-7 tracking-[-0.02em] text-muted sm:text-lg">
+            {page.finalMessage.map((line, index) => (
+              <span key={line}>
+                {index > 0 ? <br /> : null}
+                {line}
+              </span>
+            ))}
+          </p>
+        </section>
 
         <section className="mt-12 rounded-[1.25rem] border border-gold/25 bg-charcoal p-6 text-text sm:p-8">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-gold">{siteName}</p>
